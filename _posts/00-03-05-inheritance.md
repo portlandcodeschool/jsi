@@ -2,7 +2,7 @@
 layout: post
 title: Inheritance
 class: inheritance
-date: 2014-09-22 01:00:00
+date: 2015-01-26
 ---
 
 What happens when one object is like another? How can we re-use the code that's

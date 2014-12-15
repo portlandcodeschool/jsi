@@ -2,7 +2,7 @@
 layout: post
 title: Ember Testing
 class: testing
-date: 2014-10-16 00:00:00
+date: 2015-02-20
 ---
 
 It's time to learn more Ember!

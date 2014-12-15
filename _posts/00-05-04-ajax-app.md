@@ -2,7 +2,7 @@
 layout: post
 title: AJAX Application
 class: ajax-app
-date: 2014-10-02 00:00:00
+date: 2015-02-05
 ---
 
 Today we're going to build a front-end app that interacts with a REST API.

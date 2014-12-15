@@ -2,7 +2,7 @@
 layout: post
 title: GitHub Pages
 class: github-pages
-date: 2014-09-24 00:00:00
+date: 2015-01-28
 ---
 
 Today we're going to publish something very basic to

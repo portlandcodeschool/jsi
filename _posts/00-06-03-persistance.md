@@ -2,7 +2,7 @@
 layout: post
 title: Persistence
 class: persistence
-date: 2014-10-08 00:00:00
+date: 2015-02-11
 ---
 
 Today we're going to learn about persistence using _SQL_ (pronounced _sequel_

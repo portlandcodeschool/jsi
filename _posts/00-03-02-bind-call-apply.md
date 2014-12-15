@@ -2,7 +2,7 @@
 layout: post
 title: Bind, Call &amp; Apply
 class: bind+call+apply
-date: 2014-09-17 00:00:00
+date: 2015-01-20
 ---
 
 Today we're going to revisit some of the functions we wrote while discussing

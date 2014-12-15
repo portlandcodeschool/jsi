@@ -2,7 +2,7 @@
 layout: post
 title: Fundamentals
 class: fundamentals
-date: 2014-09-03 01:00:00
+date: 2015-01-05
 ---
 
 This class will cover some of the fundamentals of JavaScript. We will discuss

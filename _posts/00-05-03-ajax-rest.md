@@ -2,7 +2,7 @@
 layout: post
 title: AJAX &amp; REST
 class: ajax+rest
-date: 2014-10-01 00:00:00
+date: 2015-02-04
 ---
 
 ## AJAX

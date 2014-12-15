@@ -2,7 +2,7 @@
 layout: post
 title: Ember &amp; MVC
 class: ember+mvc
-date: 2014-10-13 00:00:00
+date: 2015-02-17
 ---
 
 [Ember][ember] is a front-end JavaScript framework for building web

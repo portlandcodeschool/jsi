@@ -2,7 +2,7 @@
 layout: post
 title: Refactoring
 class: refactoring
-date: 2014-09-19 01:00:00
+date: 2015-01-22
 ---
 
 By now you've written a good amount of code. You've probably ended up with a

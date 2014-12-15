@@ -2,7 +2,7 @@
 layout: post
 title: Sessions
 class: sessions
-date: 2014-10-21 00:00:00
+date: 2015-02-25
 ---
 
 Allowing uses to sign up and log into your website is a complicated process.

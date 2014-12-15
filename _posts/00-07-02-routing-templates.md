@@ -2,7 +2,7 @@
 layout: post
 title: Routing &amp; Templates
 class: routing+templates
-date: 2014-10-14 00:00:00
+date: 2015-02-18
 ---
 
 It's time to learn more Ember!

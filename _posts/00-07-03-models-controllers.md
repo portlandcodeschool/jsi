@@ -2,7 +2,7 @@
 layout: post
 title: Models &amp; Controllers
 class: models+controllers
-date: 2014-10-15 00:00:00
+date: 2015-02-19
 ---
 
 It's time to learn more Ember!

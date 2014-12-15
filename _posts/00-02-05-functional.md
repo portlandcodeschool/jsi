@@ -2,7 +2,7 @@
 layout: post
 title: Functional Programming
 class: functional
-date: 2014-09-15 00:00:00
+date: 2015-01-15
 ---
 
 Today we're going to discuss functions again. Again? Yes, functions are the
