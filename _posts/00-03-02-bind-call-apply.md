@@ -17,7 +17,7 @@ What happens with this code?
 
 {% highlight javascript %}
 var fn = function() {
-  
+
 };
 fn('hello', 'world');
 {% endhighlight %}

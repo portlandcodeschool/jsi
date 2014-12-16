@@ -36,7 +36,7 @@ Erlang, and F# are primarily functional.
 {% highlight javascript %}
 // functions can be assigned to variables
 var foo = function() {
-  
+
 };
 
 // functions can be passed as arguments
@@ -50,10 +50,10 @@ var utilities = {
   }
 };
 utilities.bar = function() {
-  
+
 };
 utilities["baz"] = function() {
-  
+
 };
 
 // functions can be returned from functions

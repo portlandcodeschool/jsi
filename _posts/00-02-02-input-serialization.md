@@ -81,7 +81,7 @@ var object = [
 JSON.stringify(object)
 {% endhighlight %}
 
-The result is the following string:  
+The result is the following string:
 `'[{"firstName":"Whitney","lastName":"Young"},{"firstName":"Cris","lastName":"Kelly"}]'`
 
 That's nearly exactly what we typed in! Now, though, it's a string. So we can
@@ -191,18 +191,18 @@ the [JSI Game Library][github-jsi-game-library].
     |    H         I         J         K    |
     |         |         |         |         |
     +---   ---+---------+---------+---------+
-    |         |                              
-    |    G    |                              
-    |         |                              
-    +---   ---+---------+---------+          
-    |         |         |         |          
-    |    D    |    E         F    |          
-    |         |         |         |          
-    +---   ---+---   ---+---------+          
-    |         |         |         |          
-    |    A         B         C    |          
-    |         |         |         |          
-    +---------+--  ^  --+---------+          
+    |         |
+    |    G    |
+    |         |
+    +---   ---+---------+---------+
+    |         |         |         |
+    |    D    |    E         F    |
+    |         |         |         |
+    +---   ---+---   ---+---------+
+    |         |         |         |
+    |    A         B         C    |
+    |         |         |         |
+    +---------+--  ^  --+---------+
 
 The game library can be installed with:
 
