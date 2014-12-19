@@ -2,393 +2,214 @@
 layout: post
 title: Fundamentals
 class: fundamentals
-date: 2015-01-05
+date: 2015-01-05 00:00:01
 ---
 
-This class will cover some of the fundamentals of JavaScript. We will discuss
-conditionals, objects, arrays and functions. We'll also make a lot of mistakes
-so we can learn that it's not quite so bad.
+This class will cover some of the fundamentals of JavaScript. We will discuss conditionals, objects, arrays and functions. We'll also make a lot of mistakes so we can learn to come back from them!
 
-Since we're just starting off, let's take baby steps to build up our programming
-chops. First, we'll learn to speak. Then we'll learn to count.
+Since we're just starting off, let's take baby steps to build up our programming chops. First, we'll learn to speak. Then we'll learn to count.
 
+## Variables
+
+A variable is a name that you can tell the JavaScript interpreter to associate with some value. You might remember variables in algebra, where you'd see expressions like `4x + 3`. Variables in programming are similar; they represent some value that you don't know up front--its exact meaning may _vary_ over time. Unlike in algebra, in programming we generally avoid giving variables single-letter names. Instead, variables names should be one or more words. In JavaScript you can declare a variable using the keyword `var`, and assign a value to it using the `=` operator:
+
+{% highlight javascript %}
+var bottlesOfBeerOnTheWall = 99;
+{% endhighlight %}
+
+### Exercise: storing and using variables
+
+Create a file called `variables.js.` Inside it, create several variables that contain facts about your partner. For example, you might create one called `name` that shows their name. Try to come up with at least four variables. Next, use `console.log` to display those facts on the screen:
+
+{% highlight javascript %}
+console.log(name);
+{% endhighlight %}
+
+## Loops
+
+Suppose you wanted to make a program that sang "99 Bottles Of Beer On The Wall." You could just write the whole thing out:
+
+{% highlight javascript %}
+console.log("99 bottles of beer on the wall, 99 bottles of beer, take one down, pass it around, 98 bottles of beer on the wall!");
+console.log("98 bottles of beer on the wall, 98 bottles of beer, take one down, pass it around, 97 bottles of beer on the wall!");
+console.log("97 bottles of beer on the wall, 97 bottles of beer, take one down, pass it around, 96 bottles of beer on the wall!");
+console.log("96 bottles of beer on the wall, 96 bottles of beer, take one down, pass it around, 95 bottles of beer on the wall!");
+console.log("95 bottles of beer on the wall, 95 bottles of beer, take one down, pass it around, 94 bottles of beer on the wall!");
+...
+{% endhighlight %}
+
+I think we can all agree writing out the whole thing would be infuriatingly tedious. Isn't computer programming supposed to _reduce_ the amount of work we do? Yes it is. That's why almost every programming language offers at least one way to do things in a loop. For example:
+
+{% highlight javascript %}
+var bottlesOfBeer = 99;
+while (bottlesOfBeer > 1) {
+    console.log(bottlesOfBeer + " bottles of beer on the wall, " + bottlesOfBeer + " bottles of beer, take one down, pass it around, " + (bottlesOfBeer - 1) + "bottles of beer on the wall!");
+    bottlesOfBeer = bottlesOfBeer - 1;
+}
+console.log("1 bottle of beer on the wall, 1 bottle of beer, take one down, pass it around, no more bottles of beer on the wall!");
+{% endhighlight %}
+
+### Exercise: for-loops
+
+An alternative to the `while` statement above is the `for` statement. Look up `for` on [MDN](https://developer.mozilla.org/en-US/). In a new file called `bottlesOfBeer.js`, rewrite the while-loop above as a for-loop.
+
+## Functions
+
+Let's pause for a moment to think about how those loops let us _reuse code_. Code reuse is a fundamental aspect of computer programming. If you had to write out every possible branch of code by hand, large programs would be utterly unmanageable. The features offered by various programming languages are basically all different ways to reuse code, which brings us to functions!
+
+Functions are the most important tool JavaScript offers for code reuse. Just as the code in the while-loop behaved a little differently as the value of `bottlesOfbeer` changed, a function is a chunk of code whose behavior is defined by its _arguments_. We've already used the function `console.log` to display text on the screen. Notice how some of its behavior (displaying text on the screen) is the same each time you call it, but the details (exactly what text it displays) are different depending on its arguments (the value or values in parentheses after the name of the function). `console.log` is provided by Node.js, but we can write our own functions, as well. For example, if we wanted to calculate the kinetic energy of a moving object:
+
+{% highlight javascript %}
+var kineticEnergy = function(mass, velocity) {
+  return mass * Math.pow(velocity, 2);
+};
+{% endhighlight %}
+
+### Exercise: refactoring
+
+_Refactoring_ is the process of taking working code and reorganizing it so it accomplishes the same goals in a better (easier to read, more performant, or otherwise more appropriate) way. One of the most common ways to refactor code is to take some code and extract it into a function. Usually you'd do this with code that's duplicated in 2 or more places, but try extracting the body of the loop, so it calls `console.log(singAboutBottles(bottlesOfBeer));`.
 
 ## Objects
 
-For quick reference, here's an example of creating and using objects:
+We've seen how to assign numbers and strings (ordered groupings of letters and other characters) to variables. However, a single string or number by itself isn't enough information for all but the most trivial tasks. Usually, you'll have several pieces of data that all go together. In JavaScript, we accomplish that with _objects_. An Object is an unordered collection of keys and values. Here's a simple example of creating an object:
 
 {% highlight javascript %}
-var person = {
-  name: "Whitney",
-  age: 4,
-  favoriteColor: "blue",
-  hobby: "cooking"
+var andrew = {
+  name: "Andrew",
+  age: 30,
+  favoriteColor: "green",
+  hobby: "woodworking"
 };
-person.age = 12;
-person['favoriteColor'] = "orange";
-console.log(person.name);
 {% endhighlight %}
 
-We'll be exploring objects in a lot more detail in the future, but for now we'll
-start using them to get comfortable with the syntax.
+You can access the values in an object using two types of syntax: dot-notation or bracket notation.
+
+{% highlight javascript %}
+console.log(person.name); // dot notation
+console.log(person['age']); // bracket notation
+{% endhighlight %}
+
+<aside>
+  **Comments**
+
+  The example above introduces _comments_. A comment is a piece of code that doesn't do anything when executed. It's intended for explanatory notes to other people who might be reading your code. In JavaScript, a `//` starts a _line comment_ that ends at the end of the line, while `/*` starts a _block comment_ that doesn't end until a `*/` (which might be many lines later). We'll discuss good commenting practice later.
+</aside>
+
+### Exercise: stick your partner in an object
+
+Let's go back to `variables.js`. Rather than storing each fact about your partner in an individual variable, create a single object that has those facts as key/value pairs. Then update the calls to `console.log` so that they pull that information off of the object.
+
+## Arrays
+
+An array is a special type of object that keeps its values in order, using integers for keys. You can declare arrays using square brackets:
+
+{% highlight javascript %}
+var authors = ["Margaret Atwood", "Jane Austen", "Bill Bryson", "Roald Dahl", "Tom Holt", "Terry Pratchett", "J.K. Rowling"]
+{% endhighlight %}
+
+Since arrays' values are ordered, you can use a loop to show all these authors in alphabetical order:
+
+{% highlight javascript %}
+for (var i = 0; i < authors.length, i++) {
+  console.log(authors[i]);
+}
+{% endhighlight %}
+
+However, since arrays are objects, they can have _methods_, which are attributes whose values are functions. Arrays provide a method called `forEach`, which takes another function, called a _callback_, as an argument. `forEach` will call its callback once for each element in the array, passing the value and index of that element as arguments. Using `forEach` looks like this:
+
+{% highlight javascript %}
+authors.forEach(function(author){
+  console.log(author);
+});
+{% endhighlight %}
+
+Don't worry if callbacks seem a little confusing; that's normal. You'll have many opportunities to start getting a handle on them.
+
+### Exercise: binders full of students
+
+Collect facts about your partner, yourself, and other students around you. Make an array of objects, where each object contains various facts about a person. Now change your code so that it loops through the array (using `while`, `for`, or `forEach`) and display all the facts about them.
+
+What happens if you've collected different sets of facts about different people?
+
+## Conditionals
+
+So far, the programs we've written will always do the same thing every time they're run. That's ok if you only have one thing you want to do, but it's not gonna get us very far. That's why JavaScript offers conditional statements that operate on _boolean_ values. Booleans (commonly abbreviated "bool") are the simple option of true or false. Using the statements `if`, `else if`, and `else`, the logical operators "and" (`&&`), "or" (`||`), and "not" (`!`), plus the various comparison operators, we can form logical conditions that let our program decide what it should do. The comparison operators in JavaScript are:
+
+* "equals," which is spelled `===`
+* "does not equal," which is spelled `!==`
+* "greater than," spelled `>`
+* "greater than or equal to," spelled `>=`
+* "less than," spelled `<`
+* "less than or equal to," spelled `<=`
+
+<aside>
+  **Danger Zone**
+
+  JavaScript's design is flawed in various ways. Two of the most prominent have to do with conditional statements.
+
+  * JavaScript has another way of spelling "equals," `==`. The way `==` works in JavaScript is broken! We'll discuss it in greater depth later, but for now, just remember to always use `===` rather than `==`.
+  * JavaScript allows you to use non-boolean values in conditional statements. This is a feature commonly called "truthiness," and like `==`, it is broken in JavaScript. When using a conditional statement, always make sure you're examining boolean values--either a plain boolean or the result of a comparison operator like `===`.
+
+  JavaScript also has _bitwise operators_, which are spelled `|` (or), `&` (and), and `^` (xor). We probably won't discuss them in this class. Be sure to use the _logical operators_ or your program will behave strangely.
+
+</aside>
+
+Using conditionals, we could write a function that decides whether you should talk to somebody:
+
+{% highlight javascript %}
+var safeToChat = function() {
+  if (name === "Whitney") {
+    return true;
+  }
+  else if (name === "Andrew") {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+{% endhighlight %}
+
+### Exercise: using conditionals and booleans
+
+1. Rewrite the code above so the function has only an `if` and an `else` statement (no `else if`).
+1. Rewrite it again, so it's a single line with a `return` statement!
+1. In the "binders full of students" exercise, your program probably claimed that some people's hometown was undefined. That's not really true, though. Update your program so it only tells you a fact about someone if you know that fact about them.
 
 ## Code Quality
 
 Are you typing everything right? Are you sure you didn't make any typos?
 
-Most JavaScript programmers aren't really sure that they got it all right, so
-we use programs to verify that everything looks okay. Try it out. Don't be
-surprised if you have a few mistakes already. :)
+Carefully going line-by-line and letter-by-letter to make sure you've typed everything just right is a giant pain, so we use programs to verify that everything looks okay. Try it out. Don't be surprised if you have a few mistakes already. :)
 
 {% highlight bash %}
 npm install -g jshint
 jshint myfile.js
 {% endhighlight %}
 
+You can also install the [SublimeLinter](http://www.sublimelinter.com/en/latest/) plugin for Sublime Text to get -obnoxious- helpful jshint notes right in your editor.
 
-## Learning to Speak
+## Challenges
 
-### Functions
-
-Functions are chunks of code that can be reused. Functions are just
-expressions just like `2 + 2` or `"hello world"`.
-A function expression looks like: `function() { /* code */ }`.
-Usually, you'll assign functions to variables to use them. Here's a basic function
-that takes no _arguments_ that we've named `greet` by assigning
-it to a variable:
-
-{% highlight javascript %}
-var greet = function() {
-  console.log("Whitney says \"Hello!\"");
-};
-{% endhighlight %}
-
-We can then have this chunk of code run anywhere by _calling_ the function.
-This is done by adding `()` after the name we gave it:
-
-{% highlight javascript %}
-greet();
-{% endhighlight %}
-
-Functions can also be thought of as the building blocks of programs.
-Soon we'll start combining functions to make cool things happen.
-
-
-### Arguments
-
-Since greeting is something that many people can do, we can make
-our function more general by providing it with some information.
-
-Here are some examples:
-
-{% highlight javascript %}
-var greet = function(personName) {
-  console.log(personName + " says 'Hello!'");
-};
-var personName = "Whitney";
-greet(personName);
-greet("Sara");
-{% endhighlight %}
-
-
-You could also pass objects to functions:
-
-{% highlight javascript %}
-var greet = function(person) {
-  console.log(person.name + " says 'Hello!'");
-};
-var person = { name: "Whitney" };
-greet(person);
-greet({ name: "Sara" });
-{% endhighlight %}
-
-
-### Return values
-
-Functions can also produce a result. We'll only touch on this briefly today, but
-it will be an important concept that we start using very soon.
-
-{% highlight javascript %}
-var person = {
-  firstName: "Whitney",
-  lastName: "Young"
-};
-
-var fullName = function(person) {
-  return person.fristName + " " + person.lastName;
-};
-
-console.log(fullName(person));
-{% endhighlight %}
-
-
-<aside>
-**Confused by parenthesis?**
-
-When you're new to functions, the syntax can feel confusing, specifically the
-parenthesis. You use them both when you're defining your function, but also when
-calling the function. This really boils down to the syntax of programming languages.
-Generally it's best just to accept it and move on.
-
-If you're still having trouble, and you're not in the mood to just accept it, this
-may help: the parenthesis don't mean just one thing. When parenthesis come after the
-keyword `function`, they are being used to define arguments. When they come after a
-variable name, they mean call the function. So `function(a, b, c)` means define the
-arguments `a`, `b`, and `c` for a new function. But `learnJavaScript(x, y, z)` means
-that you want to call the function that's been assigned to `learnJavaScript` with
-whatever values are in `x`, `y`, and `z`.
-</aside>
-
-
-### Challenges
-
-- Write a function that takes two arguments, both numbers, and logs the sum. For instance,
-  `sum(7, 5)` should log `The sum of 7 and 5 is 12`.
-- Write a function that subtracts two numbers. For instance, `difference(7, 5)` should log
-  `The difference between 7 and 5 is 2`.
+- Write a function that takes two arguments, both numbers, and returns some text describing the sum. For instance, `sum(7, 5)` should return `"The sum of 7 and 5 is 12"`.
+- Write a function that subtracts two numbers. For instance, `difference(7, 5)` should return `"The difference between 7 and 5 is 2"`.
 - Write a function that takes two people objects and logs a message about them meeting
-  each other for the first time. For instance, `introduce(john, sara)` would log something
-  like `John met Sara and said the color is green is awesome`.
-- Create variations of your sum and difference functions that return a results instead of
-  logging
-- Bonus: Change `difference` so that it never returns negative numbers. For instance,
-  both `difference(5, 7)` and `difference(7, 5)` should return `2`.
+  each other for the first time. For instance, `introduce(john, sara)` would return something like `"John met Sara and said the color is green is awesome"`.
+- Change `difference` so that it never returns negative numbers. For instance, both `difference(5, 7)` and `difference(7, 5)` should return `2`.
 
+## Stepping Through Execution
 
-### Stepping Through Execution
-
-Often it's helpful to walk through pieces of code step by step, the same way
-the computer is working through it. You'll find that you can sometimes better
-understand what's happening this way, and also may discover solutions to
-problems in your code.
+Often it's helpful to walk through pieces of code step by step, the same way the computer is working through it. You'll find that you can sometimes better understand what's happening this way, and also may discover solutions to problems in your code.
 
 There are two nifty utilities that try to make this process more visual:
 
 - [SlowmoJS][slowmojs]
 - [metajs][metajs]
 
+## For later
 
-## Learning to Count
-
-Let's go back to the early days of childhood. At some point we learned to count. Many of us
-decided after we learned, that we'd continue counting until we couldn't go any higher. It
-was fun. We're going to try to re-create that fun time counting with a program.
-
-<aside class="objective">
-**Learning to Count Objective**
-Build a program where once you instruct the computer to begin counting, it will continue
-counting (forever) just like a young child.
-</aside>
-
-Let's start with a very basic function:
-
-{% highlight javascript %}
-var sayNumber = function(n) {
-  console.log("Whitney says '" + n.toString() + "'");
-};
-{% endhighlight %}
-
-Now we can speak numbers:
-
-{% highlight javascript %}
-sayNumber(0);
-sayNumber(1);
-sayNumber(2);
-{% endhighlight %}
-
-But this doesn't really achieve the goal. We can manually give instructions to count, but we want to
-have the computer automatically continue for us once we start. Let's write a function to start counting:
-
-{% highlight javascript %}
-var startCounting = function() {
-  sayNumber(0);
-};
-{% endhighlight %}
-
-Now we can start counting:
-
-{% highlight javascript %}
-startCounting();
-{% endhighlight %}
-
-But at this point, we only say the number zero. So we haven't done much better. Let's add another function
-to the mix to continue counting, and update our start counting function.
-
-{% highlight javascript %}
-var startCounting = function() {
-  sayNumber(0);
-  continueCounting(1);
-};
-
-var continueCounting = function(n) {
-  // think about what continue counting means. it means
-  // that we say a number, and then continue with the
-  // next number, right? do we have all the functions
-  // we need in order to say a number and continue counting?
-  // also, what is the next number?
-};
-{% endhighlight %}
-
-### Stopping
-
-Well, we have to stop at some point, we can't go forever.
-
-Let's try to stop at 10 for now. Before we do that, we need to add _conditionals_
-to our JavaScript repertoire. These are pretty easy, let's take a look:
-
-### Conditionals
-
-{% highlight javascript %}
-if (2 > 1) {
-  console.log('JavaScript understands how to compare numbers.');
-}
-
-if (1 > 2) {
-  console.log('JavaScript failed us, and pigs are probably flying as well!');
-}
-{% endhighlight %}
-
-While we're at it, let's look at a few other things you can do with `if` statements.
-
-{% highlight javascript %}
-var name = "Whitney";
-if (name === "Whitney") {
-  console.log("Seems like a pretty cool guy, you should talk to him.");
-}
-else {
-  console.log("I don't know that person. Don't talk to strangers.");
-}
-{% endhighlight %}
-
-You can expand and use multiple else items:
-
-{% highlight javascript %}
-if (name === "Whitney") {
-  console.log("Seems like a pretty cool guy, you should talk to him.");
-}
-else if (name === "Alex") {
-  console.log("Oh, don't talk to him. I hate him.");
-}
-else {
-  console.log("I don't know that person. Don't talk to strangers.");
-}
-{% endhighlight %}
-
-#### Quick Status Check
-
-- Write a function that takes a person's name as an argument, and logs
-  a message if they are enrolled in this class. If they're not in the
-  class, it should log a message stating that they're not.
-- Bonus: who can get everyone's name right?
-
-### Back to Stopping
-
-Let's review our counting code again and make some changes so we only count to 10:
-
-{% highlight javascript %}
-var continueCounting = function(n) {
-  // when do we want to continue?
-};
-{% endhighlight %}
-
-
-<aside>
-The original version of the counting functions that we wrote was supposed to continue on
-it's own <q>forever</q>, but it instead crashed. We hit a limitation of the current version
-of JavaScript. This will be addressed in ES6, and if you'd like to learn more about this,
-ask in a week or two and we can discuss it more.
-</aside>
-
-### Challenge
-
-Update the functions above so that they can be used for any person.
-Hint: All of the functions will need to take another argument.
-
-{% highlight javascript %}
-startCounting({ name: "Whitney" });
-{% endhighlight %}
-
-Bonus: Make it so 3 year olds can count to 10, 4 year olds to 20,
-and everyone else to 100 (adults get bored and stop).
-
-
-## Collections of Things (Arrays)
-
-I like fruit. Who doesn't like fruit? It's good for you and delicious.
-Let's say I need an application to keep track of my fruit purchasing.
-I'd like to be able to ask it what I need to purchase, then when I
-go to the grocery store, I'd like to be able to tell it that I purchased
-everything.
-
-Where do I store this collection of fruit? In something called an array.
-You use brackets `[]` to create arrays. Here's a basic array:
-
-{% highlight javascript %}
-var fruits = ['apples', 'oranges', 'bananas'];
-{% endhighlight %}
-
-Ok, how do I access items in this array? You access them by _index_.
-An array of three items, like the one above, will have 3 slots in which
-it's holding values. The indexes for these slots are `0`, `1`, and `2`.
-_What? Why not 1, 2, and 3?_ In most programming languages, counting
-starts at zero. We just get have to deal with it.
-
-To access a slot, you use the brackets as well:
-
-{% highlight javascript %}
-console.log(fruits[0]);
-console.log(fruits[1]);
-console.log(fruits[2]);
-{% endhighlight %}
-
-<aside>
-**Confused by brackets?**
-
-Like before with arrays, we're seeing the brackets used during the definition
-of an array and when using an array. Again, it's brackets in both places, but
-they have different meanings. In this case, one use means _define_ and the other
-means _access_.
-</aside>
-
-#### Tinker with Arrays
-
-- Create an array with more/fewer items
-- What happens when you access something in a slot that doesn't exist?
-- How to you change one of the items in the array?
-- Figure out how many items are in an array using the _length_ property
-- What happens when you `console.log` an array?
-- What else can you try?
-
-### Back to Fruit Shopping
-
-So we have an array, now let's work with it.
-
-<aside class="objective">
-**Keeping Track of Fruit**
-Create a function that will print out fruits needs purchasing. The fruits
-will be stored in an array. Create another function that will print out that
-the fruits have been purchased.
-</aside>
-
-The goal is basically to call `startIndicatingFruitThatNeedsPurchasing`
-with our array and get a result of:
-
-{% highlight text %}
-I need to purchase apples.
-I need to purchase oranges.
-I need to purchase bananas.
-{% endhighlight %}
-
-Let's model this off of how we counted. We'll follow the same basic
-steps to build up to a our function that is able to indicate
-fruit that needs purchasing.
-
-We'll do this first part together.
-
-### Challenges
-
-- Create a `startIndicatingFruitPurchased` function.
-- Think about and discuss where things are being repeated in the code
+- Think of a domain name for a portfolio site
+- Think of a web application you'd like to build
 
 [slowmojs]: http://toolness.github.io/slowmo-js/
 [metajs]: http://int3.github.io/metajs/
