@@ -2,8 +2,10 @@
 layout: post
 title: Microblog 2
 class: microblog-2
-date: 2014-10-22 00:00:00
+date: 2015-02-27
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 Today you should finish your clone of Twitter.
 

@@ -2,8 +2,10 @@
 layout: post
 title: Express
 class: express
-date: 2014-10-07 00:00:00
+date: 2015-02-10
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 ## DRY: Don't Repeat Yourself
 

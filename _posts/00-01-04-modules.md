@@ -2,8 +2,10 @@
 layout: post
 title: Modules
 class: modules
-date: 2014-09-05 00:00:00
+date: 2015-01-07
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 In this class we'll continue to discuss abstractions. We'll create some common
 abstractions and group them together into _modules_. Finally, we'll focus on

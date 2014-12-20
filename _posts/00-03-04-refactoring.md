@@ -2,8 +2,10 @@
 layout: post
 title: Refactoring
 class: refactoring
-date: 2014-09-19 01:00:00
+date: 2015-01-22
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 By now you've written a good amount of code. You've probably ended up with a
 jumbly mess at times. Here's what happens when you leave it that way:

@@ -2,8 +2,10 @@
 layout: post
 title: AJAX &amp; REST
 class: ajax+rest
-date: 2014-10-01 00:00:00
+date: 2015-02-04
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 ## AJAX
 
@@ -27,13 +29,13 @@ AJAX stands for Asynchronous JavaScript and XML.
 
 Let's break that down:
 
-* _JavaScript_  
+* _JavaScript_
   Well this one's obvious. We're working in JavaScript.
-* _XML_  
+* _XML_
   This refers to retrieving XML from somewhere. So at this point, we're
   retrieving XML with JavaScript. In fact, this is a lie. We'll be using AJAX
   to retrieve JSON. No one says AJAJ, though.
-* _Asynchronous_  
+* _Asynchronous_
   We learned about asynchronous coding before when we discussed I/O in Node.
   This is the exact same idea. We know that we need to use asynchronous
   techniques when doing things that could take a long time.

@@ -2,8 +2,10 @@
 layout: post
 title: Project Extras
 class: mini-project-extras
-date: 2014-09-25 00:00:00
+date: 2015-01-29
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 ## Project Extras
 

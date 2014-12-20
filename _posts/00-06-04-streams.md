@@ -2,8 +2,10 @@
 layout: post
 title: Streams
 class: streams
-date: 2014-10-09 00:00:00
+date: 2015-02-12
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 We've briefly touched on streams already during the `learnyounode` tutorial.
 Streams are an incredibly powerful part of Node.js and allow data to flow from

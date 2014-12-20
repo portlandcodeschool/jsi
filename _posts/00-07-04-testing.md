@@ -2,8 +2,10 @@
 layout: post
 title: Ember Testing
 class: testing
-date: 2014-10-16 00:00:00
+date: 2015-02-20
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 It's time to learn more Ember!
 

@@ -2,8 +2,10 @@
 layout: post
 title: Node.js
 class: learnyounode
-date: 2014-10-06 00:00:00
+date: 2015-02-09
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 Today we're going to start learning Node.js. There's a great interactive
 tutorial from [nodeschool.io][nodeschool] called

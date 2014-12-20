@@ -1,6 +1,6 @@
 # Dependencies
 markdown:         redcarpet
-pygments:         true
+highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
@@ -11,11 +11,11 @@ tagline:          'JS Immersion'
 description:      'JavaScript Immersion'
 url:              http://portlandcodeschool.github.io/jsi
 baseurl:          /jsi
-timezone:         GMT
+timezone:         UTC
 
 author:
-  name:           'Whitney Young'
-  url:            https://twitter.com/wbyoung
+  name:           'Andrew Lorente'
+  url:            https://twitter.com/AndrewLorente
 
 # Custom vars
-version:          2.0.2
+version:          2.1.0b

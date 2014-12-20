@@ -2,8 +2,10 @@
 layout: post
 title: Git, TDD & Abstractions
 class: git+tdd+abstractions
-date: 2014-09-04 00:00:00
+date: 2015-01-06
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 This lesson will expand on some of the ideas we touched on while discussing
 functions, but first we're going to add Git and Test Driven Development to our

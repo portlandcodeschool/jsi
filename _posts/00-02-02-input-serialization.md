@@ -2,8 +2,10 @@
 layout: post
 title: User Input & Serialization
 class: serialization
-date: 2014-09-10 00:00:00
+date: 2015-01-12
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 ## User Input
 
@@ -81,7 +83,7 @@ var object = [
 JSON.stringify(object)
 {% endhighlight %}
 
-The result is the following string:  
+The result is the following string:
 `'[{"firstName":"Whitney","lastName":"Young"},{"firstName":"Cris","lastName":"Kelly"}]'`
 
 That's nearly exactly what we typed in! Now, though, it's a string. So we can
@@ -191,18 +193,18 @@ the [JSI Game Library][github-jsi-game-library].
     |    H         I         J         K    |
     |         |         |         |         |
     +---   ---+---------+---------+---------+
-    |         |                              
-    |    G    |                              
-    |         |                              
-    +---   ---+---------+---------+          
-    |         |         |         |          
-    |    D    |    E         F    |          
-    |         |         |         |          
-    +---   ---+---   ---+---------+          
-    |         |         |         |          
-    |    A         B         C    |          
-    |         |         |         |          
-    +---------+--  ^  --+---------+          
+    |         |
+    |    G    |
+    |         |
+    +---   ---+---------+---------+
+    |         |         |         |
+    |    D    |    E         F    |
+    |         |         |         |
+    +---   ---+---   ---+---------+
+    |         |         |         |
+    |    A         B         C    |
+    |         |         |         |
+    +---------+--  ^  --+---------+
 
 The game library can be installed with:
 

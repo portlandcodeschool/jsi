@@ -2,8 +2,10 @@
 layout: post
 title: Sessions
 class: sessions
-date: 2014-10-21 00:00:00
+date: 2015-02-25
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 Allowing uses to sign up and log into your website is a complicated process.
 It's gotten more complicated recently for developers as many sites are allowing

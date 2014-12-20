@@ -2,8 +2,10 @@
 layout: post
 title: Mini Project
 class: mini-project
-date: 2014-09-23 00:00:00
+date: 2015-01-27
 ---
+
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
 
 Over the following week, we're going to create a portfolio site that you can
 use to showcase your work. We'll publish this to GitHub Pages and optionally
