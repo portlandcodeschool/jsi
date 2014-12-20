@@ -11,8 +11,6 @@ Each class will have its own page and may have one or more sets of slides. Think
 
 I've tried to organize this site so things are easy for you to find and reference. You'll find the classes and slides listed on the [home page]({{ site.baseurl }}/). You'll also find a [reference page]({{ site.baseurl }}/reference/) that collects all the links for the course.
 
-Today we'll start with slides and then come back to this page.
-
 ## Setting Up Your Computer
 
 It's quite annoying, and you don't have to do it frequently, but learning how to install the tools you use will help you significantly going forward.
