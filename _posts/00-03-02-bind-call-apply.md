@@ -5,6 +5,8 @@ class: bind+call+apply
 date: 2015-01-20
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 Today we're going to revisit some of the functions we wrote while discussing
 functional programming topics. We'll make each of these functions work a little
 better.

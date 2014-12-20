@@ -5,6 +5,8 @@ class: persistence
 date: 2015-02-11
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 Today we're going to learn about persistence using _SQL_ (pronounced _sequel_
 or <nobr>_S-Q-L_</nobr>), [Bookshelf.js][bookshelf] and [PostgreSQL][postgres]
 (pronounced <nobr>_post-gres-q-l_</nobr> or <nobr>_post-gres_</nobr>).

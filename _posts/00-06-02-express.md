@@ -5,6 +5,8 @@ class: express
 date: 2015-02-10
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 ## DRY: Don't Repeat Yourself
 
 Many developers feel that writing their own logic to handle some of the basics

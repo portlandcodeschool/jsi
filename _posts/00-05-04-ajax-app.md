@@ -5,6 +5,8 @@ class: ajax-app
 date: 2015-02-05
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 Today we're going to build a front-end app that interacts with a REST API.
 You'll use the [Foursquare API][foursquare-api] to build a site for finding an
 awesome lunch place.

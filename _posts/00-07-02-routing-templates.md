@@ -5,6 +5,8 @@ class: routing+templates
 date: 2015-02-18
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 It's time to learn more Ember!
 
 If you haven't already started looking into routing and templates, try to get

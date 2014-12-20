@@ -5,9 +5,9 @@ class: fundamentals
 date: 2015-01-05 00:00:01
 ---
 
-This class will cover some of the fundamentals of JavaScript. We will discuss conditionals, objects, arrays and functions. We'll also make a lot of mistakes so we can learn to come back from them!
+This class will cover some of the fundamentals of JavaScript. We will discuss conditionals, objects, arrays and functions. We'll also make a lot of mistakes so we can learn to recover from them!
 
-Since we're just starting off, let's take baby steps to build up our programming chops. First, we'll learn to speak. Then we'll learn to count.
+Since we're just starting off, let's take baby steps to build up our programming chops. First, we'll learn about variables.
 
 ## Variables
 
@@ -67,7 +67,7 @@ var kineticEnergy = function(mass, velocity) {
 
 ### Exercise: refactoring
 
-_Refactoring_ is the process of taking working code and reorganizing it so it accomplishes the same goals in a better (easier to read, more performant, or otherwise more appropriate) way. One of the most common ways to refactor code is to take some code and extract it into a function. Usually you'd do this with code that's duplicated in 2 or more places, but try extracting the body of the loop, so it calls `console.log(singAboutBottles(bottlesOfBeer));`.
+_Refactoring_ is the process of taking working code and reorganizing it so it accomplishes the same goals in a better (easier to read, more performant, or otherwise more appropriate) way. One of the most common ways to refactor code is to take some code and extract it into a function. Usually you'd do this with code that's duplicated in 2 or more places, but try extracting the body of the loop into a function `singAboutBottles`, so all the loop body says is `console.log(singAboutBottles(bottlesOfBeer));`.
 
 ## Objects
 
@@ -90,9 +90,9 @@ console.log(person['age']); // bracket notation
 {% endhighlight %}
 
 <aside>
-  **Comments**
+  <h4>Comments</h4>
 
-  The example above introduces _comments_. A comment is a piece of code that doesn't do anything when executed. It's intended for explanatory notes to other people who might be reading your code. In JavaScript, a `//` starts a _line comment_ that ends at the end of the line, while `/*` starts a _block comment_ that doesn't end until a `*/` (which might be many lines later). We'll discuss good commenting practice later.
+  The example above introduces <em>comments</em>. A comment is a piece of code that doesn't do anything when executed. It's intended for explanatory notes to other people who might be reading your code. In JavaScript, a <code>//</code> starts a <em>line comment</em> that ends at the end of the line, while <code>/*</code> starts a <em>block comment</em> that doesn't end until a <code>*/</code> (which might be many lines later). We'll discuss good commenting practice later.
 </aside>
 
 ### Exercise: stick your partner in an object
@@ -101,10 +101,18 @@ Let's go back to `variables.js`. Rather than storing each fact about your partne
 
 ## Arrays
 
-An array is a special type of object that keeps its values in order, using integers for keys. You can declare arrays using square brackets:
+An array is a special type of object that keeps its values in order, using integers for keys. You can declare arrays using square brackets, separating each value with a comma.
 
 {% highlight javascript %}
-var authors = ["Margaret Atwood", "Jane Austen", "Bill Bryson", "Roald Dahl", "Tom Holt", "Terry Pratchett", "J.K. Rowling"]
+var authors = [
+  "Margaret Atwood",
+  "Jane Austen",
+  "Bill Bryson",
+  "Roald Dahl",
+  "Tom Holt",
+  "Terry Pratchett",
+  "J.K. Rowling"
+];
 {% endhighlight %}
 
 Since arrays' values are ordered, you can use a loop to show all these authors in alphabetical order:
@@ -143,14 +151,16 @@ So far, the programs we've written will always do the same thing every time they
 * "less than or equal to," spelled `<=`
 
 <aside>
-  **Danger Zone**
+  <h4>Danger Zone</h4>
 
   JavaScript's design is flawed in various ways. Two of the most prominent have to do with conditional statements.
 
-  * JavaScript has another way of spelling "equals," `==`. The way `==` works in JavaScript is broken! We'll discuss it in greater depth later, but for now, just remember to always use `===` rather than `==`.
-  * JavaScript allows you to use non-boolean values in conditional statements. This is a feature commonly called "truthiness," and like `==`, it is broken in JavaScript. When using a conditional statement, always make sure you're examining boolean values--either a plain boolean or the result of a comparison operator like `===`.
+  <ul>
+    <li>JavaScript has another way of spelling "equals," <code>==</code>. The way <code>==</code> works in JavaScript is broken! We'll discuss it in greater depth later, but for now, just remember to always use <code>===</code> rather than <code>==</code>.</li>
+    <li>JavaScript allows you to use non-boolean values in conditional statements. This is a feature commonly called "truthiness," and like <code>==</code>, it is broken in JavaScript. When using a conditional statement, always make sure you're examining boolean values--either a plain boolean or the result of a comparison operator like <code>===</code>.</li>
+  </ul>
 
-  JavaScript also has _bitwise operators_, which are spelled `|` (or), `&` (and), and `^` (xor). We probably won't discuss them in this class. Be sure to use the _logical operators_ or your program will behave strangely.
+  JavaScript also has <em>bitwise operators</em>, which are spelled <code>|</code> (or), <code>&</code> (and), and <code>^</code> (xor). We probably won't discuss them in this class. Be sure to use the <em>logical operators</em> or your program will behave strangely.
 
 </aside>
 
@@ -160,11 +170,9 @@ Using conditionals, we could write a function that decides whether you should ta
 var safeToChat = function() {
   if (name === "Whitney") {
     return true;
-  }
-  else if (name === "Andrew") {
+  } else if (name === "Andrew") {
     return true;
-  }
-  else {
+  } else {
     return false;
   }
 }
@@ -176,7 +184,9 @@ var safeToChat = function() {
 1. Rewrite it again, so it's a single line with a `return` statement!
 1. In the "binders full of students" exercise, your program probably claimed that some people's hometown was undefined. That's not really true, though. Update your program so it only tells you a fact about someone if you know that fact about them.
 
-## Code Quality
+## For later
+
+### Code Quality
 
 Are you typing everything right? Are you sure you didn't make any typos?
 
@@ -187,17 +197,9 @@ npm install -g jshint
 jshint myfile.js
 {% endhighlight %}
 
-You can also install the [SublimeLinter](http://www.sublimelinter.com/en/latest/) plugin for Sublime Text to get -obnoxious- helpful jshint notes right in your editor.
+You can also install the [SublimeLinter](http://www.sublimelinter.com/en/latest/) plugin for Sublime Text to get obnoxious--err, I mean, _helpful_ jshint notes right in your editor.
 
-## Challenges
-
-- Write a function that takes two arguments, both numbers, and returns some text describing the sum. For instance, `sum(7, 5)` should return `"The sum of 7 and 5 is 12"`.
-- Write a function that subtracts two numbers. For instance, `difference(7, 5)` should return `"The difference between 7 and 5 is 2"`.
-- Write a function that takes two people objects and logs a message about them meeting
-  each other for the first time. For instance, `introduce(john, sara)` would return something like `"John met Sara and said the color is green is awesome"`.
-- Change `difference` so that it never returns negative numbers. For instance, both `difference(5, 7)` and `difference(7, 5)` should return `2`.
-
-## Stepping Through Execution
+### Stepping Through Execution
 
 Often it's helpful to walk through pieces of code step by step, the same way the computer is working through it. You'll find that you can sometimes better understand what's happening this way, and also may discover solutions to problems in your code.
 
@@ -206,10 +208,14 @@ There are two nifty utilities that try to make this process more visual:
 - [SlowmoJS][slowmojs]
 - [metajs][metajs]
 
-## For later
+### Challenges
 
-- Think of a domain name for a portfolio site
-- Think of a web application you'd like to build
+- Write a function that takes two arguments, both numbers, and returns some text describing the sum. For instance, `sum(7, 5)` should return `"The sum of 7 and 5 is 12"`.
+- Write a function that subtracts two numbers. For instance, `difference(7, 5)` should return `"The difference between 7 and 5 is 2"`.
+- Write a function that takes two people objects and logs a message about them meeting each other for the first time. For instance, `introduce(john, sara)` would return something like `"John met Sara and said the color is green is awesome"`.
+- Change `difference` so that it never returns negative numbers. For instance, both `difference(5, 7)` and `difference(7, 5)` should return `2`.
+- Think of a domain name for a portfolio site.
+- Think of a web application you'd like to build.
 
 [slowmojs]: http://toolness.github.io/slowmo-js/
 [metajs]: http://int3.github.io/metajs/

@@ -5,6 +5,8 @@ class: ember+mvc
 date: 2015-02-17
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 [Ember][ember] is a front-end JavaScript framework for building web
 applications. They describe it as:
 

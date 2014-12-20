@@ -5,6 +5,8 @@ class: inheritance
 date: 2015-01-26
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 What happens when one object is like another? How can we re-use the code that's
 similar between the two objects?
 

@@ -5,6 +5,8 @@ class: oo
 date: 2015-01-16
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 It's been a long time coming. We're ready to discuss objects in detail! Many
 languages and courses discuss this very early in the course. JavaScript is a
 bit different because how your interaction with objects thus actually provides

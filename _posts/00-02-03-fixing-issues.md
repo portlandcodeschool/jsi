@@ -5,6 +5,8 @@ class: issues
 date: 2015-01-13
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 As you may have noticed, the JSI Game Library has some
 [issues][github-jsi-game-library-issues].
 

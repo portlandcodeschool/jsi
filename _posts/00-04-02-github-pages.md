@@ -5,6 +5,8 @@ class: github-pages
 date: 2015-01-28
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 Today we're going to publish something very basic to
 [GitHub pages][github-pages]. We'll optionally set up a domain name via
 [name.com][name] to work with the site.

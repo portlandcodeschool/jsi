@@ -5,6 +5,8 @@ class: models+controllers
 date: 2015-02-19
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 It's time to learn more Ember!
 
 If you haven't already started looking into objects/models and controllers,

@@ -5,6 +5,8 @@ class: sudoku-all
 date: 2015-01-23
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 Now it's time to make your Sudoku solver solve all puzzles.
 
 There's nothing new to learn here. You'll want to re-use the same

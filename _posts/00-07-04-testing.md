@@ -5,6 +5,8 @@ class: testing
 date: 2015-02-20
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 It's time to learn more Ember!
 
 If you haven't already started looking into testing, take a look today.

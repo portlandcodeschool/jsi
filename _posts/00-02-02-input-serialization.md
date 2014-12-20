@@ -5,6 +5,8 @@ class: serialization
 date: 2015-01-12
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 ## User Input
 
 Sometimes, you'll want to build a command line app that asks the user a

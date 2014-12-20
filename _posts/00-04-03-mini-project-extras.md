@@ -5,6 +5,8 @@ class: mini-project-extras
 date: 2015-01-29
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 ## Project Extras
 
 If you finish this project before the end of the week, try tackling one or more

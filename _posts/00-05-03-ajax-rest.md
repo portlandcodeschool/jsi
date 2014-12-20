@@ -5,6 +5,8 @@ class: ajax+rest
 date: 2015-02-04
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 ## AJAX
 
 In order to understand AJAX, it's best to understand a little history about

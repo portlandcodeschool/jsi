@@ -5,6 +5,8 @@ class: functional
 date: 2015-01-15
 ---
 
+# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+
 Today we're going to discuss functions again. Again? Yes, functions are the
 building blocks of pretty much everything we're doing. So we're going to learn
 some more tricks with functions before we move on.
