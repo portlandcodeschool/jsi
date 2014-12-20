@@ -79,10 +79,10 @@ Someone, please interrupt and ask the following question:
   </strong>
   What does this do? It sets up `bash`, the main program that runs inside of `Terminal.app`, to handle a few things differently:
   <ul>
-    <li>PS1 &ndash; sets the prompt to a nice set of colors and info. There's [a helpful customization tool](https://www.kirsle.net/wizards/ps1.html) if you want to edit your prompt.</li>
+    <li>PS1 &ndash; sets the prompt to a nice set of colors and info. There's <a href="https://www.kirsle.net/wizards/ps1.html">a helpful customization tool</a> if you want to edit your prompt.</li>
     <li>PATH &ndash; Tells `bash` where to look for programs.</li>
     <li>CLICOLOR &ndash; Use colors more frequently (for instance when doing `ls`).</li>
-    <li>LSCOLORS $ndash; The particular color theme `ls` should use. [Read more about this arcane incantation](http://www.norbauer.com/rails-consulting/notes/ls-colors-and-terminal-app.html), if you like.</li>
+    <li>LSCOLORS $ndash; The particular color theme `ls` should use. <a href="http://www.norbauer.com/rails-consulting/notes/ls-colors-and-terminal-app.html">Read more about this arcane incantation</a>, if you like.</li>
     <li>PAGER &ndash; Some apps may use this when showing multiple pages of content. It's the pager in the sense of "the thing that splits long content into pages," not "the thing that notifies you."</li>
     <li>EDITOR &ndash; Some apps (such as `git`) use this when they need you to edit files.</li>
   </ul>
