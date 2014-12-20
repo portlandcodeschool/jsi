@@ -92,12 +92,12 @@ Someone, please interrupt and ask the following question:
 
 ## Reference
 
-[Arithmetic][mdn-arithmetic]
-[Assignment][mdn-assignment]
-[Comparison][mdn-comparison]
-[Logic][mdn-logic]
-[Strings][mdn-strings]
-[Impostor Syndrome][impostor]
+* [Arithmetic][mdn-arithmetic]
+* [Assignment][mdn-assignment]
+* [Comparison][mdn-comparison]
+* [Logic][mdn-logic]
+* [Strings][mdn-strings]
+* [Impostor Syndrome][impostor]
 
 [mdn-arithmetic]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators
 [mdn-assignment]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators
