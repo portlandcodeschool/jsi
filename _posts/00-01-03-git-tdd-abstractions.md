@@ -5,11 +5,7 @@ class: git+tdd+abstractions
 date: 2015-01-07
 ---
 
-# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
-
-This lesson will expand on some of the ideas we touched on while discussing
-functions, but first we're going to add Git and Test Driven Development to our
-workflow.
+This lesson will expand on some of the ideas we touched on while discussing functions, but first we're going to add Git and Test Driven Development to our workflow.
 
 ## Git & GitHub
 
@@ -23,8 +19,7 @@ Here's a typical workflow with GitHub:
 1. Push changes (`git`)
 1. Create pull request (GitHub)
 
-As you can see, we start and end on GitHub, but much of the time you'll be
-using `git` on your computer. Let's take a look at this workflow.
+As you can see, we start and end on GitHub, but much of the time you'll be using `git` on your computer. Let's take a look at this workflow.
 
 {% highlight bash %}
 git clone git@github.com:github_username/repo_name.git
@@ -43,11 +38,11 @@ git commit -m 'My commit message.'
 git push origin branch-name
 {% endhighlight %}
 
-Let's practice using Git and GitHub with [this repository][github-jsi-members].
+Let's practice using Git and GitHub with [the JSI Members repository][github-jsi-members].
 
 ### Creating your own fork
 
-Fork of the GitHub, then:
+Fork the project on GitHub, in your browser. Then, in a terminal:
 
 {% highlight bash %}
 git push git@github.com:my_github_username/repo_name.git branch-name
@@ -83,46 +78,27 @@ git commit -m 'Merged changes from wherever.'
 git push origin branch-name
 {% endhighlight %}
 
-[This answer on StackOverflow][so-git-merge] may also provide some guidance
-if you get stuck merging.
+[This answer on StackOverflow][so-git-merge] may also provide some guidance if you get stuck merging.
 
 <aside>
 **Whitespace**
 
-Whitespace, that is line breaks, spaces, and tabs, can cause headaches when
-merging changes. You should make sure that when you commit changes that you
-(or your text editor) hasn't changed whitespace in parts of the code that you
-didn't intend to edit.
+Whitespace, that is line breaks, spaces, and tabs, can cause headaches when merging changes. You should make sure when you commit changes that you (or your text editor) hasn't changed whitespace in parts of the code that you didn't intend to edit.
 
-Also, it's a good idea to ensure that every file ends with a line break
-(newline). Why? Many (command line) tools don't work quite as nicely when you
-don't have that final newline. Git, for instance, will show you a weird
-representation of changes that affect the addition/removal of content at the
-end of a file if you don't have a trailing newline.
+Also, it's a good idea to ensure that every file ends with a line break (newline). Why? Many (command line) tools don't work quite as nicely when you don't have that final newline. Git, for instance, will show you a weird representation of changes that affect the addition/removal of content at the end of a file if you don't have a trailing newline.
 </aside>
 
 ### Updating Course Contents
 
-Now that you know the typical Git workflow, you can actually make changes to
-[this course][github-jsi] if you find any mistakes.
+Now that you know the typical Git workflow, you can actually make changes to [this course][github-jsi] if you find any mistakes.
 
 ### Always Use Version Control
 
-Yes, this gets its own section. You know the basics of how to use `git`. You'll
-keep getting better as you use it, and it won't slow you down. What will slow
-you down is when you lose work you've done or get your code into a weird state.
+Yes, this gets its own section. You know the basics of how to use `git`. You'll keep getting better as you use it, and it won't slow you down. What will slow you down is when you lose work you've done or get your code into a weird state.
 
-Along the same lines, you should commit code frequently. How frequently? It's
-difficult to commit too frequently, but easy to not commit frequently enough.
-One line commits are okay. You'll find them all over GitHub. Your commit should
-probably change something. Once a day is too infrequently.
+Along the same lines, you should commit code frequently. How frequently? It's difficult to commit too frequently, but easy to not commit frequently enough. One line commits are okay. You'll find them all over GitHub. Your commit should probably change something. Once a day is too infrequently.
 
-Generally, you'll want to commit _working code_, but there are times when it
-may make sense to commit things that don't run. If, for instance, you want to
-share progress with someone else, you may want to commit something that's
-broken. It's generally a good idea to do this on a branch and share that branch
-with someone else.
-
+Generally, you'll want to commit _working code_, but there are times when it may make sense to commit things that don't run. If, for instance, you want to share progress with someone else, you may want to commit something that's broken. It's generally a good idea to do this on a branch and share that branch with someone else.
 
 ## Test Driven Development
 
@@ -130,9 +106,7 @@ Let's use TDD to write an interest calculator.
 
 <aside class="objective">
 **Interest Calculator Objective**
-Write an continuous compounding interest calculator following the test driven
-development workflow. The function should return just the interest, not the
-amount owed.
+Write an continuous compounding interest calculator following the test driven development workflow. The function should return just the interest, not the amount owed.
 </aside>
 
 Start with a test:
@@ -153,42 +127,21 @@ Let's come up with some more tests. Remember:
 
 ### Challenge
 
-Fork the repository [here][github-jsi-gravity], follow the directions in the
-[README][github-jsi-gravity-readme], use TDD to create a solution, then create
-a pull request with the solution.
+Fork the repository [here][github-jsi-gravity], follow the directions in the [README][github-jsi-gravity-readme], use TDD to create a solution, then create a pull request with the solution.
 
-The project uses [npm][npm] to install [Mocha][mocha] and [Chai][chai], so when
-you first clone it, you should run `npm install`. You should run the tests you
-write with `npm test` instead of using `node`.
+The project uses [npm][npm] to install [Mocha][mocha] and [Chai][chai], so when you first clone it, you should run `npm install`. You should run the tests you write with `npm test` instead of using `node`.
 
 <aside>
 **`npm install` and `npm test`**
 
-We're skipping over a few details here on how things are set up. Don't worry,
-we'll be discussing this shortly when we introduce modules.
+We're skipping over a few details here on how things are set up. Don't worry, we'll be discussing this shortly when we introduce modules.
 </aside>
-
-
-## More Fun With Functions
-
-Let's continue from where we left of with our fruit functions.
-
-We were repeating ourselves quite a bit, so let's try to get rid of that
-repetition. Identifying and repeated code, and creating a singular function or
-piece of code that can be shared is called _abstraction_.
-
 
 ## Challenges
 
-- Write a function that takes an array of people as an argument an updates each
-  of their ages to be one year older. Make sure you write tests before you
-  write the function so you're properly doing TDD.
-- Write test for the `each` function.
-- Create a new version of the interest rate calculator that calculates the
-  amount of interest you've paid with fluctuating interest rates. For example,
-  you may call `calculateInterest(1000, [0.041, 0.042, 0.38, 0.41], 1)` to
-  calculate the interest on $1000 over 1 year with 4 compounding periods. Note
-  that the formula for this is different.
+- Write a function that takes an array of people as an argument and updates each of their ages to be one year older. Make sure you write tests before you write the function--this is how TDD is done!
+- Test and write a new function `each` that takes an array and a callback as an argument and runs the callback for each element of the array.
+- Create a new version of the interest rate calculator that calculates the amount of interest you've paid with fluctuating interest rates. For example, you may call `calculateInterest(1000, [0.041, 0.042, 0.38, 0.41], 1)` to calculate the interest on $1000 over 1 year with 4 compounding periods. Note that the formula for this is different.
 
 [so-git-merge]: http://stackoverflow.com/a/3407920/98069
 [github-jsi]: https://github.com/portlandcodeschool/jsi
