@@ -2,7 +2,7 @@
 layout: post
 title: Modules
 class: modules
-date: 2015-01-07
+date: 2015-01-08
 ---
 
 # Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.

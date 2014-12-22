@@ -2,7 +2,7 @@
 layout: post
 title: Git, TDD & Abstractions
 class: git+tdd+abstractions
-date: 2015-01-06
+date: 2015-01-07
 ---
 
 # Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
