@@ -81,7 +81,7 @@ git push origin branch-name
 [This answer on StackOverflow][so-git-merge] may also provide some guidance if you get stuck merging.
 
 <aside>
-**Whitespace**
+<h4>Whitespace</h4>
 
 Whitespace, that is line breaks, spaces, and tabs, can cause headaches when merging changes. You should make sure when you commit changes that you (or your text editor) hasn't changed whitespace in parts of the code that you didn't intend to edit.
 
@@ -105,7 +105,7 @@ Generally, you'll want to commit _working code_, but there are times when it may
 Let's use TDD to write an interest calculator.
 
 <aside class="objective">
-**Interest Calculator Objective**
+<h4>Interest Calculator Objective</h4>
 Write an continuous compounding interest calculator following the test driven development workflow. The function should return just the interest, not the amount owed.
 </aside>
 
@@ -132,7 +132,7 @@ Fork the repository [here][github-jsi-gravity], follow the directions in the [RE
 The project uses [npm][npm] to install [Mocha][mocha] and [Chai][chai], so when you first clone it, you should run `npm install`. You should run the tests you write with `npm test` instead of using `node`.
 
 <aside>
-**`npm install` and `npm test`**
+<h4>npm install` and `npm test</h4>
 
 We're skipping over a few details here on how things are set up. Don't worry, we'll be discussing this shortly when we introduce modules.
 </aside>
