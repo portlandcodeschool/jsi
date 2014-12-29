@@ -129,7 +129,7 @@ Let's come up with some more tests. Remember:
 
 Fork the repository [here][github-jsi-gravity], follow the directions in the [README][github-jsi-gravity-readme], use TDD to create a solution, then create a pull request with the solution.
 
-The project uses [npm][npm] to install [Mocha][mocha] and [Chai][chai], so when you first clone it, you should run `npm install`. You should run the tests you write with `npm test` instead of using `node`.
+The project uses [npm][npm] to install [Jasmine][jasmine], so when you first clone it, you should run `npm install`. You should run the tests you write with `npm test` instead of using `node`.
 
 <aside>
 <h4>npm install` and `npm test</h4>
@@ -149,5 +149,4 @@ We're skipping over a few details here on how things are set up. Don't worry, we
 [github-jsi-gravity]: https://github.com/portlandcodeschool/jsi-gravity
 [github-jsi-gravity-readme]: https://github.com/portlandcodeschool/jsi-gravity/blob/master/README.md
 [npm]: https://www.npmjs.org
-[mocha]: http://visionmedia.github.io/mocha/
-[chai]: http://chaijs.com
+[jasmine]: https://jasmine.github.io/2.1/introduction.html

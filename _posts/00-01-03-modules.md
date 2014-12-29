@@ -162,11 +162,11 @@ We've been using command line programs since day one. Now we're going to make on
 First, let's take a look at how these programs commonly work. Run
 
 {% highlight bash %}
-npm install -g mocha
-mocha -h
+npm install -g jasmine
+jasmine -h
 {% endhighlight %}
 
-We just used two command line programs, `npm` and `mocha`. Seeing the help for Mocha should give you a pretty good idea of how command line programs typically work. Usually they take arguments and use those arguments to figure out what to do.
+We just used two command line programs, `npm` and `jasmine`. Seeing the help for Jasmine should give you a pretty good idea of how command line programs typically work. Usually they take arguments and use those arguments to figure out what to do.
 
 So what if we wanted to make a weather program?
 
@@ -187,7 +187,7 @@ So our program needs to be able to handle displaying help, displaying the versio
 console.log(process.argv);
 {% endhighlight %}
 
-We're on the right track, but when we run `mocha`, we don't have to run `node`, we simply run `mocha`. Let's get that working:
+We're on the right track, but when we run `jasmine`, we don't have to run `node`, we simply run `jasmine`. Let's get that working:
 
 {% highlight bash %}
 mv weather.js weather
@@ -209,7 +209,7 @@ So what's all that? We made an _executable_ file without a JavaScript extension.
 <aside>
 <h4>Shebang</h4>
 
-The shebang is actually ignored by the Node interpreter when it's run. So you can also run `node weather` and it will work. The `#!` is the actual shebang. The remaining part is the program to run instead of executing the file directly. In this case, we're using the `env` command to look up the `node` that the user prefers. To really understand how this all works, you could consider doing the advanced project below, reimplementing `which`.
+Shebang is short for "hash bang," since "!" is often pronounced "bang." The shebang is actually ignored by the Node interpreter when it's run. So you can also run `node weather` and it will work. The `#!` is the actual shebang. The remaining part is the program to run instead of executing the file directly. In this case, we're using the `env` command to look up the `node` that the user prefers. To really understand how this all works, you could consider doing the advanced project below, reimplementing `which`.
 </aside>
 
 Here's how we could handle arguments:
