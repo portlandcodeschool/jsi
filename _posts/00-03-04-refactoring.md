@@ -2,7 +2,7 @@
 layout: post
 title: Refactoring
 class: refactoring
-date: 2015-01-22
+date: 2015-01-23
 ---
 
 # Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.

@@ -2,7 +2,7 @@
 layout: post
 title: Sudoku Solver 2
 class: sudoku-all
-date: 2015-01-23
+date: 2015-01-22
 ---
 
 # Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.

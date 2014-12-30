@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Security
-class: security
+class: special topics
 date: 2015-03-02
 ---
 
