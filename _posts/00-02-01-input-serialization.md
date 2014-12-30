@@ -5,15 +5,11 @@ class: serialization
 date: 2015-01-12
 ---
 
-# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
-
 ## User Input
 
-Sometimes, you'll want to build a command line app that asks the user a
-question.
+Sometimes, you'll want to build a command line program that asks the user a question.
 
-Node makes this a little complicated, but it's not too difficult. Here's some
-code taken directly from [Node's `readline` documentation][node-readline].
+It's a little more complicated than you might expect in Node, but it's not too difficult. Here's some code taken directly from [Node's `readline` documentation][node-readline].
 
 {% highlight javascript %}
 var readline = require('readline');
@@ -31,56 +27,40 @@ rl.question("What do you think of node.js? ", function(answer) {
 });
 {% endhighlight %}
 
-The most cryptic part of this example code is `process.stdin` and
-`process.stdout`. These are the _standard input_ and _standard output_ of your
-app. The standard input is the input that the user provides to your app, and
-the standard output is the information you provide back to the user (often by
-using `console.log`).
+The most cryptic part of this example code is `process.stdin` and `process.stdout`. These are the _standard input_ and _standard output_ of your program. The standard input is the input that the user provides, and the standard output is the information you provide back to the user (often by using `console.log`).
 
 Any questions?
 
-#### Quick Status Check
+### Quick Status Check
 
-Write a simple command line app that prompts the user for one number,
-then prompts for a second, then reports the sum.
-
+Write a simple command line program that prompts the user for one number, then prompts for a second, then reports the sum.
 
 ## Serialization
 
-Serialization is the process of converting data &mdash; objects, strings,
-numbers, booleans, etc. into a format that can be _persisted_, or stored
-somehow. Usually the first step will be converting that data into a _stream_ of
-bytes (which is pretty much the same as a string). We'll be storing serialized
-data in files.
+Serialization is the process of converting data&mdash;objects, strings, numbers, booleans, etc. into a format that can be _persisted_, or stored somehow. Usually the first step will be converting that data into a _stream_ of bytes (which is pretty much the same as a string). We'll be storing serialized data in files.
 
-The reverse, deserialization, simply converts that stream of data back into
-usable objects.
+The reverse, deserialization, simply converts that stream of data back into usable objects.
 
 ### Formats
 
-There's an endless number of formats into which you can serialize data. Some
-popular ones available to most programming languages are:
+There's an endless number of formats into which you can serialize data. Some popular ones available to most programming languages are:
 
 * JSON
 * XML
 * YAML
 
-We're going to focus on JSON which was designed with JavaScript in mind and has
-exploded in popularity.
+We're going to focus on JSON, which was designed with JavaScript in mind and has exploded in popularity.
 
 ### JSON
 
-JSON stands for JavaScript Object Notation. The format of the serialized data
-is nearly identical to the code you'd write in JavaScript. Actually, it is
-valid JavaScript. This makes it really easy for web browsers to convert back
-into objects since they already know how to _parse_ JavaScript.
+JSON stands for JavaScript Object Notation. The format of the serialized data is nearly identical to the code you'd write in JavaScript. Actually, it is valid JavaScript. This makes it really easy for web browsers to convert back into objects since they already know how to _parse_ JavaScript.
 
 {% highlight javascript %}
-var object = [
+var people = [
   { firstName: "Whitney", lastName: "Young" },
   { firstName: "Cris", lastName: "Kelly" }
 ];
-JSON.stringify(object)
+JSON.stringify(people)
 {% endhighlight %}
 
 The result is the following string:
@@ -92,10 +72,7 @@ save it to a file.
 <aside>
 **XML Example**
 
-There's no strict rule to how XML should be structured in order to represent
-objects. You can basically create whatever structure you want, and it can be
-different for each application. The above object could be written out as the
-following XML document:
+There's no strict rule to how XML should be structured in order to represent objects. You can basically create whatever structure you want, and it can be different for each application. The above object could be written out as the following XML document:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <root>
@@ -105,21 +82,12 @@ following XML document:
       </people>
     </root>
 
-XML's flexibility also makes it a little more annoying to work with. `people`
-could have been called anything, for instance `array`. We could have skipped
-the `root` element in the example above.
+XML's flexibility is both a blessing and a curse. `people` could have been called anything, for instance `array`. We could have skipped the `root` element in the example above.
 
-An application that receives an XML file like this needs to account for the
-exact structure of the XML and generally manipulates it through an XML
-library. With JSON, there can still be structural differences, but you're
-generally working with built in types (strings, arrays,
-objects/hashes/dictionaries, booleans, and numbers) which makes accessing and
-manipulating the data easier.
+An application that receives an XML file like this needs to account for the exact structure of the XML and generally manipulates it through an XML library. With JSON, there can still be structural differences, but you're generally working with built in types (strings, arrays, objects/hashes/dictionaries, booleans, and numbers) which makes accessing and manipulating the data easier.
 </aside>
 
-Reading JSON from a file couldn't be easier in Node. If you name a file with
-a JSON extension, `information.json`, you can simply `require` the file, so
-`require('path/to/informaiton')` or `require('path/to/informaiton.json')`.
+Reading JSON from a file couldn't be easier in Node. If you name a file with a JSON extension, `information.json`, you can simply `require` the file, so `require('path/to/information')` or `require('path/to/information.json')`.
 
 #### Quick Status Check
 
@@ -139,15 +107,11 @@ This message is stored in the JSON file.
 
 ## Adventure Game
 
-Now that we can read files and accept user input, we can build something pretty
-fun.
+Now that we can read files and accept user input, we can build something pretty fun.
 
-This game will be a simple game to try to find a treasure by navigating a bunch
-of rooms. This is basically a maze, but the player plays blind, only knowing
-which direction they can go.
+This game will be a simple game to try to find a treasure by navigating a bunch of rooms. This is basically a maze, but the player plays blind, only knowing which direction they can go.
 
-You can give this game whatever spin you want to: castles, dungeons, space
-ships, etc. Try to have fun with it!
+You can give this game whatever spin you want to: castles, dungeons, space ships, etc. Try to have fun with it!
 
 <aside class="objective">
 Here's an example of how your game might work:
@@ -184,9 +148,7 @@ Here's an example of how your game might work:
     You found the treasure!
 </aside>
 
-The above game was played on the following map. The input file that produced
-this map can be found along with a library that does some game related stuff in
-the [JSI Game Library][github-jsi-game-library].
+The above game was played on the following map. The input file that produced this map can be found, along with a library that does some game-related stuff, in the [JSI Game Library][github-jsi-game-library].
 
     +---------+---------+---------+---------+
     |         |         |         |         |
@@ -226,16 +188,13 @@ The game library can be installed with:
 - Fix any [issues][github-jsi-game-library-issues] you find in the JSI Game
   Library.
 
-- **Advanced:** Allow things to be picked up and used in order to get through
-  certain rooms. For instance,
+- **Advanced:** Allow things to be picked up and used in order to get through certain rooms. For instance,
 
   > You're in a room with a fire breathing dragon, but you brought a cactus
   > with you. You throw the cactus at the dragon. He gets scared and hides.
   > The door to the north is now accessible.
 
-  This will require some thought as to how you'll want to change the structure
-  of the game file in order to allow carrying and applying items in different
-  circumstances.
+  This will require some thought as to how you'll want to change the structure of the game file in order to allow carrying and applying items in different circumstances.
 
 
 [node-readline]: http://nodejs.org/api/readline.html
