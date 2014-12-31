@@ -39,7 +39,7 @@ Write a simple command line program that prompts the user for one number, then p
 
 Serialization is the process of converting data&mdash;objects, strings, numbers, booleans, etc. into a format that can be _persisted_, or stored somehow. Usually the first step will be converting that data into a _stream_ of bytes (which is pretty much the same as a string). We'll be storing serialized data in files.
 
-The reverse, deserialization, simply converts that stream of data back into usable objects.
+Deserialization is the inverse: it converts a stream of serialized data back into usable structures.
 
 ### Formats
 
@@ -57,14 +57,14 @@ JSON stands for JavaScript Object Notation. The format of the serialized data is
 
 {% highlight javascript %}
 var people = [
-  { firstName: "Whitney", lastName: "Young" },
+  { firstName: "Andrew", lastName: "Lorente" },
   { firstName: "Cris", lastName: "Kelly" }
 ];
 JSON.stringify(people)
 {% endhighlight %}
 
 The result is the following string:
-`'[{"firstName":"Whitney","lastName":"Young"},{"firstName":"Cris","lastName":"Kelly"}]'`
+`'[{"firstName":"Andrew","lastName":"Lorente"},{"firstName":"Cris","lastName":"Kelly"}]'`
 
 That's nearly exactly what we typed in! Now, though, it's a string. So we can
 save it to a file.
@@ -77,7 +77,7 @@ There's no strict rule to how XML should be structured in order to represent obj
     <?xml version="1.0" encoding="UTF-8"?>
     <root>
       <people>
-        <person firstName="Whitney" lastName="Young" />
+        <person firstName="Andrew" lastName="Lorente" />
         <person firstName="Cris" lastName="Kelly" />
       </people>
     </root>

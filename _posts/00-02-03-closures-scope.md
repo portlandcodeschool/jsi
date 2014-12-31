@@ -184,7 +184,7 @@ var greet = (function() {
 greet('Andrew');
 {% endhighlight %}
 
-Note that `sayHello` is set to a function that actually returns a function. The inner function is the one that's called later with `greet('Whitney')`. The `greeting` variable is not accessible outside of the scope created by the immediately invoked function expression. This example is a bit contrived, but we'll start using these soon.
+Note that `sayHello` is set to a function that actually returns a function. The inner function is the one that's called later with `greet('Andrew')`. The `greeting` variable is not accessible outside of the scope created by the immediately invoked function expression. This example is a bit contrived, but we'll start using these soon.
 
 ## Takeaway
 

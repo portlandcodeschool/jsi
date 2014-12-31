@@ -149,7 +149,7 @@ var greet = function(greeting, name) {
 
 var hi = partial(greet, 'hi');
 
-console.log(hi('Whitney'));
+console.log(hi('Andrew'));
 {% endhighlight %}
 
 The result that we'll build will be only a starting place. We don't have all of the tools we need to build a great version of `partial`. Later we'll come back to this and make it work far better.
