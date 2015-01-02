@@ -3,7 +3,7 @@ layout: page
 title: JavaScript Immersion Syllabus
 ---
 
-Version 1.0
+Version 1.1
 
 ![Portland Code School]({{ site.baseurl }}/images/pcs.png "PCS Logo")
 
@@ -11,7 +11,7 @@ Version 1.0
 
 ## Course Description
 
-This comprehensive course gives you everything you need to begin a career as a JavaScript developer. In this fast-paced, project-based 12-week course, you will be introduced to all the skills necessary for web application development.
+This comprehensive course gives you everything you need to begin a career as a JavaScript developer. In this fast-paced, project-based 13-week course, you will be introduced to all the skills necessary for web application development.
 
 **Not a contract**
 
@@ -24,26 +24,26 @@ Monday-Friday 9:00AM to 5:00PM
 
 ### Location
 
-PCS Classroom, 1771 NW Pettygrove Street, Ste 140  
+PCS Classroom, 1771 NW Pettygrove Street, Ste 140
 Portland, OR 97209
 
 
 ### Instructor:
 
-**Whitney Young**
+**Andrew lorente**
 
-Email: [whitney@portlandcodeschool.com](mailto:whitney@portlandcodeschool.com)
+Email: [alorente@portlandcodeschool.com](mailto:alorente@portlandcodeschool.com)
 
 **Contacting your instructor**
 
-I am available during breaks any day of class. I'm also willing to meet with you personally by prior arrangement online. My PCS email is whitney@portlandcodeschool.com.
+I am available during breaks any day of class. I'm also willing to meet with you personally by prior arrangement online. My PCS email is alorente@portlandcodeschool.com.
 
 
 # Prerequisites
 
 This class continues your education in software development. You should be able to do the following:
 
-  - Create one a web site with HTML and CSS
+  - Create a web site with HTML and CSS
   - Use the Git version control tool from the command line
   - Explain the difference between front end and back end development
   - Define a variable in one programming language (JavaScript or any other language)
@@ -73,10 +73,10 @@ The core abilities for students in our program are as follows. They are designed
 
 Technical abilities are skills needed to succeed in web development.
 
-1. Understanding the core principles of programming in JavaScript
+1. Understanding the core principles of programming, in JavaScript and in general
 1. Creating full-stack websites encompassing both front-end and back-end technologies
 1. Using test driven development and understanding its benefits
-1. Understanding various modules like Express and Ember.js
+1. Understanding various modules like Express and Angular.js
 1. Building applications following design patterns such as Model View Controller
 1. Collaborating with development teams using GitHub
 
@@ -100,7 +100,7 @@ Career abilities are skills needed to have a successful development career.
 
 Class hours: **Monday-Friday 9am - 5pm**
 
-You must attend all classes. Class begins promptly at 9am. Late arrivals and missing team members are very disruptive. If you are going to miss class or even be as little as 10 minutes late, please email Whitney prior to 9am.
+You must attend all classes. Class begins promptly at 9am. Late arrivals and missing team members are very disruptive. If you are going to miss class or even be as little as 10 minutes late, please email Andrew prior to 9am.
 
 This course requires 40 hours each week for classroom time. In addition, successful students devote approximately 10-20 outside hours of their own time each week. In effect, think of this as a demanding full time job where 40 hours each week are required, but you still need to put in a little extra if you want to impress your boss and get a raise.
 
@@ -125,11 +125,11 @@ There is no better way to learn coding then to do it, to fail, and to puzzle out
 
 You need to provide your own computer running Mac OS X 10.9 for this class.
 
-Portland Code School highly recommends MacBook Pros or MacBook Airs running OSX 10.9 or later. Most of the best coding tools are developed on that operating system first. The important aspect of OSX is the underlying UNIX-like operating system. We place an emphasis at being able to work on a Unix/Linux command line level, down in the guts of the operating system as well as the entire group learning the same set of tools.
+Portland Code School highly recommends MacBooks Pro or MacBooks Air running OSX 10.9 or later. Most of the best coding tools are developed on that operating system first. The important aspect of OSX is the underlying UNIX-like operating system. We place an emphasis at being able to work on a Unix/Linux command line level, down in the guts of the operating system as well as the entire group learning the same set of tools.
 
 ### Other Tools
 
-You are required to learn and use **Sublime Text** (http://www.sublimetext.com). The "stable" version is v2, but Whitney has been using v3 (http://www.sublimetext.com/3) for a long time and it's recommended. Sublime Text is not free. You can try it for free and that will get you through this class, but you should consider buying a copy when you get a job.
+You are required to learn and use **Sublime Text** (http://www.sublimetext.com). The officially stable version is v2, but v3 (http://www.sublimetext.com/3) is widely-used and it's recommended. Sublime Text is not free. You can try it for free and that will get you through this class, but you should consider buying a copy when you get a job.
 
 Now, you may already have a favorite text editor. I understand where you're coming from. However, one characteristic of professional programmers is they can walk into a shop and quickly adopt whatever tool set that company is using. Lots of programmers use Sublime Text and, if all the students in this class use it, we can learn from each other and get the most out of the tool.
 
@@ -140,7 +140,7 @@ There will be more tools introduced as the class goes on, but these are good pla
 
 # How to succeed at this class
 
-Our ultimate goal is to be able to give a shining recommendation about you to any and all possible employers. Over the years, Whitney has managed and hired many software engineers at both a junior and senior level. Our goal for you is that we would want to hire you ourselves.
+Our ultimate goal is to be able to give a shining recommendation about you to any and all possible employers. Over the years, Andrew has worked with and hired many software engineers at both a junior and senior level. Our goal for you is that we would want to hire you ourselves.
 
 Along the way, we will be asking ourselves the same questions about you that all hiring managers will be asking about you:
 
@@ -172,16 +172,16 @@ Your progress will be assessed using a variety of methods:
 * Participation in the community - we will ask you to hang out with your peers, meet people, and report back
 * Projects - we will help you design and build a portfolio web site where you can show off projects you work on
 
-We will keep records of your progress. Your records are private to you and your instructor. However, at the end of the session, employers ask us for recommendations &mdash; the names of particularly talented and hard-working students. We use student scores and evaluations to identify students for these recommendations.
+We will keep records of your progress. Your records are private to you and your instructor. However, at the end of the session, employers ask us for recommendations&mdash;the names of particularly talented and hard-working students. We use student scores and evaluations to identify students for these recommendations.
 
 We will check-in 1-on-1 with you every two weeks. You will get early notice if you need to step up your game in any particular area. After that, if in our judgment we think you still aren't able to complete the demands of the course and become a viable developer, we will discuss alternatives with you that may include termination of your contract with Portland Code School. For your part, if you feel you are not getting your money's worth, you can terminate your contract at any time. Check your student contract for details.
 
-Don't worry: every two weeks, you also get to evaluate *us*. Fair is fair, after all. We practice agile methods here which means we do regular retrospectives and make improvements.
+Don't worry: every two weeks, you also get to evaluate *us*. Fair is fair, after all. We practice agile methods here, which means we do regular retrospectives and make improvements.
 
 
 ## Student Effort
 
-This class is project and collaboration driven. Students are expected to keep pace with the group and invest extra time if they feel they are falling behind. Students should communicate with their peers and collaborate with them to schedule extra review time outside of class. They are expected to come prepared to build on top of the skills that they learned in prior days' classes or with appropriate questions to solidify their understanding.
+This class is project- and collaboration-driven. Students are expected to keep pace with the group and invest extra time if they feel they are falling behind. Students should communicate with their peers and collaborate with them to schedule extra review time outside of class. They are expected to come prepared to build on top of the skills that they learned in prior days' classes or with appropriate questions to solidify their understanding.
 
 Group work will be emphasized throughout the course and it is important that students help each other keep to the same pace by extending help when concepts click more quickly and asking for help when required.
 
@@ -196,7 +196,7 @@ In a related vein, this class requires work in close proximity to others as we c
 
 **Grievances Procedure**
 
-Students who observe or experience any behavior on the part of instructors, staff, or students at Portland Code School that does not meet the school's Code of Conduct should take action. If you experience or perceive a problem, attempt to work it out on your own, if possible, but do not hesitate to bring it privately to the attention of your instructor. If this is unsatisfactory, bring it to the attention of the school Director (Cris Kelly) or Assistant Director (Shawna Scott).
+Students who observe or experience any behavior on the part of instructors, staff, or students at Portland Code School that does not meet the school's Code of Conduct should take action. If you experience or perceive a problem, attempt to work it out on your own, if possible, but do not hesitate to bring it privately to the attention of your instructor. If this is unsatisfactory, bring it to the attention of the school Director (Cris Kelly) or Head Instructor (Al Zimmerman).
 
 
 ## Additional Expectations
@@ -228,7 +228,7 @@ This course teaches students how to become self-learners, how to challenge thems
 
 **Teach:** You don't fully understand something until you teach it to others. This class requires students to teach each other and gives them frequent practice in small, easy doses to help them become comfortable.
 
-This also includes blogging and contributing to online forums like mailing lists and StackOverflow. Helping others in the community by relating what you know is an excellent way to earn a good reputation and build a personal brand. The reason this is such a wonderful time to be learning software development is because people are so willing to help each other. Students learn how to pay this forward.
+This also includes blogging and contributing to online fora like mailing lists and StackOverflow. Helping others in the community by relating what you know is an excellent way to earn a good reputation and build a personal brand. The reason this is such a wonderful time to be learning software development is because people are so willing to help each other. Students learn how to pay this forward.
 
 
 ## Student capstone projects
@@ -259,7 +259,7 @@ We will cover material on three major themes: Code, Communication, and Career.
 * JavaScript
   * Node.js
   * Express.js
-  * Ember.js
+  * Angular.js
   * Debugging
   * jQuery
   * JSON
@@ -270,7 +270,8 @@ We will cover material on three major themes: Code, Communication, and Career.
   * CSS & Sass
 * Databases
   * Postgresql
-  * ORM
+  * ORMs
+  * NoSql databases
 * Version Control
   * Git
   * GitHub
@@ -307,7 +308,7 @@ We will cover material on three major themes: Code, Communication, and Career.
 
 ### Instructional ADA statement
 
-Students who have a documented disability and require a classroom adjustment or accommodation should contact the instructor and/or the PCS Director.
+Students who have a documented disability and require a classroom adjustment or accommodation should expect to receive it. Please contact the instructor and/or the PCS Director.
 
 
 ### Course content and calendar subject to change
@@ -316,4 +317,4 @@ The instructor reserves the right to modify course content and/or substitute ass
 
 We adjust the class each session to the needs of the current students. We may slow the pace or add additional work, as needed. We also carefully incorporate new technologies as they become significant to your employability. As a result, we often are creating class materials as we go. You will always get advance notice of classwork.
 
-You should all have access to a Google calendar called, "PCS" and should have received an email to this effect. If you haven't, please contact Kristina, Cris, or Whitney and we will make sure the class calendar is available to you. We will try to make sure this calendar is always up-to-date.
+You should all have access to a Google calendar called "PCS" and should have received an email to this effect. If you haven't, please contact Kristina, Cris, or Andrew and we will make sure the class calendar is available to you. We will try to make sure this calendar is always up-to-date.
