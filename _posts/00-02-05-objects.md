@@ -1,430 +1,191 @@
 ---
 layout: post
-title: Making Objects
-class: oo
+title: Objects&#58; Methods and Inheritance
 date: 2015-01-16
 ---
 
-# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+Today we're going to get into some of the more interesting things you can do with objects: _methods_, which are object attributes that are functions, and _inheritance_, which is a mechanism for sharing behavior between objects.
 
-It's been a long time coming. We're ready to discuss objects in detail! Many
-languages and courses discuss this very early in the course. JavaScript is a
-bit different because how your interaction with objects thus actually provides
-a lot of functionality without adding too much complexity and jargon. But now
-it's time to dive in.
-
-## Containers For Related Functionality
-
-Remember how objects let us group things together? We made a person that had
-a `firstName` and `lastName`. Well this got us pretty far, but let's take
-things a little further, try to build something a little bigger.
-
-Let's pretend that we're building an application that models a tennis practice.
-What's that involve? A bunch of objects!
-
-- People
-- Court
-- Tennis Balls
-- Tennis Raquets
-- Ball basket
-- Ball machine
-
-That list could probably go on forever. We're going to explore the person and
-the ball machine.
+In the first part of this class, we'll be using the function `interpolate`, which takes a string and inserts it between each element of the array.
 
 {% highlight javascript %}
-var person = {
-  name: 'Whitney',
-  age: 11
-};
-var ballMachine = {
-  capacity: 100,
-  speed: {
-    max: 80,
-    min: 20
-  },
-  delay: {
-    max: 60,
-    min: 1
-  }
-};
+  ["uno", "dos", "tres", "catorce"].interpolate(", "); // => "uno, dos, tres, catorce"
 {% endhighlight %}
 
-Please don't run that ball machine shooting balls at 80mph every second!
+## Methods
 
-Now let's start a drill. We'll need to run the ball machine, and the person
-will have to try to hit the ball back by running over to wherever it lands and
-hitting it.
-
-Ok, that shouldn't be so hard to model:
+You've used methods already. On day 1, we got into the `forEach` method on arrays:
 
 {% highlight javascript %}
-/**
- * Run a ball machine.
- * @param {object} ballMachine - The ball machine to run.
- * @param {object} settings - Settings on which to run. You can include
- * `speed` and `delay` which must be within the thresholds of the
- * machine.
- * @param {function} cb - Called when each ball is fired.
- */
-var run = function(ballMachine, settings, cb) {
-  // implementation eventually does something like
-  cb({ speed: 40, direction: '5deg' });
-};
-{% endhighlight %}
-
-Now we just need to be able to make the person run to hit the ball:
-
-{% highlight javascript %}
-/**
- * Make a person run to a location.
- * @param {object} person - The person to make run.
- * @param {object} location - Where you want the person to run.
- * @param {function} cb - Called when the person arrives at the location.
- */
-var run = function(person, location, cb) {
-  // implementation eventually does something like
-  cb({ location: location });
-}
-{% endhighlight %}
-
-Well, we can't have two functions named `run`. So we have to make things more
-verbose. Let's call them `runBallMachine` and `personRun`. Or we could just
-rename them entirely. We could `start` the ball machine and still have the
-person `run`. But then what if we eventually had a lesson that we wanted to
-`start`? What if instead we could just associate the functions with the
-objects that they represent? A person can `run` and a ball machine can `run`
-too!
-
-## Objects
-
-We're going to break things up now, so that we can group functions together in
-and use them with objects the same way that we did before with properties. This
-grouping that we're doing is actually a _separation of concerns_.
-
-Here's what we want:
-
-{% highlight javascript %}
-ballMachine.run(function(info) {
-  var speed = info.speed;
-  var direction = info.direction;
-
-  var location;
-  // figure out where the person needs to go based
-  // on the current location of the person and the
-  // expected final destination of the ball that
-  // was just fired.
-
-  person.run(location)
+["a", "b", "c"].forEach(function(element, index) {
+  console.log("'" + element + "' is at index " + index + ".")
 });
 {% endhighlight %}
 
-This should look familiar. We've done this already with `array.forEach`,
-`array.map`, `string.toUpperCase`, `string.toLowerCase`, `date.getYear`, etc.
-
-Now we're going to learn how to make that work for our own objects.
-
-### Creating Objects
-
-Remember how we created a date?
+Think about how you might implement the `interpolate` method.
 
 {% highlight javascript %}
-var date = new Date();
-{% endhighlight %}
-
-That was different from arrays, strings, and other objects. We did those like
-so:
-
-{% highlight javascript %}
-var array = [];
-var string = "";
-var object = {};
-{% endhighlight %}
-
-But guess what? You can create each of those through the use of `new` as well.
-
-{% highlight javascript %}
-var array = new Array();
-var string = new String();
-var object = new Object();
-{% endhighlight %}
-
-So how can we make our own type that works with `new`?
-
-{% highlight javascript %}
-var person = new Person();
-{% endhighlight %}
-
-The answer is surprisingly simple (and mind-bendingly confusing). It's a function.
-
-{% highlight javascript %}
-var Person = function() {
+var myArray = [];
+myArray.interpolate = function(delimiter) {
+  // what to write here?
 };
-var person = new Person();
 {% endhighlight %}
 
-At this point, this just looks like a weird way of calling a function. There's
-more going on behind the scenes, though. We'll get to that soon.
+If you're writing a function that accepts an array as its argument like `var interpolate = function(array, delimiter) {...}`, it's easy to see how to write it. But how do you get access to the object for which you're writing a method? Well, you use the keyword `this`. In JavaScript, `this` is a special variable that refers to the current object. So we could write `interpolate` like so:
 
-#### Quick Status Check
+{% highlight javascript %}
+var myArray = [];
+myArray.interpolate = function(delimiter) {
+  var joined = ""
+  for (var i = 0; i < this.length - 1; i++) {
+    joined += this[i] + delimiter;
+  }
+  joined += this[this.length - 1];
+  return joined;
+};
+{% endhighlight %}
 
-* Update `Person` to accept `firstName` and `lastName` as arguments
-* Pass those arguments when you create the object for `person`
+### Exercise: implement a method
 
-### Jargon
+Yesterday you implemented one of the functions from the LoDash library. Rewrite that function as a method on an array:
 
-So now we have `Person` and `person`. They're both logical names, but we don't
-have a language to discuss them distinctly.
+{% highlight javascript %}
+var myArray = [...];
+myArray.myIterateyFunction = function(...) {
 
-`Person` is a _class_. Classes are the foundation of _object oriented
-programming_. `person` is an _instance_. When we create an _instance_ of a
-class, that's called _instantiation_. When you instantiate an object, its
-_constructor_ is called. The constructor in this case is the `Person` function.
-As we'll see _classes_ will give us a dedicated area in which we can add
-procedures that are specific to that kind of object.
+};
+{% endhighlight %}
 
-We're going to start using this jargon right away. You'll likely forget some of
-these terms since your brain has been working so hard. Feel free to interrupt
-and ask to clarify when the jargon is keeping you from understanding.
+## Constructors
+
+Adding a function to a single object is ok, but it only gets you so far. If you have some code that wants to use `interpolate`, it needs to be able to rely on `interpolate` being present. It would be tedious and error-prone to manually add `interpolate` to every object on which you need it. One way to get around that is a _constructor_, which is a function that constructs and returns a new object. Here's a constructor that makes an array with `interpolate` attached:
+
+{% highlight javascript %}
+var MyArray = function () {
+  var toReturn = [];
+  for (var i = 0; i < arguments.length; i++) {
+    toReturn[i] = arguments[i];
+  }
+  toReturn.interpolate = function(delimiter) {
+    var joined = ""
+    for (var i = 0; i < this.length - 1; i++) {
+      joined += this[i] + delimiter;
+    }
+    joined += this[this.length - 1];
+    return joined;
+  };
+  return toReturn;
+}
+{% endhighlight %}
+
+Now if you want an array with a `interpolate` function, you can make it with the `MyArray` constructor:
+
+{% highlight javascript %}
+var someArray = MyArray(1, 2, 3, 4, 5);
+{% endhighlight %}
+
+However, that `toReturn` variable is a little fishy. It's not too bad, but it's not great either. JavaScript provides the keyword `new`, which takes a constructor, creates an object, and then calls the constructor with `this` bound to the newly-created object. It makes things a little nicer than before:
+
+{% highlight javascript %}
+var MyArray = function () {
+  for (var i = 0; i < arguments.length; i++) {
+    this[i] = arguments[i];
+  }
+  this.interpolate = function(delimiter) {
+    var joined = ""
+    for (var i = 0; i < this.length - 1; i++) {
+      joined += this[i] + delimiter;
+    }
+    joined += this[this.length - 1];
+    return joined;
+  };
+}
+
+var someArray = new MyArray(1, 2, 3, 4, 5);
+{% endhighlight %}
 
 <aside>
-**Case Convention**
+  **Syntactic Sugar**
 
-You'll notice that all classes use names that start with an uppercase letter.
-This is not required, but this convention helps us quickly distinguish between
-names that represent classes and instances.
+  _Syntactic sugar_ is any language syntax that accomplishes something you can already do, but in a more convenient way. In JavaScript, `[...]` is syntactic sugar for `new Array(...)`. Any time you see the one, you could replace it with the other. Generally, the sugared variant is easier to read and write, so we prefer it.
 </aside>
 
-### Adding Methods
-
-We'll now extend our `Person` class so that instances can call `run`.
+Okay, that's a little nicer. There's still a glaring problem, though: all the arrays we get have to have been created by `MyArray`, not with `[]`. We could do something like this:
 
 {% highlight javascript %}
-Person.prototype.run = function() {
-  console.log('I can run!');
-};
-var person = new Person();
-person.run();
+var MyArray = function () {
+  if (arguments.length === 1 && typeof(arguments[0]) === 'array') {
+    arguments = arguments[0];
+  }
+  for (var i = 0; i < arguments.length; i++) {
+    this[i] = arguments[i];
+  }
+  this.interpolate = function(delimiter) {
+    var joined = ""
+    for (var i = 0; i < this.length - 1; i++) {
+      joined += this[i] + delimiter;
+    }
+    joined += this[this.length - 1];
+    return joined;
+  };
+}
+
+var someArray = new MyArray(regularArray);
 {% endhighlight %}
 
-What? `prototype`? What's that? Simplest answer: just go with it for right now.
-Accept it and don't let your brain tell you that it needs to know. Just know
-that now your instance can now call the `run` method.
+But it's not that much better. What we really want is for every array everywhere to have `interpolate`. What we really want to do is mess with the _`prototype`_ from which all Arrays are created.
 
-If you need a better way to think about it:
+### Exercise: Objects with Methods
 
-<section class="conceptual-code">
+Let's go back to game.js. Update the code in jsi-gamelib so that:
+
+* There is a class called `Room`.
+* When `game.json` is loaded, the list of descriptions is used to instantiate a list of `Room`s.
+* The `Room` class has methods for joining itself to its neighbors, so walls aren't drawn twice.
+
+## Prototypes
+
+Back on day 1 I told you that Objects are associations between keys and values. Well, I lied, a little. Objects also have a _prototype_, which is another Object that gets searched when you try to access an attribute that isn't there. If you type `someObject.someAttribute`, JavaScript first searches for a `someAttribute` attribute in `someObject`. If it doesn't find one, it then searches `someObject`'s prototype, and then the prototype's prototype, and so on, until it gets to the end of the prototype chain. That means we can put an attribute in `Array.prototype` and make it available to all arrays everywhere:
 
 {% highlight javascript %}
-Person.instanceMethods.run = function() {
-  console.log('I can run!');
+Array.prototype.interpolate = function(delimiter) {
+  var joined = ""
+  for (var i = 0; i < this.length - 1; i++) {
+    joined += this[i] + delimiter;
+  }
+  joined += this[this.length - 1];
+  return joined;
 };
+
+["uno", "dos", "tres", "cuatro", "cinco", "cinco", "seis"].interpolate(", ");
 {% endhighlight %}
-
-</section>
-
 
 <aside>
-**Prototype**
+  **Monkey-patching**
 
-Seriously, don't worry about it right now. If you really need to know, come
-back to this blurb in the future.
-
-When you're ready for it, what you'll want to research is prototypal
-inheritance. Don't start looking into it until you've really mastered
-inheritance. I'm talking like 3 months down the line.
-
-The reason this can be so confusing is because JavaScript doesn't easily expose
-the same paradigm that most developers have come to know very well, object
-oriented design. It's possible to create an object oriented system with
-JavaScript, though. So it's really just confusing because we're making
-JavaScript do something that's not convenient in the language. When you combine
-that with the history of poor documentation on JavaScript, things get ugly.
-
-If you read all the way through this and are still curious, you're an adult.
-Make an informed choice. We'll always be here to answer questions! :)
+  _Monkey-patching_ is an informal term for adding behavior to a datatype that you didn't create. Above, we monkey-patched `interpolate` into the main `Array` type. Monkey-patching can be useful, but use it with caution. If two modules try to monkey-patch a function with the same name, one of them will win and one will get its monkey-patch overridden. That's bad. There's a chance the two implementations are compatible, but more likely, the module that lost will end up behaving wrong.
 </aside>
 
-### Functions vs Methods
-
-Up until now, you may have noticed both the use of function and method. We've
-completely skipped over the distinction until now.
-
-Methods are functions that are defined on objects. Functions are functions.
-This distinction allows us to easily understand when you need to write
-`obj.something()` vs `something()`.
-
-We've only been writing functions up until now. We've been using methods (like
-the ones discussed in [the objects section](#objects)). Now we'll be defining
-methods as well.
-
-
-### Data
-
-Right now our people can't do anything. They don't even have names. We need
-to associate data with them. Before, we did that via properties. And we will
-again.
+You can set the prototype for your own constructors as well:
 
 {% highlight javascript %}
-var person = new Person();
-person.firstName = "Whitney";
-person.lastName = "Young";
-console.log('%s %s', person.firstName, person.lastName);
-{% endhighlight %}
-
-That still works just fine. But what if you want to set the first and last name
-in the constructor?
-
-<section class="conceptual-code">
-{% highlight javascript %}
-var Person = function(firstName, lastName) {
-  person.firstName = "Whitney";
-  person.lastName = "Young";
+var MyConstructor = function() {
+  ...
+}
+MyConstructor.prototype = {
+  'doAThing': function() {...}
 };
 {% endhighlight %}
-</section>
 
-In the code above, `person` is not defined. We need a way of accessing the
-_current instance_ that's being worked with. Whenever you create an object or
-call a method on it, the code is being invoke on behalf of that object. So that
-code has every right to know which object that is.
+### Exercise: Prototypes
 
-We use the keyword `this` to refer to the object on which the method is
-invoked.
+Let's add several types of room:
 
-#### Status Check
+* cave
+* dungeon
+* lounge
 
-- Fix the code above.
-- Create a new person.
-- Log the person's first and last name.
-- Add a `fullName` method and log that.
+Each type of room should have Room as its prototype, but describe itself differently.
 
 
-### Encapsulation
 
-Sometimes we want properties to be accessible by people who use instances of
-our classes. Sometimes we don't. Usually we don't. Protecting the properties
-so that people using the class can't access them is called _encapsulation_.
-
-This is often done to make later alterations to a class easier. For instance,
-image the following:
-
-{% highlight javascript %}
-var Person = function(name) {
-  this.name = name;
-};
-var person = new Person("Whitney Young");
-console.log(person.name);
-person.name = "Whit Young";
-console.log(person.name);
-{% endhighlight %}
-
-If someone later decides that they want to allow first and last names, they
-may change the code:
-
-{% highlight javascript %}
-var Person = function(firstName, lastName) {
-  // we used to accept just one argument, name, so
-  // be backwards compatible with that.
-  if (arguments.length === 1) {
-    var names = arguments[0].split(' ');
-    firstName = names[0];
-    lastName = names[1];
-  }
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.name = [firstName, lastName].join(' ');
-};
-var person = new Person("Whitney Young");
-console.log(person.name);
-console.log(person.firstName);
-console.log(person.lastName);
-person.name = "Whit Young";
-console.log(person.name);
-console.log(person.firstName);
-console.log(person.lastName);
-{% endhighlight %}
-
-Allowing someone to access these properties manually caused our name property
-to end up in a bad state.
-
-If we had instead started with:
-
-{% highlight javascript %}
-var Person = function(name) {
-  this._name = name;
-};
-Person.prototype.name = function() {
-  return this._name;
-}
-Person.prototype.setName = function(name) {
-  this._name = name;
-}
-var person = new Person("Whitney Young");
-console.log(person.name());
-person.setName("Whit Young");
-console.log(person.name());
-{% endhighlight %}
-
-We can add first and last names without consequence:
-
-{% highlight javascript %}
-var Person = function(firstName, lastName) {
-  // we used to accept just one argument, name, so
-  // be backwards compatible with that.
-  if (arguments.length === 1) {
-    this.setName(arguments[0]);
-  }
-  else {
-    this._firstName = firstName;
-    this._lastName = lastName;
-    this._name = [firstName, lastName].join(' ');
-  }
-};
-Person.prototype.name = function() {
-  return this._name;
-}
-Person.prototype.setName = function(name) {
-  var names = name.split(' ');
-  this._firstName = names[0];
-  this._lastName = names[1];
-  this._name = name;
-}
-Person.prototype.firstName = function() {
-  return this._firstName;
-}
-Person.prototype.setFirstName = function(firstName) {
-  this._firstName = firstName;
-  this._name = [this._firstName, this._lastName].join(' ');
-}
-Person.prototype.lastName = function() {
-  return this._lastName;
-}
-Person.prototype.setLastName = function(lastName) {
-  this._lastName = lastName;
-  this._name = [this._firstName, this._lastName].join(' ');
-}
-var person = new Person("Whitney Young");
-console.log(person.name());
-console.log(person.firstName());
-console.log(person.lastName());
-person.setName("Whit Young");
-console.log(person.name());
-console.log(person.firstName());
-console.log(person.lastName());
-{% endhighlight %}
-
-In general, it's better to add _getter_ and _setter_ methods than to allow
-access to private data.
-
-<aside>
-**Private Data Convention**
-
-There is no formal way in JavaScript to protect the data of an object (that
-statement is only partially true). Therefore, we use an underscore before the
-property name to indicate to all other programmers that they shouldn't access
-it.
-
-In fact, JavaScript can fully encapsulate data via closures. It just can't do
-so for the properties of an object.
-</aside>
