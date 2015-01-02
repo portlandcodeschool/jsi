@@ -56,11 +56,9 @@ git push --set-upstream mine branch-name
 
 ### Merging & Conflicts
 
-When collaborating, you'll sometimes end up editing the same code as someone
-else. The best way to understand this is to experience it in action.
+When collaborating, you'll sometimes end up editing the same code as someone else. The best way to understand this is to experience it in action.
 
-Assuming you still are on a branch, the following will be pretty close do what
-you'll want to do:
+Assuming you still are on a branch, the following will be pretty close do what you'll want to do:
 
 1. Fetch and merge changes from upstream (`pull`)
 1. Manually merge any conflicting files
@@ -83,7 +81,7 @@ git push origin branch-name
 <aside>
 <h4>Whitespace</h4>
 
-Whitespace, that is line breaks, spaces, and tabs, can cause headaches when merging changes. You should make sure when you commit changes that you (or your text editor) hasn't changed whitespace in parts of the code that you didn't intend to edit.
+Whitespace (that is, line breaks, spaces, and tabs) can cause headaches when merging changes. You should make sure when you commit changes that you (or your text editor) hasn't changed whitespace in parts of the code that you didn't intend to edit.
 
 Also, it's a good idea to ensure that every file ends with a line break (newline). Why? Many (command line) tools don't work quite as nicely when you don't have that final newline. Git, for instance, will show you a weird representation of changes that affect the addition/removal of content at the end of a file if you don't have a trailing newline.
 </aside>
@@ -106,7 +104,7 @@ Let's use TDD to write an interest calculator.
 
 <aside class="objective">
 <h4>Interest Calculator Objective</h4>
-Write an continuous compounding interest calculator following the test driven development workflow. The function should return just the interest, not the amount owed.
+Write an continuous compounding interest calculator following the test driven development workflow. The function should return just the interest accrued, not the total amount owed.
 </aside>
 
 Start with a test:

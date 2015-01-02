@@ -164,11 +164,11 @@ So far, the programs we've written will always do the same thing every time they
 
 </aside>
 
-Using conditionals, we could write a function that decides whether you should talk to somebody:
+Using conditionals, we could write a function that decides whether someone is a JavaScript teacher:
 
 {% highlight javascript %}
-var safeToChat = function() {
-  if (name === "Whitney") {
+var isTeacher = function() {
+  if (name === "Dan") {
     return true;
   } else if (name === "Andrew") {
     return true;
