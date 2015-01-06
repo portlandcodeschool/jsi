@@ -8,23 +8,23 @@ learning JavaScript.
 
 ## Sites
 
-* [Mozilla Developer Network][mdn]  
+* [Mozilla Developer Network][mdn]
   Mozilla has done a great job documenting many of the tools needed to build
   websites. Their documentation on JavaScript, in particular is great.
 
-* [WebPlatform][webplatform]  
+* [WebPlatform][webplatform]
   Joint project by many organizations to do a better job documenting HTML, CSS,
   JavaScript, etc. This is still a work in progress, but it's pretty good for
   CSS. In particular, you should use this over W3Schools (which some people
   even recommend you avoid by always adding `-w3schools` to your searches).
 
-* [nodeschool.io][nodeschool]  
+* [nodeschool.io][nodeschool]
   Great lessons to learn Node.js.
 
-* [SlowmoJS][slowmojs] and [metajs][metajs]  
+* [SlowmoJS][slowmojs] and [metajs][metajs]
   Sites for visualizing code flow.
 
-* [Can I Use&hellip;][caniuse]  
+* [Can I Use&hellip;][caniuse]
   This site will tell you whether a browser includes certain functionality and
   will allow you to quickly choose whether you should use that feature or not.
 
@@ -42,44 +42,44 @@ learning JavaScript.
 
 ## Documentation
 
-[Arithmetic Operators][mdn-arithmetic]  
-[Assignment Operators][mdn-assignment]  
-[Comparison Operators][mdn-comparison]  
-[Logic Operators][mdn-logic]  
-[String Operators][mdn-strings]  
-[`typeof`][mdn-typeof]  
-[Dates][mdn-dates]  
-[`setTimeout`][mdn-settimeout]  
-[`setTimeout` (Node)][node-settimeout]  
-[`readFile`][node-readfile]  
-[`readline`][node-readline]  
-[Debugger][node-debugger]  
-[`arguments`][mdn-arguments]  
-[`bind`][mdn-bind]  
+[Arithmetic Operators][mdn-arithmetic]
+[Assignment Operators][mdn-assignment]
+[Comparison Operators][mdn-comparison]
+[Logic Operators][mdn-logic]
+[String Operators][mdn-strings]
+[`typeof`][mdn-typeof]
+[Dates][mdn-dates]
+[`setTimeout`][mdn-settimeout]
+[`setTimeout` (Node)][node-settimeout]
+[`readFile`][node-readfile]
+[`readline`][node-readline]
+[Debugger][node-debugger]
+[`arguments`][mdn-arguments]
+[`bind`][mdn-bind]
 
 
 ## Tools
 
-[Node.js][node]  
-[npm][npm]  
-[JSHint][jshint]  
-[Mocha][mocha]  
-[Chai][chai]  
-[JSDoc][jsdoc]  
-[Commander.js][commander]  
-[Lo-Dash][lodash]  
-[Sass][sass]  
+[Node.js][node]
+[npm][npm]
+[JSHint][jshint]
+[Mocha][mocha]
+[Chai][chai]
+[JSDoc][jsdoc]
+[Commander.js][commander]
+[Lo-Dash][lodash]
+[Sass][sass]
 
 
 ## Online Books
 
-* [Git Book][gitbook]  
+* [Git Book][gitbook]
   More than you ever wanted to know about Git.
 
-* [JSbooks][jsbooks]  
+* [JSbooks][jsbooks]
   Free JavaScript books.
 
-* [JavaScript Allongé][allonge]  
+* [JavaScript Allongé][allonge]
   This book begins with a different approach to teaching common concepts.
   Overall, it is very focused on functional JavaScript. It does have an
   academic feel at times, but is also very focused on practical usage of the
@@ -95,61 +95,61 @@ would suggest reading reviews on Amazon and/or paging through the book yourself
 at [Powell's][powells] to make sure the book matches your learning style and
 expectations.
 
-* _jQuery and JavaScript Phrasebook_, Brad Dayley  
-  Beginner, $30  
+* _jQuery and JavaScript Phrasebook_, Brad Dayley
+  Beginner, $30
   Good reference book, lots of examples. The examples don't go too deep, it's
   may be helpful to help point you in the right direction, but it's not a
   cookbook.
 
-* _Jump Start JavaScript_, Ara Pehlivanian and Don Nguyen  
-  Beginner, $30  
+* _Jump Start JavaScript_, Ara Pehlivanian and Don Nguyen
+  Beginner, $30
   This is a pretty good intro book. It covers the basics without too much
   extra.
 
-* _Learning JavaScript_, Shelley Powers  
-  Beginner, $35  
+* _Learning JavaScript_, Shelley Powers
+  Beginner, $35
   Good intro to JavaScript in the browser, and covers most everything you
   would want to know at an introductory level.
 
-* _JavaScript: The Good Parts_, Douglas Crockford  
-  Intermediate, $30  
+* _JavaScript: The Good Parts_, Douglas Crockford
+  Intermediate, $30
   This is one of the top selling JavaScript books, and it contains good
   tidbits, gotchas, and opinions. Overall, it's not going to teach you
   JavaScript, but it will explain why some JavaScript developers write code
   in a specific way.
 
-* _Node.js in Action_, Mike Cantelon, Marc Harter, TJ Holowaychuk and Nathan Rajlich  
-  Intermediate, $45  
+* _Node.js in Action_, Mike Cantelon, Marc Harter, TJ Holowaychuk and Nathan Rajlich
+  Intermediate, $45
   This is one of the most popular Node.js books, and is a pretty in depth look
   at various parts of Node.js and frameworks that are built with Node.
 
-* _Learning Node_,  Shelley Powers  
-  Intermediate, $35  
+* _Learning Node_,  Shelley Powers
+  Intermediate, $35
   This is a pretty in depth look at various parts of Node.js and frameworks
   that are built with Node. This books was written early in the lifetime of
   Node.js and may be slightly inaccurate because of that, but still covers
   details of up to date tools. _Node.js in Action_ may be a better choice, but
   this has material that complements the other as well.
 
-* _Maintainable JavaScript_, Nicholas C. Zakas  
-  Intermediate, $25  
+* _Maintainable JavaScript_, Nicholas C. Zakas
+  Intermediate, $25
   This book will probably teach you some good practices to keep you from forming
   bad habits.
 
-* _Effective JavaScript_, David Herman  
-  Intermediate, $20  
+* _Effective JavaScript_, David Herman
+  Intermediate, $20
   This is a good book to teach you some finer points of JavaScript, how things
   work, which language features to use, and which to avoid.
 
-* _Secrets of the JavaScript Ninja_, John Resig and Bear Bibeault  
-  Advanced, $40  
+* _Secrets of the JavaScript Ninja_, John Resig and Bear Bibeault
+  Advanced, $40
   This is a good advanced book that will teach you about many real world
   concepts and practices for front-end JavaScript. John Resig is the creator
   of jQuery. His [blog](http://ejohn.org/category/blog/) also has a lot of
   valuable content.
 
-* _Functional JavaScript_, Michael Fogus  
-  Advanced, $30  
+* _Functional JavaScript_, Michael Fogus
+  Advanced, $30
   This is an advanced book that gives good examples of advanced usage of
   functional programming concepts. It's a book that may cause your head
   to spin at times and sometimes has confusing explanations of concepts
