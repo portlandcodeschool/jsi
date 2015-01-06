@@ -118,7 +118,7 @@ var authors = [
 Since arrays' values are ordered, you can use a loop to show all these authors in alphabetical order:
 
 {% highlight javascript %}
-for (var i = 0; i < authors.length, i++) {
+for (var i = 0; i < authors.length; i++) {
   console.log(authors[i]);
 }
 {% endhighlight %}
