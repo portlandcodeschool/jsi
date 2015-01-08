@@ -293,7 +293,7 @@ git init
 echo "node_modules" > .gitignore
 npm init
 git add .
-git ci -m 'Setting up project.'
+git commit -m 'Setting up project.'
 {% endhighlight %}
 
 #### Installing Modules
