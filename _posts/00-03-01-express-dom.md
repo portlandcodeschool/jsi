@@ -94,19 +94,13 @@ You can observe events on DOM objects with
 
 ### Challenge #1
 
-Make it so that when you click an article title, it toggles the visibility of
-the paragraphs within the article.
+Make it so that when you click an article title, it toggles the visibility of the paragraphs within the article.
 
-_Hint:_ Think about how you would normally change whether an item is visible or
-not. Try to make your JavaScript replicate the changes you would normally make.
-
+_Hint:_ Think about how you would normally change whether an item is visible or not. Try to make your JavaScript replicate the changes you would normally make.
 
 ### Challenge #2
 
-Keep the current functionality of clicking the article title. Make it so that
-if you click anywhere else on the article, it highlights the entire article.
-It shouldn't highlight the article when you click the title, though.
-
+Keep the current functionality of clicking the article title. Make it so that if you click anywhere else on the article, it highlights the entire article. It shouldn't highlight the article when you click the title, though.
 
 ### Challenge #3
 
@@ -120,12 +114,29 @@ Create a page that accepts payments. It should accept and validate:
 * City
 * State
 
-There should be a submit button. When the submit button is pressed, it should
-validate each field and somehow inform the user that there are problems.
+There should be a submit button. When the submit button is pressed, it should validate each field and somehow inform the user that there are problems.
 
-All of these fields are required. Some of them should only accept certain
-values as input. How can you use JavaScript to make a really good user
-experience here? Want to make it really pretty? Go for it!
+All of these fields are required. Some of them should only accept certain values as input. How can you use JavaScript to make a really good user experience here? Want to make it really pretty? Go for it!
+
+## Script Location
+
+Generally, you'll want to
+[put your scripts at the bottom of the body][yahoo-performance-scripts]. When you don't, you'll need to ensure you wait for the DOM to be ready. This is good practice regardless, and it's easy with jQuery, but for reference, here's how you could do it without jQuery (this won't work in all browsers).
+
+{% highlight javascript %}
+(function(ready) {
+  var loaded = function() {
+    document.removeEventListener("DOMContentLoaded", loaded, false);
+    ready();
+  };
+  if (document.readyState === "complete") { setTimeout(ready); }
+  else { document.addEventListener("DOMContentLoaded", loaded, false); }
+})(function() {
+
+  // insert your code here
+
+});
+{% endhighlight %}
 
 [mdn-createElement]: https://developer.mozilla.org/en-US/docs/Web/API/Document.createElement
 [mdn-getElementById]: https://developer.mozilla.org/en-US/docs/Web/API/Document.getElementById
