@@ -38,6 +38,7 @@ learning JavaScript.
 * [Reflections On Trusting Trust](http://cm.bell-labs.com/who/ken/trust.html), something of a counterpoint to the Hacker Manifesto
 * [WAT](https://www.destroyallsoftware.com/talks/wat), a short video on some of JavaScript's eccentricities
 * [The Jargon File](http://www.catb.org/jargon/html/online-preface.html), a list of various terms used by programmers through history
+* [The Google JavaScript Style Guide](https://code.google.com/p/google-styleguide/)
 
 
 ## Documentation
