@@ -10,7 +10,10 @@ Yesterday we used JavaScript on the page to create a blog post. That's kinda sid
 <aside>
     **Watch out!**
 
-    Starting today we'll be working with some JavaScript that runs on the page and some that runs in the server. You'll need to keep an eye on which context you're working in. Make sure you don't try to write browser interactions in server-side JS, or server interactions in browser-side JS!
+    Starting today we'll be working with some JavaScript that runs on the page
+    and some that runs in the server. You'll need to keep an eye on which context
+    you're working in. Make sure you don't try to write browser interactions in
+    server-side JS, or server interactions in browser-side JS!
 </aside>
 
 Express is a _framework_ for serving webpages. It provides functions for routing (associating URLs with pages), rendering (turning templates into HTML), and error handling.
