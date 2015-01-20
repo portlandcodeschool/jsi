@@ -155,6 +155,8 @@ Generally, you'll want to
 [mdn-textContent]: https://developer.mozilla.org/en-US/docs/Web/API/Node.textContent
 [mdn-getAttribute]: https://developer.mozilla.org/en-US/docs/Web/API/element.getAttribute
 [mdn-setAttribute]: https://developer.mozilla.org/en-US/docs/Web/API/element.setAttribute
+[mdn-addEventListener]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener
+[mdn-events]: https://developer.mozilla.org/en-US/docs/Web/Reference/Events
 [mdn-blur]: https://developer.mozilla.org/en-US/docs/Web/Reference/Events/blur
 [mdn-change]: https://developer.mozilla.org/en-US/docs/Web/Reference/Events/change
 [mdn-click]: https://developer.mozilla.org/en-US/docs/Web/Reference/Events/click
@@ -179,3 +181,4 @@ Generally, you'll want to
 [mdn-touchleave]: https://developer.mozilla.org/en-US/docs/Web/Reference/Events/touchleave
 [mdn-touchmove]: https://developer.mozilla.org/en-US/docs/Web/Reference/Events/touchmove
 [mdn-touchstart]: https://developer.mozilla.org/en-US/docs/Web/Reference/Events/touchstart
+[yahoo-performance-scripts]: https://developer.yahoo.com/performance/rules.html#js_bottom
