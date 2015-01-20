@@ -2,7 +2,7 @@
 layout: post
 title: Mini Project
 class: mini-project
-date: 2015-01-27
+date: 2015-01-26
 ---
 
 # Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
