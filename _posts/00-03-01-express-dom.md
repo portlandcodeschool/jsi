@@ -53,7 +53,7 @@ Edit `public/javascripts/page.js` so that when the page loads, it updates it to 
       <p>This is the first blog post I've ever written.</p>
     </article>
   </body>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="/javascripts/page.js"></script>
 </html>
 {% endhighlight %}
 
