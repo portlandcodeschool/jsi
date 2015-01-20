@@ -1,18 +1,37 @@
 ---
 layout: post
-title: GitHub Pages
-class: github-pages
-date: 2015-01-28
+title: Heroku
+class: heroku
+date: 2015-01-27
 ---
 
-# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+Today we're going to publish something very basic to [Heroku][heroku]. We'll optionally set up a domain name via [Namecheap][namecheap] to work with the site.
 
-Today we're going to publish something very basic to
-[GitHub pages][github-pages]. We'll optionally set up a domain name via
-[name.com][name] to work with the site.
+After we've done this, you should update the site to be your portfolio site that you just built, then continue working on the static site generator.
 
-After we've done this, you should update the site to be your portfolio site
-that you just built, then continue working on the static site generator.
+### Exercise: Get started with Heroku
 
-[github-pages]: https://pages.github.com
-[name]: https://www.name.com/
+Follow the [Getting Started With Node.js guide][heroku-nodejs] in Heroku's documentation.
+
+### Exercise: create a Heroku app for your portfolio site
+
+Using what you've learned from the "getting started" guide, create and deploy a Heroku app for your portfolio site.
+
+### Optional exercise: Custom Domain Name
+
+Create an account with [Namecheap][namecheap] (or another registrar of your choice). Pick and buy a reasonably-priced domain name for your portfolio site. You can be stodgy like me and go for your-name.com, or get something a little more fun.
+
+Once you've purchased a domain name, you need to make a CNAME record that points to your weird heroku url (e.g. warm-ice-73259.heroku.com).
+
+Finally, tell Heroku about the domain. (Until you do, Heroku will respond with "no such app"). You can do it from the command line with `heroku domains:add DOMAIN` or in the "Domains" section of the Heroku web interface.
+
+<aside>
+***DNS: The good parts***
+
+DNS has a lot of confusing terminology. The blog post [DNS: The Good Parts][dns-the-good-parts] does a great job of laying out the basics.
+</aside>
+
+[heroku]: https://www.heroku.com/
+[heroku-nodejs]: https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+[namecheap]: https://www.namecheap.com/
+[dns-the-good-parts]: https://www.petekeen.net/dns-the-good-parts
