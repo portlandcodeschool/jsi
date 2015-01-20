@@ -5,25 +5,17 @@ class: mini-project-extras
 date: 2015-01-29
 ---
 
-# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
-
 ## Project Extras
 
-If you finish this project before the end of the week, try tackling one or more
-of these advanced features.
+If you get your static site generator working before the end of the week, try tackling one or more of these advanced features.
 
 ### Configurable Layouts
 
-Allow each page on your site to specify which layout it wants to use rather
-than using one global layout.
+Create a "layouts" directory where different page layouts can go. Allow each page on your site to specify which layout it wants to use rather than using one global layout.
 
 ### Markdown
 
-Markdown is a wonderful _markup language_ for writing content for web pages.
-It allows you to easily skip HTML tags in favor of a syntax that's slightly
-more human-readable. Lots of sites use Markdown, and it's valuable to know.
-GitHub, for example, allows Markdown to be used in README files as well as in
-comments.
+Markdown is a wonderful _markup language_ for writing content for web pages. It allows you to easily skip HTML tags in favor of a syntax that's slightly more human-readable. Lots of sites use Markdown, and it's valuable to know. GitHub, for example, allows Markdown to be used in README files as well as in comments.
 
 Here's an example of the syntax:
 
@@ -114,32 +106,30 @@ Finally, you can do large chunks of code:
     explain();
 </aside>
 
+<aside>
+***Markdown Flavors***
+
+Markdown originally started as a blog post saying "wouldn't it be nice if this existed?" As a result, there's no real standard, and different Markdown parsers offer different featuresets. "Github-flavored Markdown," for example, has extra features for referencing GitHub users, repos, issues, etc.
+
+There's been an attempt to make a Markdown standard, called Standard Markdown, but it was immediately controversial and is far from universally accepted.
+</aside>
 
 ### Sass
 
-[Sass][sass] makes CSS a lot easier to work with. Learn a little about Sass
-and make your generator handle sass files.
+[Sass][sass] makes CSS a lot easier to work with. Learn a little about Sass and make your generator handle sass files.
 
 
 ### Watch Mode
 
-Make you generator accept a flag that will keep it watching all files for
-changes. When it notices a change, it should re-generate the output for that
-file.
-
+Make your generator accept a flag that will keep it watching all files for changes. When it notices a change, it should re-generate the output for that file.
 
 ### Jekyll
 
-Add some of the features that [Jekyll][jekyll] has to your generator. If you
-want to be really ambitious, you can try to make your generator a drop-in
-replacement for Jekyll. But be warned, this could take you months to complete!
+Add some of [Jekyll][jekyll]'s features to your generator. If you want to be really ambitious, you can try to make your generator a drop-in replacement for Jekyll. But be warned, this could take you months to complete!
+
+### Other
+
+If you have other ideas for features your generator should have, go hog wild!
 
 [jekyll]: http://jekyllrb.com
 [sass]: http://sass-lang.com
-
-
-### GitHub Pages Integration
-
-Determine a good way to make your generator work more seamlessly with GitHub
-pages. Before you implement your ideas, discuss them with your instructor to
-make sure you're heading down the right path.
