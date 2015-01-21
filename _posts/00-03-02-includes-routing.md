@@ -101,8 +101,11 @@ router.get('/post/:post_name', function(request, response) {
 Now it's possible to make a single `post.jade` view that shows your rendered post:
 
 {%highlight jade%}
-article
-    != post
+extends layout
+
+block content
+    article
+        != post
 {%endhighlight%}
 
 Finally, we need to define a function for finding posts:
@@ -110,12 +113,13 @@ Finally, we need to define a function for finding posts:
 {%highlight javascript%}
 // posts.js
 var fs = require('fs');
+var jade = require('jade');
 
 var find = function(post_name, cb) {
     fs.readdir('./posts/', function(err, files) {
-        if (files.indexOf(post_name + '.html') !== -1) {
-            fs.readFile('./posts/' + post_name + '.html', function(err, data) {
-                cb(data);
+        if (files.indexOf(post_name + '.jade') !== -1) {
+            fs.readFile('./posts/' + post_name + '.jade', function(err, data) {
+                cb(jade.compile(data));
             })
         } else {
             cb(null);
