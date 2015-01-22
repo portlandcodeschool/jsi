@@ -48,11 +48,11 @@ How do you do this? Well you can use the built in [`XMLHttpRequest`][mdn-xhr]:
 
 {%highlight javascript%}
 var request = new XMLHttpRequest();
-oReq.onload = function() {
+request.onload = function() {
     console.log(this.responseText);
 };
-oReq.open("get", "https://google.com");
-oReq.send();
+request.open("get", "https://google.com");
+request.send();
 
 {%endhighlight%}
 
