@@ -137,3 +137,4 @@ JSONP allows web applications to make requests to other servers without running 
 [jsi-gamelib-package]: https://raw.githubusercontent.com/portlandcodeschool/jsi-gamelib/master/package.json
 [jsonp]: https://en.wikipedia.org/wiki/JSONP
 [same-origin]: https://en.wikipedia.org/wiki/Same-origin_policy
+[crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
