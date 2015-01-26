@@ -146,7 +146,7 @@ Attackers can eavesdrop on HTTP traffic that isn't secured by SSL/TLS. We musn't
 
 
 <aside>
-We'll touch on security a little more in the future, but be aware that you won't get everything right if you try to implement crypto on your own. It's a very specialized domain, and a single error can break the whole thing. You want to trust the modules that others have built, been peer reviewed, and been vetted over time.
+We'll touch on security a little more in the future, but be aware that you won't get everything right if you try to implement crypto on your own. It's a very specialized domain, and a single error can break the whole thing. You want to trust the modules that others have built, that have been peer-reviewed and vetted over time.
 </aside>
 
 
