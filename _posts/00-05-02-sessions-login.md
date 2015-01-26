@@ -1,174 +1,205 @@
 ---
 layout: post
-title: jQuery
-class: jquery
+title: Sessions
+class: sessions
 date: 2015-02-03
 ---
 
-# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+Allowing users to sign up and log into your website is a complicated process. It's gotten more complicated recently for developers as many sites are allowing people to log in using Google, Twitter, Facebook, etc.
 
-## Some Thoughts
+## Problems
 
-### The DOM is annoying
+HTTP wasn't designed to deliver custom content on a per-user basis. It was designed to allow hundreds of thousands of requests to be made to a server without overloading the server.
 
-The code we wrote while learning about the DOM was kind of annoying.
-Re-creating a few simple HTML items was kind of a pain. It was overly verbose.
-There are already a few obvious places where we'd repeat ourselves if we kept
-writing JavaScript this way.
+What's that mean?
 
-### Compatibility
+It means HTTP is [_stateless_][stateless]. Each request is independent of any others. If I make a request to a web server, the web server will handle the HTTP request and give me a response. It will immediately forget that ever happened. When I make another request, it will handle that as well, but won't have any knowledge of prior requests.
 
-Who has been to a website that didn't work in some browser? It's less common
-these days, but used to be a far larger issue. Especially if you weren't using
-IE on Windows.
+Clearly, there must be a way to work around this, or there'd be no way to ever log into a website.
 
-Why does this happen, and how to we prevent having the same issues ourselves
-while building websites?
+## Solutions
 
+There are a few things we can use to our advantage to remember users as they continue to make requests to our web applications. We'll be solving these problems at the application level, above HTTP. We'll use features of HTTP to achieve this, but it wouldn't be possible without the application handling some of the work.
 
-## Front End Libraries
+### HTTP Headers
 
-Front end libraries attempt to address both of these problems. There are lots
-of them. jQuery, Dojo, MooTools, Prototype, YUI, Ext, and Script.aculo.us are
-some.
+We haven't really discussed HTTP in detail up until now. The best way to understand HTTP is to see it in action, so let's do just that.
 
-Many of these tools came out around the same time. Over time, jQuery emerged as
-the dominant player in the space. Others are still active, some have fizzled
-out. Most JS developers starting new projects will include jQuery without
-blinking an eye.
+Run the _netcat_ tool:
 
-We're starting to see the emergence of tools like AngularJS, Ember, and
-Backbone.js. These are called frameworks, and we'll dive into one of them,
-Ember, soon.
+{%highlight bash%}
+  nc -l 9000
+{%endhighlight%}
 
-<aside>
-**Library vs. Framework**
+Now open your browser and go to `http://localhost:9000/`. Your browser is making an HTTP request to your computer on port `9000` and will continue to wait for a response for a while. The command you ran is actually just listening on port `9000` for anything that comes in. If you go look at it, you can see the request that your web browser issued.
 
-Generally, a library is a set of related functionality. It exposes many
-functions or classes that you can use. Lo-Dash and Underscore.js were examples
-of libraries as well.
+Let's respond.
 
-We haven't seen frameworks just yet, but they're coming. They expose
-functionality as well, but also define a certain structure and methodology for
-creating applications.
-</aside>
+Type whatever you want to followed by a newline, then `control+D` (control, not command). `control+D` sends the end-of-file character, which tells `nc` you're finished with this transmission. Try responding with some HTML and see what happens.
 
-When you're using features directly from the browser, you can check for
-[HTML/CSS][caniuse] and [JavaScript][es5-compat] compatibility
-([another option][qm-compat]) quickly rather than having to test in each
-browser. Once you've implemented the feature, though, you'll still need to test
-in each browser.
+A proper response is specifically formatted. This is what node's `http` module does when you create a server. Let's give a proper response now. You could type this in manually, but we'll do it a little differently to avoid quite as much copying and pasting.
 
+Create a new directory to work in, and `cd` to it. Create a file called `index.html` with some HTML in it. Also create a file, `index.headers` with the following content (make sure you have two blank lines at the bottom of your file):
 
-## jQuery
+```
+    HTTP/1.1 200 OK
+    Content-Type: text/html; charset=utf-8
+```
 
-Rather than explaining anything about jQuery, we're going to jump right into
-challenges.
+Now run `cat index.headers index.html` and make sure there's at least one blank line between your headers and your HTML. Once you've got that, run `cat index.headers index.html | nc -l 9000` and access your page in the browser.
 
-### Challenge &mdash; Finding Tutorials
-
-When you first approach a new tool on your own, you're going to have to find
-good tutorials.
-
-How to find good tutorials:
-
-* Ask a fellow programmer for recommendations
-* Look on project site for official tutorials or links
-* Search for them
-
-What makes a good tutorial:
-
-* Popularity
-* Good writing / video
-* Many code examples
-* Clear explanations of basic concepts
-* Moves on to more advanced topics as well
-
-Find two good tutorials for learning jQuery. Be prepared to defend your reason
-for choosing what you did.
-
-
-### Challenge &mdash; Understanding jQuery
-
-Learn enough jQuery to repeat the two intro DOM examples. Speed doesn't count
-during this phase. Understanding counts.
-
-When you start to have a handle on some of the basics, explore the
-[API][jq-api]. Learn the organization of the API so you can quickly come back
-and find a feature that you've used before. Look for something that seems
-interesting that you'd like to learn more about or try. If it looks easy, give
-it a shot. If it looks hard, store it away as something to come back to when
-you gain a little more understanding.
-
-
-### Challenge &mdash; Plugins & Payments
-
-Revisit the credit card payment example. If you haven't done it yet, start from
-scratch. If you have, update your code to use jQuery.
-
-Use the [`jquery.payment`][stripe-payment] jQuery plugin to improve your form
-validation.
+Use Chrome's developer tools to view the HTTP response headers. Try adding a custom HTTP header to `index.response`. What happens if you change the content type so it's XML instead of HTML?
 
 <aside>
-**Plugins**
+**HTTP Keep-Alive**
 
-Plugins are small pieces of code that can be appended to another code base to
-extend its functionality. They're specific enough that they don't belong in the
-main library.
+Run `nc -kl 9000`, which keeps netcat running after sending a response. Play around with sending responses to your browser this way.
 
-Most jQuery plugins will leverage jQuery heavily. They'll usually expose their
-functionality via a method you can call on jQuery itself or on a specific
-jQuery object. So either `$.myPluginFunction()` or
-`$('ul').myPluginFunction()`.
+HTTP Keep-Alive allows a browser to keep a connection to a server and issue multiple HTTP requests over one TCP connection. This optimization improves performance.
+</aside>
+
+### Exercise: Differing content-types
+
+Use _netcat_ to respond to an HTTP request and display an image to the browser.
+
+### Cookies
+
+Cookies are little bits of data that are stored by web browsers. Any time a request is made to a server, the browser will look for any cookies it stored that are associated with that server and send the cookie data along with the request.
+
+Either the client or the server can set cookies.
+
+ - Clients set cookies via JavaScript
+ - Servers set cookies via HTTP headers
+ - Browsers transmit cookies via HTTP headers
+
+Your server side application can use cookies to track users over multiple requests.
+
+<aside>
+**HTTP Only Cookies**
+
+HTTP only cookies cannot be read by JavaScript. They're transmitted to the, browser, the browser stores them, and will send them back in future requests to the server, but the browser will not make them available to your client side JavaScript.
+
+This helps prevent cookie theft and session hijacking via cross site scripting ("XSS") attacks.
+
+Most browsers support this feature, but older browsers did not have it. On these older browsers, HTTP only cookies will still be accessible to JavaScript.
+
+**Secure Cookies**
+
+It's possible for servers to send _secure_ cookies. Most of the time, that doesn't mean that they can't be read by users on the client end. Even if you look at them and you don't think they seem readable, they could simply be encoded (base64 is a common choice here).
+
+Never store sensitive data in cookies. If you need to store sensitive data that and associate it with someone using your site, use database-backed sessions and store the data on the server.
+</aside>
+
+### Exercise: log-into-able website
+
+Create an application that uses cookies on the client- and server-sides. Your client-side page should be served by the server (rather than loaded via the `file://` protocol).
+
+The server side should:
+
+ - Log cookies for all incoming requests
+ - Create a cookie, `last-request-time`
+ - Log a message like `last access by user: 10s ago`
+
+The client side should:
+
+- Have an input that allows the user to enter their favorite color
+- When the user enters their favorite color, store it in a cookie, `favorite-color`, remove the input and display the favorite color as well as an edit button.
+- Subsequent access to the page should not show the input if the favorite color is already known.
+
+## Security
+
+Security is a serious concern when dealing with authentication. As a web developer, you should arm yourself with as much security knowledge as you can. We'll get to more later, but for now we'll hit some basics.
+
+### SSL/TLS
+
+Requests sent via HTTP are not secure. Everything is transmitted over plain text, so people sharing your wi-fi router, or with access to any of the network devices through which your data passes, can read the data being sent.
+
+Try this:
+
+{% highlight bash %}
+$ nc -l 9000
+{% endhighlight %}
+
+Now login here (don't use a real password):
+
+<form class="auth" action="http://localhost:9000" method="post">
+<input name="username" placeholder="Username">
+<input name="password" placeholder="Password">
+<button type="submit">Login</button>
+</form>
+
+Go back to your terminal and see what shows up. See what happens when
+you <a id="secure-form" href="#">make it secure</a>.
+
+<script>
+$(function() {
+  $('a#secure-form').click(function() {
+    $('form.auth').attr('action', 'https://localhost:9000');
+    $('form.auth button').text('Secure Login');
+    $(this).remove();
+    return false;
+  });
+});
+</script>
+
+Attackers can eavesdrop on HTTP traffic that isn't secured by SSL/TLS. We musn't transmit passwords, authentication tokens, credit card numbers, bank account information, or other secrets over a connection that isn't secure.
+
+
+<aside>
+We'll touch on security a little more in the future, but be aware that you won't get everything right if you try to implement crypto on your own. It's a very specialized domain, and a single error can break the whole thing. You want to trust the modules that others have built, been peer reviewed, and been vetted over time.
 </aside>
 
 
-### Challenge &mdash; Code Reading
+## Middleware
 
-Read the [code for the `jquery.payment`][stripe-payment-src] plugin. Choose one
-small piece and try to figure out how it works.
+Much of what we've discussed is very easy to do with Express. Express is built to easily include _middleware_, pre-packaged modules that can run before (or after) your application code and reduce the work you need to do. Here are some useful middleware modules:
 
-Note, this is an advanced challenge. The point here is to expose yourself to
-something new. You will not achieve 100% understanding. If you need help or
-guidance, please ask.
+- [`cookie-parser`][middleware-cookie-parser] for basic cookie handling
+- [`express-session`][middleware-session] for sessions persisted server side
+- [`cookie-session`][middleware-cookie-session] for sessions persisted in cookies
 
-If you want to go in a different direction, try getting the plugin to build and
-run the test suite.
+## Putting it All Together
 
+Once you understand cookies and the security issues behind authentication, you can start to build up an authentication, authorization, and user management system.
 
-### Advanced Challenge &mdash; Date Formatting
+The [`node-basic-auth-examples`][node-basic-auth-examples] project [demonstrates][node-basic-auth-heroku] cookie-based authentication as well as token-based authentication via HTTP headers.
 
-Write a small jQuery plugin that allows dates to be displayed in the local
-timezone and can also be formatted. Ensure this plugin would allow users to
-support displaying dates when JavaScript is disabled as well.
+### Exercise: save users in the database
 
-{% highlight javascript %}
-$('span.date').localizeDates('relative');
-$('span.date').localizeDates('long');
-$('span.date').localizeDates('short');
-$('span.date').localizeDates({ weekday: 'long', minute: 'numeric', hour: 'numeric' });
-$.localizeDates('long'); // handle all [data-timestamp] elements on the page
-{% endhighlight %}
+Update the authentication example to save users in the database. Users should be able to create accounts and log in and out.
 
-If the server was running in the eastern timezone, it may respond with this
-HTML:
+## Definitions
 
-{% highlight html %}
-<span class="date" data-timestamp="1399553615090">May 8th 08:53 AM</span>
-{% endhighlight %}
+_Authentication_ is what we think of as the login process. Usually we authenticate with a web applications by providing a username and password.
 
-A viewer on the west coast would want to see that it's 5:53AM. If it was
-currently 6AM on the west coast, the `relative` option would show,
-`7 minutes ago` rather than the date/time. You'll want to consider
-[`Intl.DateTimeFormat`][mdn-dateTimeFormat] among other options.
+_Authorization_ is the process of determining what a user is a allowed to do. Can the currently authenticated user create posts? Can they delete users?
 
+## More
 
-[caniuse]: http://caniuse.com
-[es5-compat]: http://kangax.github.io/es5-compat-table/
-[qm-compat]: http://www.quirksmode.org/compatibility.html
+Cookies are a good way to handle associating an authenticated user with a request, but they only work when a browser is in place.
 
-[stripe-payment]: https://github.com/stripe/jquery.payment
-[stripe-payment-src]: https://github.com/stripe/jquery.payment/blob/master/src/jquery.payment.coffee
-[jq-api]: http://api.jquery.com
-[mdn-dateTimeFormat]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
-[mdn-toLocaleString]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+APIs typically use tokens to determine the user who's making the request and _authorize_ that they have access to access the requested resource or perform the requested action. These tokens are usually returned by the API after the initial authentication, then passed via a HTTP header for all subsequent requests that require authorization.
+
+### OAuth
+
+OAuth is a popular standard for authentication that's widely used. It's usually the system that you use when you log into a site using your Google, Twitter, Facebook, or whatever account.
+
+It also supports scenarios for API authorization. Applications that wish to make use of many modern APIs authenticate via OAuth, then pass authorization tokens for each API call.
+
+Google does a pretty good job documenting OAuth for [authentication (login)][google-oauth-login] and [authorization (API access)][google-oauth].
+
+### Exercise: Passport
+
+[Passport][passport] is a Node.js module that allows you to easily support many different authentication strategies (including pretty much every popular social media site you could imagine).
+
+Update your site so users can create accounts and log in using their social media accounts.
+
+[stateless]: http://en.wikipedia.org/wiki/Stateless_protocol
+[node-basic-auth-examples]: https://github.com/wbyoung/node-basic-auth-examples
+[node-basic-auth-heroku]: http://node-basic-auth-examples.herokuapp.com
+[middleware-cookie-parser]: https://github.com/expressjs/cookie-parser
+[middleware-session]: https://github.com/expressjs/session
+[middleware-cookie-session]: https://github.com/expressjs/cookie-session
+[google-oauth]: https://developers.google.com/accounts/docs/OAuth2
+[google-oauth-login]: https://developers.google.com/accounts/docs/OAuth2Login
+[passport]: http://passportjs.org
