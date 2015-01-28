@@ -5,25 +5,20 @@ class: learnyounode
 date: 2015-02-09
 ---
 
-# Note: this page was written for a previous term, and probably doesn't reflect the actual class content for this day.
+Today we're going to start learning to use some of the features provided by Node.js. We've used modules to export code, and used Express to make Node's HTTP handling easier, but now we'll get right down to the bare bones.
 
-Today we're going to start learning Node.js. There's a great interactive
-tutorial from [nodeschool.io][nodeschool] called
-[`learnyounode`][learnyounode].
+There's a great interactive tutorial from [nodeschool.io][nodeschool] called [`learnyounode`][learnyounode].
 
     npm install -g learnyounode
     learnyounode
 
-You can skip around in this. Some of the exercises do build on previous ones,
-but don't get too caught up in some of the earlier exercises. You've already
-learned most of the material through the exercise on modules.
+You can skip around in this. Some of the exercises do build on previous ones, but don't get too caught up in some of the earlier exercises. You've already learned much of that material.
 
 Make sure you do the HTTP file server exercise.
 
 ## HTTP Servers
 
-Node allows us to easily build applications built on top of HTTP. You've
-learned the basics, now write a server that can:
+Node provides everything you need to build applications that respond to HTTP requests. You've learned the basics, now write a server that can:
 
 - Serve HTML, CSS, and JavaScript files out of a `public` directory.
 - Serve `index.html` if a directory is requested.
@@ -39,11 +34,7 @@ The JSON API should expose the following resources:
 - `PUT /api/people/1` should update a person.
 - `DELETE /api/people/1` should remove a person.
 
-People should have a `firstName`, `lastName`, and `address`. For now, you
-should store the people in a standard JavaScript structure. This means they'll
-be stored in memory, and every time you restart your server, your list of
-people will revert back to being empty (or a pre-set value). We'll improve this
-when we discuss persistence.
+People should have a `firstName`, `lastName`, and `address`. For now, just store the people in a standard JavaScript structure. This means they'll be stored in memory, and every time you restart your server, your list of people will revert back to being empty (or a pre-set value). If you like, you can store them in a database instead.
 
 Your directory structure should start like this:
 
