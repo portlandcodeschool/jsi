@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Angular 6
+title: Angular 2
 class: angular
 date: 2015-02-24
 ---
