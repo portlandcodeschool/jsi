@@ -209,29 +209,29 @@ insert into people (name)
 
 Now we have cities and people, but we have no relationship between the two. We actually need to build a new table to hold the relationships. The table will simply contain two foreign keys, one to reference the city, and one to reference the person. It's easier with an example:
 
-   id |   name
-  ----+----------
-    1 | Andrew
-    2 | David
-    3 | Jonathan
+     id |   name
+    ----+----------
+      1 | Andrew
+      2 | David
+      3 | Jonathan
 
-   id |     name
-  ----+---------------
-    1 | Portland
-    2 | Washington DC
-    3 | Montreal
-    4 | Ottawa
+     id |     name
+    ----+---------------
+      1 | Portland
+      2 | Washington DC
+      3 | Montreal
+      4 | Ottawa
 
 How do we relate Andrew to Portland? That's `1` in the people and `1` in the cities. David to Ottawa? `2` in people and `4` in cities. Since Jonathan lives in Ottawa as well, we'll put `3` in people and `4` in cities. Jonathan also spends half the year in Washington DC, so we'll need a `3` in people and `2` in cities for that.
 
 So we end up with a table of relations that looks like this. Since the database supports relationships so well, we'll be able to use this table to build up queries telling us who lives where.
 
-   person_id | city_id
-  -----------+---------
-           1 |       1
-           2 |       4
-           3 |       4
-           3 |       2
+     person_id | city_id
+    -----------+---------
+             1 |       1
+             2 |       4
+             3 |       4
+             3 |       2
 
 Creating this table is pretty straightforward:
 
