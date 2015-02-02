@@ -278,7 +278,7 @@ left join cities on cities.id = residences.city_id;
 
 ## Transactions
 
-Transactions allows you to group together multiple commands and either _commit_ the entire group at once or _rollback_ everything if you've realized that something isn't quite right.
+Transactions allow you to group together multiple commands and either _commit_ the entire group at once or _rollback_ everything if you've realized that something isn't quite right.
 
 Transactions allow us to better ensure _consistency_ in our database. If we want to create a user at the time that they sign up, but we also need to make sure that they have an account created for them, we can do both of those together. If both succeed, we can commit the transaction. If either fails, we can roll it back.
 
