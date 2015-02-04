@@ -48,7 +48,7 @@ Create a new directory to work in, and `cd` to it. Create a file called `index.h
 
 Now run `cat index.headers index.html` and make sure there's at least one blank line between your headers and your HTML. Once you've got that, run `cat index.headers index.html | nc -l 9000` and access your page in the browser.
 
-Use Chrome's developer tools to view the HTTP response headers. Try adding a custom HTTP header to `index.response`. What happens if you change the content type so it's XML instead of HTML?
+Use Chrome's developer tools to view the HTTP response headers. Try adding a custom HTTP header to `index.headers`. What happens if you change the content type so it's XML instead of HTML?
 
 <aside>
 **HTTP Keep-Alive**
