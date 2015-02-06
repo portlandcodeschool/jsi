@@ -2,7 +2,7 @@
 layout: post
 title: Sudoku Solver 2
 class: sudoku
-date: 2015-02-19
+date: 2015-02-20
 ---
 
 Now it's time to make your Sudoku solver solve all puzzles.

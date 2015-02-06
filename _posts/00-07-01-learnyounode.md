@@ -2,7 +2,7 @@
 layout: post
 title: Node.js
 class: learnyounode
-date: 2015-02-16
+date: 2015-02-17
 ---
 
 Today we're going to start learning to use some of the features provided by Node.js. We've used modules to export code, and used Express to make Node's HTTP handling easier, but now we'll get right down to the bare bones.
