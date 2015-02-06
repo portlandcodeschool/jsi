@@ -262,3 +262,18 @@ img[alt="MVC"] {
     margin: 0px auto;
   }
 }
+
+p[data-pullquote] {
+  display: block;
+}
+
+p[data-pullquote]:before {
+  content: attr(data-pullquote);
+  background-color: #dbdfd2;
+  border-radius: 4px;
+  float: right;
+  width: 200px;
+  margin: 0 -5% 0.5em 30px;
+  padding: 0 0 0 10px;
+  font-size: 22px;
+}
