@@ -19,7 +19,8 @@ A one-time code, also called a _nonce_, is some randomly-generated piece of data
 // after running `npm install node-uuid`...
 var uuid = require('node-uuid');
 
-var nonce = uuid.v4(); // => '55cfeb9c-0a64-4300-9ad4-6540d865939a', for example.
+var nonce = uuid.v4();
+// => '55cfeb9c-0a64-4300-9ad4-6540d865939a', for example.
 {%endhighlight%}
 
 Having generated the nonce, you can use it to verify the user's email address:
@@ -48,7 +49,8 @@ router.get('/verify_email/:nonce', function(request, response) {
                     // now log the user in, etc.
                 })
             } else {
-                response.render('index', {error: "That verification code is invalid!"});
+                response.render('index',
+                    {error: "That verification code is invalid!"});
             }
         });
     });
