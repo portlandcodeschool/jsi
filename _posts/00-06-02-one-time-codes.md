@@ -64,7 +64,7 @@ Either in your microblog or a new project, make a page where new users can enter
 * [Nodemailer][nodemailer] is an npm module for sending email.
 * [Sendgrid][sendgrid] has an API that lets you send small amounts of mail for free.
 
-## Password verification
+## Password Recovery
 
 Sometimes, users forget their passwords. There are a few ways to help them out in this situation. You can use "security questions," but you shouldn't. You can email them their password, which is problematic for its own reasons. The right way, as you might have guessed, is to use a one-time code. Since you know the user owns the email address they've registered, you can send a nonce to that address to let them change their password.
 
@@ -80,9 +80,9 @@ In general, there are three ways for someone to prove they are who they say they
 Systems where security is especially important may use two or more authentication factors&mdash;think of a secret vault that only opens with a keycard, a code you type in, and a retinal scan.
 </aside>
 
-### Exercise: password verification mails
+### Exercise: password recovery mails
 
-Implement a page where users who've forgotten their password can request a reset code, and a page where they can redeem it.
+Implement a page where users who've forgotten their password can request a reset code, and a page where they can redeem it. The redemption page should also require the user to reset their password.
 
 [node-uuid]: https://www.npmjs.com/package/node-uuid
 [nodemailer]: https://www.npmjs.com/package/nodemailer
