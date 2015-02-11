@@ -17,5 +17,5 @@ While everything you'd want to do could be done with pure Node, the community ha
 [node-pipe]: http://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
 [through2]: https://github.com/rvagg/through2
 [node-tansform]: http://nodejs.org/api/stream.html#stream_class_stream_transform
-[stream-adventure]: http://nodeschool.io/#stream-adventure
+[stream-adventure]: https://github.com/substack/stream-adventure
 [stream-handbook]: https://github.com/substack/stream-handbook
