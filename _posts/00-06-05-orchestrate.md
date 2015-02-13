@@ -44,8 +44,8 @@ db.get('users', 'kates-user-id')
 1. [Sign up for an account on orchestrate.io][orchestrate-signup].
 1. Create an application at the Orchestrate dashboard.
 1. Create a new node project (new folder, `npm init`, etc&hellip;).
-1. Install [the `orchestrate.io` Node module][orchestrate-npm] (`npm install --save orchestrate.io`).
-1. Make a JS file that `require`s `orchestrate.io` and uses its API to create and delete some records. Check out the [api docs][orchestrate-docs] for more on how to work with the API through the Node client.
+1. Install [the `orchestrate` Node module][orchestrate-npm] (`npm install --save orchestrate`).
+1. Make a JS file that `require`s `orchestrate` and uses its API to create and delete some records. Check out the [api docs][orchestrate-docs] for more on how to work with the API through the Node client.
 
 ## Using Orchestrate for search
 
@@ -71,7 +71,7 @@ Grab [the contents of _Pride And Prejudice_][p-and-p] and load them into an Orch
 
 [orchestrate]: https://orchestrate.io/
 [orchestrate-signup]: https://dashboard.orchestrate.io/users/register
-[orchestrate-npm]: https://www.npmjs.com/package/orchestrate.io
+[orchestrate-npm]: https://www.npmjs.com/package/orchestrate
 [orchestrate-docs]: https://orchestrate.io/docs/key-value
 [lucene]: https://lucene.apache.org/core/
 [p-and-p]: https://github.com/JSI-2015-Q1/Pride-And-Prejudice
