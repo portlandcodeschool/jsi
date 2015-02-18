@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sudoku Solver
+title: Sudoku Solver & Node.js Modules
 class: sudoku
 date: 2015-02-19
 ---

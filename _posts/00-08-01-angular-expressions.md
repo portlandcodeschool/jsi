@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Angular 1
+title: Angular Expressions
 class: angular
 date: 2015-02-23
 ---
 
-Detailed content coming soon&hellip;
+## Expressions
