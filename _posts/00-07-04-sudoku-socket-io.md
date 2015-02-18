@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sudoku Solver 2
+title: Sudoku Solver & Socket.io
 class: sudoku
 date: 2015-02-20
 ---

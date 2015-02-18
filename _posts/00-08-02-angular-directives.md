@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Angular 2
+title: Angular Directives
 class: angular
 date: 2015-02-24
 ---
 
-Detailed content coming soon&hellip;
+## Directives
