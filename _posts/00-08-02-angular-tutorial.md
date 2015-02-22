@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Angular Directives
+title: Angular Tutorial
 class: angular
 date: 2015-02-24
 ---
 
-## Directives
+## Tutorial

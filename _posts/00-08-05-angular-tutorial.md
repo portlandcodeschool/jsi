@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Angular Services
+title: Angular Tutorial
 class: angular
 date: 2015-02-27
 ---
 
-## Services
+## Tutorial

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Angular Forms
+title: Angular Tutorial
 class: angular
 date: 2015-02-25
 ---
 
-## Forms
+## Tutorial
