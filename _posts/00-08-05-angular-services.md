@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Angular Services
+title: Angular Blog, Continued
 class: angular
 date: 2015-02-27
 ---
 
-## Services
+Today we'll keep working on our Angular-based blog. Keep working on features and bugfixes!
