@@ -9,11 +9,11 @@ Welcome to PCS!
 
 Each class will have its own page and may have one or more sets of slides. Think of the class pages as actionable material that you'll be doing. The slides are supplements, to guide discussion.
 
-I've tried to organize this site so things are easy for you to find and reference. You'll find the classes and slides listed on the [home page]({{ site.baseurl }}/). You'll also find a [reference page]({{ site.baseurl }}/reference/) that collects all the links for the course.
+I've tried to organize this site so things are easy for you to find and reference. You'll find the classes listed on the [home page]({{ site.baseurl }}/). You'll also find a [reference page]({{ site.baseurl }}/reference/) that collects all the links for the course.
 
 ## Setting Up Your Computer
 
-It's quite annoying, and you don't have to do it frequently, but learning how to install the tools you use will help you significantly going forward.
+Before we can really start digging in, you'll need some tools.
 
 ### Install SublimeText
 
@@ -28,15 +28,17 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/sub
 
 ### Install Homebrew
 
+Homebrew is a _package manager_ for OSX. It's a program that installs other programs, which is typically much more convenient than downloading and installing them by hand.
+
 {% highlight bash %}
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 {% endhighlight %}
 
-### Install Git and Node
+### Install Useful Command Line Tools
 
-{% highlight bash %}
-brew install git node
-{% endhighlight %}
+```bash
+brew install git node tree colordiff
+```
 
 ### Configure Git
 
@@ -65,7 +67,7 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PAGER="less"
-export EDITOR="/usr/local/bin/subl -w"
+export EDITOR="$HOME/bin/subl -w"
 {% endhighlight %}
 
 Someone, please interrupt and ask the following question:
@@ -87,21 +89,5 @@ Someone, please interrupt and ask the following question:
     <li>EDITOR &ndash; Some apps (such as `git`) use this when they need you to edit files.</li>
   </ul>
 
-  `~/.bash_profile` is run when you start a new shell session. To apply new changes, either open a new terminal window or run `source ~/.bash_profile`.
+  `~/.bash_profile` is only checked when you start a new shell session. To apply new changes, either open a new terminal window/tab or run `source ~/.bash_profile`.
 </aside>
-
-## Reference
-
-* [Arithmetic][mdn-arithmetic]
-* [Assignment][mdn-assignment]
-* [Comparison][mdn-comparison]
-* [Logic][mdn-logic]
-* [Strings][mdn-strings]
-* [Impostor Syndrome][impostor]
-
-[mdn-arithmetic]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators
-[mdn-assignment]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators
-[mdn-comparison]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators
-[mdn-logic]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators
-[mdn-strings]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/String_Operators
-[impostor]: https://medium.com/tech-talk/bdae04e46ec5
