@@ -54,7 +54,7 @@ echo ".DS_Store" >> ~/.gitignore_global
 ### Improve your Terminal
 
 {% highlight bash %}
-subl ~/.bash_profile
+~/bin/subl ~/.bash_profile
 {% endhighlight %}
 
 Add the following lines to that file:
