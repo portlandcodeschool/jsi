@@ -2,7 +2,7 @@
 layout: post
 title: Closures &amp; Scope
 class: closures+scope
-date: 2015-01-14
+date: 2015-05-13
 ---
 
 Understanding _closures_ and _scope_ will help us really understand what's going on when we use variables inside and outside of functions.

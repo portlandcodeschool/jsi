@@ -2,7 +2,7 @@
 layout: post
 title: Functional Programming
 class: functional
-date: 2015-01-15
+date: 2015-05-14
 ---
 
 Today we're going to discuss functions again. Again? Yes, functions are the building blocks of pretty much everything we're doing. So we're going to learn some more tricks with functions before we move on.

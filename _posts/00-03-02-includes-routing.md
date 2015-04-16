@@ -2,7 +2,7 @@
 layout: post
 title: Express And Jade
 class: express
-date: 2015-01-21
+date: 2015-05-19
 ---
 
 Yesterday we used JavaScript on the page to create a blog post. That's kinda sideways, though. More commonly, you'll have your server create a page with the content already in it, and serve that page to the user. Today we'll learn about using the Express.js framework and the Jade templating language to do that.

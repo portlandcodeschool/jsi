@@ -2,7 +2,7 @@
 layout: post
 title: Sudoku Solver & Socket.io
 class: sudoku
-date: 2015-02-20
+date: 2015-06-18
 ---
 
 Now it's time to make your Sudoku solver solve all puzzles.

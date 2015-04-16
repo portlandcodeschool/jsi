@@ -2,7 +2,7 @@
 layout: post
 title: Angular Blog
 class: angular
-date: 2015-02-25
+date: 2015-06-24
 ---
 
 ## Angular Blog

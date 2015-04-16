@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Getting Started With Express And The DOM
-date: 2015-01-20
+date: 2015-05-18
 ---
 
 Today we'll take JavaScript back to its roots: the browser. This year is the 20th anniversary of in-browser JavaScript! We'll touch briefly on Express.js, a small framework for serving websites from Node, and focus on the various _events_ provided by browsers.

@@ -2,7 +2,7 @@
 layout: post
 title: Sudoku Solver & Node.js Modules
 class: sudoku
-date: 2015-02-19
+date: 2015-06-17
 ---
 
 Over the next couple of days, we're going to build an application that solves Sudoku puzzles.

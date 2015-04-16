@@ -2,7 +2,7 @@
 layout: post
 title: Fundamentals
 class: fundamentals
-date: 2015-01-06 00:00:01
+date: 2015-05-05 00:00:01
 ---
 
 This class will cover some of the fundamentals of JavaScript. We will discuss conditionals, objects, arrays and functions. We'll also make a lot of mistakes so we can learn to recover from them!

@@ -2,7 +2,7 @@
 layout: post
 title: Mini Project
 class: mini-project
-date: 2015-01-26
+date: 2015-05-27
 ---
 
 Over the following week, we're going to create a portfolio site that you can use to showcase your work. We'll publish this to Heroku and optionally tie it to a custom domain name.

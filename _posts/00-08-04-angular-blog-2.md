@@ -2,7 +2,7 @@
 layout: post
 title: Angular Blog, Continued
 class: angular
-date: 2015-02-26
+date: 2015-06-25
 ---
 
 Today we'll keep working on our Angular-based blog. A blog can have lots and lots of features! Three days isn't nearly enough time to cover all of them, so pick something you like and run with it:

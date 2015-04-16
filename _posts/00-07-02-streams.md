@@ -2,7 +2,7 @@
 layout: post
 title: Streams
 class: streams
-date: 2015-02-18
+date: 2015-06-16
 ---
 
 We've briefly touched on streams already during the `learnyounode` tutorial. Streams are a powerful part of Node.js and allow data to flow from one source to another. We're also able to transform the data as it flows by [piping (`pipe`)][node-pipe] it [`through`][through2] different [transformations][node-tansform].

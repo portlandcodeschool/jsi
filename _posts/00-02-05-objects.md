@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Objects&#58; Methods and Inheritance
-date: 2015-01-16
+date: 2015-05-15
 ---
 
 Today we're going to get into some of the more interesting things you can do with objects: _methods_, which are object attributes that are functions, and _inheritance_, which is a mechanism for sharing behavior between objects.

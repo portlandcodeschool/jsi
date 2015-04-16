@@ -2,7 +2,7 @@
 layout: post
 title: Modules
 class: modules
-date: 2015-01-08
+date: 2015-05-07
 ---
 
 Today we'll continue to discuss abstractions. We'll create some common abstractions and group them together into _modules_. Finally, we'll focus on clearly expressing what functions do, by documenting code.

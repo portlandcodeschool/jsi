@@ -2,7 +2,7 @@
 layout: post
 title: Fixing Issues
 class: issues
-date: 2015-01-13
+date: 2015-05-12
 ---
 
 As you may have noticed, the JSI Game Library has some [issues][github-jsi-game-library-issues].
