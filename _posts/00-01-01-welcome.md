@@ -36,9 +36,8 @@ brew install git node tree colordiff
 ### Configure Git
 
 {% highlight bash %}
-git config --global user.name "My Name"
-git config --global user.email me@example.com
-git config --global core.editor "subl -w"
+git config --global user.name "[Your Name]"
+git config --global user.email "[your email]"
 git config --global core.excludesfile '~/.gitignore_global'
 git config --global push.default current
 git config --global diff.renames true
