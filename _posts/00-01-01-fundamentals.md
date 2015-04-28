@@ -197,7 +197,7 @@ npm install -g jshint
 jshint myfile.js
 {% endhighlight %}
 
-You can also install the [SublimeLinter](http://www.sublimelinter.com/en/latest/) plugin for Sublime Text to get obnoxious--err, I mean, _helpful_ jshint notes right in your editor.
+You can also install the [Atom-JSHint](https://atom.io/packages/atom-jshint) plugin for Atom to get obnoxious--err, I mean, _helpful_ jshint notes right in your editor.
 
 ### Stepping Through Execution
 

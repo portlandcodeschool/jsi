@@ -123,15 +123,13 @@ There is no better way to learn coding then to do it, to fail, and to puzzle out
 
 ### Computer
 
-You need to provide your own computer running Mac OS X 10.9 for this class.
+You need to provide your own computer running Mac OS X 10.9 for this class (or rent one from the school).
 
 Portland Code School highly recommends MacBooks Pro or MacBooks Air running OSX 10.9 or later. Most of the best coding tools are developed on that operating system first. The important aspect of OSX is the underlying UNIX-like operating system. We place an emphasis at being able to work on a Unix/Linux command line level, down in the guts of the operating system as well as the entire group learning the same set of tools.
 
 ### Other Tools
 
-You are required to learn and use **Sublime Text** (http://www.sublimetext.com). The officially stable version is v2, but v3 (http://www.sublimetext.com/3) is widely-used and it's recommended. Sublime Text is not free. You can try it for free and that will get you through this class, but you should consider buying a copy when you get a job.
-
-Now, you may already have a favorite text editor. I understand where you're coming from. However, one characteristic of professional programmers is they can walk into a shop and quickly adopt whatever tool set that company is using. Lots of programmers use Sublime Text and, if all the students in this class use it, we can learn from each other and get the most out of the tool.
+You are encouraged to learn and use **Atom** (http://www.atom.io).
 
 **Git** is a distributed version control system. It is complicated, arcane, and difficult to learn. Yet, it is one of the most commonly used and essential to any developer. We will start using git in the first week and emphasize its use throughout. You will be required to be able to use git from the command line, but we will also explore graphical user interfaces to make your use of git more transparent and powerful.
 

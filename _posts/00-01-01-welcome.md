@@ -15,16 +15,9 @@ I've tried to organize this site so things are easy for you to find and referenc
 
 Before we can really start digging in, you'll need some tools.
 
-### Install SublimeText
+### Install Atom
 
-Install the [latest SublimeText](http://www.sublimetext.com/3).
-
-Create a link to the `subl` command:
-
-{% highlight bash %}
-mkdir ~/bin
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
-{% endhighlight %}
+Install [Atom](https://atom.io/). Atom is a text editor built in Node.js that a lot of people have found accessible and fast. If you prefer another editor, go ahead and use it instead.
 
 ### Install Homebrew
 
@@ -55,9 +48,9 @@ echo ".DS_Store" >> ~/.gitignore_global
 
 ### Improve your Terminal
 
-{% highlight bash %}
-~/bin/subl ~/.bash_profile
-{% endhighlight %}
+```Bash
+atom ~/.bash_profile
+```
 
 Add the following lines to that file:
 
@@ -67,7 +60,7 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PAGER="less"
-export EDITOR="$HOME/bin/subl -w"
+export EDITOR="atom --wait"
 {% endhighlight %}
 
 Someone, please interrupt and ask the following question:
