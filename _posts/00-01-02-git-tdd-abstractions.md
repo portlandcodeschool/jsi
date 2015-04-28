@@ -130,7 +130,7 @@ Fork the repository [here][github-jsi-gravity], follow the directions in the [RE
 The project uses [npm][npm] to install [Jasmine][jasmine], so when you first clone it, you should run `npm install`. You should run the tests you write with `npm test` instead of using `node`.
 
 <aside>
-<h4>npm install` and `npm test</h4>
+<h4>`npm install` and `npm test`</h4>
 
 We're skipping over a few details here on how things are set up. Don't worry, we'll be discussing this shortly when we introduce modules.
 </aside>
