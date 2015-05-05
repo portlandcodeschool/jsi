@@ -167,7 +167,7 @@ So far, the programs we've written will always do the same thing every time they
 Using conditionals, we could write a function that decides whether someone is a JavaScript teacher:
 
 {% highlight javascript %}
-var isTeacher = function() {
+var isTeacher = function(name) {
   if (name === "Dan") {
     return true;
   } else if (name === "Andrew") {
