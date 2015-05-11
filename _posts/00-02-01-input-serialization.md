@@ -1,7 +1,6 @@
 ---
 layout: post
 title: User Input & Serialization
-class: serialization
 date: 2015-05-11
 ---
 
@@ -170,7 +169,7 @@ The above game was played on the following map. The input file that produced thi
 
 The game library can be installed with:
 
-    npm install --save git+ssh://git@github.com:portlandcodeschool/jsi-gamelib.git
+    npm install --save https://github.com/portlandcodeschool/jsi-gamelib.git
 
 ### Challenges
 
