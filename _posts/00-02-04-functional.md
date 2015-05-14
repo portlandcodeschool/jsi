@@ -164,7 +164,7 @@ The `filter` function is another that does just what you would think. It filters
 
 {% highlight javascript %}
 var numbers = [1, 2, 3, 4, 5, 6];
-var evenNumbers = _.filter(numbers, function(n) { return (n % 2) === 0; });
+var evenNumbers = numbers.filter(function(n) { return (n % 2) === 0; });
 {% endhighlight %}
 
 ### Challenge
@@ -225,13 +225,13 @@ Really, no peeking! :)
 
 {% highlight javascript %}
 var numbers = [1, 2, 3, 4, 5, 6];
-var sum = _.reduce(numbers, function(sum, n) { return sum + n; }, 0);
+var sum = numbers.reduce(function(sum, n) { return sum + n; }, 0);
 
 var strings = ['hello', ' ', 'world'];
-var string = _.reduce(strings, function(concatenated, s) { return concatenated + s; }, '');
+var string = strings.reduce(function(concatenated, s) { return concatenated + s; }, '');
 
 var arrays = [[10], ['string'], [{}]];
-var array = _.reduce(arrays, function(concatenated, a) { return concatenated.concat(a); }, []);
+var array = arrays.reduce(function(concatenated, a) { return concatenated.concat(a); }, []);
 {% endhighlight %}
 
 The concept behind this abstraction is that you have an array of items that need to be reduced (or folded if that word makes more sense to you) until it's just a single item.
@@ -271,7 +271,7 @@ Use `reduce` to transform an array of _tuples_ into an object.
 <aside class="objective">
 {% highlight javascript %}
 var pairs = [['name', 'JSI'], ['location', { city: 'Portland', 'state': 'OR' }], ['school', 'PCS']];
-_.reduce(pairs, /* other reduce args */);
+pairs.reduce(/* reduce args */);
 //=> { name: 'JSI', location: { city: 'Portland', state: 'OR' }, school: 'PCS' }
 {% endhighlight %}
 </aside>
