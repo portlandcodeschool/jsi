@@ -299,7 +299,7 @@ begin;
 insert into businesses (name, established)
   values ('ABC Corp', '2010-04-15');
 insert into employees (first_name, last_name, business_id)
-  values ('Andrew', 'Lorente', lastval());
+  values ('Erin', 'Call', lastval());
 select * from businesses;
 select * from employees;
 commit;

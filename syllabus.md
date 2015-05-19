@@ -30,13 +30,13 @@ Portland, OR 97209
 
 ### Instructor:
 
-**Andrew lorente**
+**Erin Call**
 
-Email: [alorente@portlandcodeschool.com](mailto:alorente@portlandcodeschool.com)
+Email: [ecall@portlandcodeschool.com](mailto:ecall@portlandcodeschool.com)
 
 **Contacting your instructor**
 
-I am available during breaks any day of class. I'm also willing to meet with you personally by prior arrangement online. My PCS email is alorente@portlandcodeschool.com.
+I am available during breaks any day of class. I'm also willing to meet with you personally by prior arrangement online. My PCS email is ecall@portlandcodeschool.com.
 
 
 # Prerequisites
@@ -100,7 +100,7 @@ Career abilities are skills needed to have a successful development career.
 
 Class hours: **Monday-Friday 9am - 5pm**
 
-You must attend all classes. Class begins promptly at 9am. Late arrivals and missing team members are very disruptive. If you are going to miss class or even be as little as 10 minutes late, please email Andrew prior to 9am.
+You must attend all classes. Class begins promptly at 9am. Late arrivals and missing team members are very disruptive. If you are going to miss class or even be as little as 10 minutes late, please email Erin prior to 9am.
 
 This course requires 40 hours each week for classroom time. In addition, successful students devote approximately 10-20 outside hours of their own time each week. In effect, think of this as a demanding full time job where 40 hours each week are required, but you still need to put in a little extra if you want to impress your boss and get a raise.
 
@@ -138,7 +138,7 @@ There will be more tools introduced as the class goes on, but these are good pla
 
 # How to succeed at this class
 
-Our ultimate goal is to be able to give a shining recommendation about you to any and all possible employers. Over the years, Andrew has worked with and hired many software engineers at both a junior and senior level. Our goal for you is that we would want to hire you ourselves.
+Our ultimate goal is to be able to give a shining recommendation about you to any and all possible employers. Over the years, Erin has worked with and hired many software engineers at both a junior and senior level. Our goal for you is that we would want to hire you ourselves.
 
 Along the way, we will be asking ourselves the same questions about you that all hiring managers will be asking about you:
 
@@ -315,4 +315,4 @@ The instructor reserves the right to modify course content and/or substitute ass
 
 We adjust the class each session to the needs of the current students. We may slow the pace or add additional work, as needed. We also carefully incorporate new technologies as they become significant to your employability. As a result, we often are creating class materials as we go. You will always get advance notice of classwork.
 
-You should all have access to a Google calendar called "PCS" and should have received an email to this effect. If you haven't, please contact Kristina, Cris, or Andrew and we will make sure the class calendar is available to you. We will try to make sure this calendar is always up-to-date.
+You should all have access to a Google calendar called "PCS" and should have received an email to this effect. If you haven't, please contact Kristina, Cris, or Erin and we will make sure the class calendar is available to you. We will try to make sure this calendar is always up-to-date.

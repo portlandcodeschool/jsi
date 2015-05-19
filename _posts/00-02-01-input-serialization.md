@@ -56,14 +56,14 @@ JSON stands for JavaScript Object Notation. The format of the serialized data is
 
 {% highlight javascript %}
 var people = [
-  { firstName: "Andrew", lastName: "Lorente" },
+  { firstName: "Erin", lastName: "Call" },
   { firstName: "Cris", lastName: "Kelly" }
 ];
 JSON.stringify(people)
 {% endhighlight %}
 
 The result is the following string:
-`'[{"firstName":"Andrew","lastName":"Lorente"},{"firstName":"Cris","lastName":"Kelly"}]'`
+`'[{"firstName":"Erin","lastName":"Call"},{"firstName":"Cris","lastName":"Kelly"}]'`
 
 That's nearly exactly what we typed in! Now, though, it's a string. So we can
 save it to a file.
@@ -76,7 +76,7 @@ There's no strict rule to how XML should be structured in order to represent obj
     <?xml version="1.0" encoding="UTF-8"?>
     <root>
       <people>
-        <person firstName="Andrew" lastName="Lorente" />
+        <person firstName="Erin" lastName="Call" />
         <person firstName="Cris" lastName="Kelly" />
       </people>
     </root>

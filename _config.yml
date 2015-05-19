@@ -14,8 +14,8 @@ baseurl:          /jsi
 timezone:         UTC
 
 author:
-  name:           'Andrew Lorente'
-  url:            https://twitter.com/AndrewLorente
+  name:           'Erin Call'
+  url:            https://twitter.com/ErinCalling
 
 # Custom vars
 version:          2.1.0b

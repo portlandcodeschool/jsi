@@ -74,8 +74,8 @@ _Refactoring_ is the process of taking working code and reorganizing it so it ac
 We've seen how to assign numbers and strings (ordered groupings of letters and other characters) to variables. However, a single string or number by itself isn't enough information for all but the most trivial tasks. Usually, you'll have several pieces of data that all go together. In JavaScript, we accomplish that with _objects_. An Object is an unordered collection of keys and values. Here's a simple example of creating an object:
 
 {% highlight javascript %}
-var andrew = {
-  name: "Andrew",
+var erin = {
+  name: "Erin",
   age: 30,
   favoriteColor: "green",
   hobby: "woodworking"
@@ -170,7 +170,7 @@ Using conditionals, we could write a function that decides whether someone is a 
 var isTeacher = function(name) {
   if (name === "Dan") {
     return true;
-  } else if (name === "Andrew") {
+  } else if (name === "Erin") {
     return true;
   } else {
     return false;
