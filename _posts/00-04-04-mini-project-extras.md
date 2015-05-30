@@ -2,7 +2,7 @@
 layout: post
 title: Project Extras
 class: mini-project-extras
-date: 2015-05-29
+date: 2015-05-29 00:00:00
 ---
 
 ## Project Extras
