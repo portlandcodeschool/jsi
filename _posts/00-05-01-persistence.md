@@ -286,6 +286,7 @@ Imagine the frustration a user could experience if we didn't use a transaction. 
 
 {% highlight sql %}
 create table businesses (
+  id serial primary key,
   name varchar(255),
   established timestamp
 );
@@ -362,6 +363,32 @@ So how do we write SQL from JavaScript? One way to do it is to connect to the SQ
 npm install pg
 {% endhighlight %}
 
+{% highlight javascript%}
+// node index.js
+var pg = require('pg');
+var settings = "postgres://localhost/test"; // "postgres://username:password@localhost/database";
+var id = process.argv[2];
+
+if (process.argv.length <= 2) { return console.error('please provide an id to look up'); }
+
+var client = new pg.Client(settings);
+client.connect(function(err) {
+  if(err)
+    return console.error('could not connect to postgres', err);
+
+  client.query('select * from people where id = $1::int', [id], function(err, result) {
+    if(err)
+      return console.error('error running query', err);
+
+    console.log('%j', result.rows[0]);
+
+    client.end();
+  });
+});
+{% endhighlight %}
+
+<aside>
+The code sample above will work fine for small-scale use, but if you're writing a server which handles many requests, you'll get faster responses if you take advantage of the `pg` module's _client-pooling_ feature.  The code is only slightly more complex:
 
 {% highlight javascript %}
 // node index.js
@@ -372,18 +399,22 @@ var id = process.argv[2];
 if (process.argv.length <= 2) { return console.error('please provide an id to look up'); }
 
 pg.connect(settings, function(err, client, done) {
-  if (err) { return console.error('error fetching client from pool', err); }
+  if (err)
+    return console.error('error fetching client from pool', err);
 
   client.query('select * from people where id = $1::int', [id], function(err, result) {
-    done();
+    done(); // done with this client; recycle it
 
-    if (err) { return console.error('error running query', err); }
+    if (err)
+      return console.error('error running query', err);
+
     console.log('%j', result.rows[0]);
 
     pg.end(); // completely finished with the database for this app
   });
 });
 {% endhighlight %}
+</aside>
 
 ## Bookshelf.js & Knex.js
 
@@ -397,7 +428,7 @@ So using these tools, we can theoretically write code that would work with any o
 While we'll focus on Bookshelf.js and Knex.js, you absolutely need to continue to develop your skills with SQL. Unlike programming languages that completely abstract away the lower level interaction with assembly language, ORM tools do not completely abstract away SQL. They just make the most common tasks more expressive and digestible.
 </aside>
 
-To install, we'll all three of these modules we've discussed, plus _Bluebird_, a _promise_ library. You'll see promises in action in just a second!
+To install, we'll use all three of these modules we've discussed, plus _Bluebird_, a _promise_ library. You'll see promises in action in just a second!
 
 {% highlight bash %}
 npm install --save bookshelf knex pg bluebird
@@ -410,6 +441,14 @@ Let's specify the creation of tables and relationships directly in JavaScript. T
 {% highlight bash %}
 `npm bin`/knex init
 {% endhighlight %}
+
+<aside>
+That command is a short way of saying
+{% highlight bash %}
+`./node_modules/.bin/knex init
+{% endhighlight %}
+but it works from any directory.
+</aside>
 
 Then modify the `knexfile.js` file so that it contains:
 
@@ -545,4 +584,5 @@ one-to-one and one-to-many relationships. Figure out how to create objects in th
 [postgres]: http://www.postgresql.org
 [postgres-datatype-docs]: http://www.postgresql.org/docs/9.4/static/datatype.html
 [knex]: http://knexjs.org
+[knex-schema]: http://knexjs.org/#Schema
 [atwood-join]: http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
