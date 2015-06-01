@@ -12,10 +12,10 @@ date: 2015-06-01 00:00:01
 -   First make a constructor named _Ctor_ for an object that has properties _a_ and _b_ and initializes them to 0 and 1 respectively.
 -   Now, make two objects named _obj1_ and _obj2_ using _Ctor_.
 -   Now make a new object _obj3_ this way:
-    ```
+{% highlight javascript%}
     var obj3 = {};
     Ctor.call(obj3);
-    ```
+{% endhighlight %}
 
     and check its properties.
 -   Next, add a property _c_ to _obj1_ with a value of 2.  What will be the value of _obj2.c_?
@@ -26,7 +26,7 @@ date: 2015-06-01 00:00:01
 
 Consider this code:
 
-```
+{% highlight javascript%}
 function A() {};
 //set default values for instances of A:
 A.prototype = {num:0, str:'default'};
@@ -37,7 +37,7 @@ function B() {};
 B.prototype.num = 0;
 B.prototype.str = 'default';
 var objB = new B();
-```
+{% endhighlight %}
 
 There is a difference between the behaviors of `objA` and `objB`!  Explain.
 
@@ -53,7 +53,7 @@ There is a difference between the behaviors of `objA` and `objB`!  Explain.
 Every instance of Animal and its subclasses should also have a personal _name_ property which is not inherited.  It should be set only within the constructor Animal, and each subclass constructor should first call its superclass constructor as an initializer, all the way up to Animal.
 
 You should see these behaviors:
-```
+{% highlight javascript%}
 new Animal("Simba").move();// 'walk'
 new Fish("Nemo").move();// 'swim'
 new Bird("Lulu").move();// 'fly'
@@ -64,14 +64,14 @@ pengo.hasWings; //true;
 pengo instanceof Penguin; //true
 pengo instanceof Bird; 	  //true
 pengo instanceof Animal;  //true
-```
+{% endhighlight %}
 
 **b)** Create a class _Egg_, whose instances have one method, _hatch(name)_, which returns a new instance (named _name_) of the same species which laid the egg.
 Assume that every Animal can lay an egg with an instance method _layEgg()_ which creates a new Egg instance.
 Try to solve this without subclassing Egg and without implementing _layEgg_ and _hatch_ more than once.
 
 You should see this behavior:
-```
+{% highlight javascript%}
 var pengo = new Penguin("Pengo");
 var egg = pengo.layEgg();
 egg.constructor === Egg; //true
@@ -83,4 +83,4 @@ egg = nemo.layEgg();
 egg.constructor === Egg; //true
 baby = egg.hatch("Nemolet");
 baby instanceof Fish; //true
-```
+{% endhighlight %}
