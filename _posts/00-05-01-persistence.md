@@ -343,7 +343,7 @@ rollback;
 
 - Create a table that uses a date. Insert some data. Select all of the entries that occur between some date range.
 - Create a one-to-many relationship between `articles` and their `comments`. Be able to select which article a comment is for, and all of the comments for an article.
-- Create a many-to-many relationship between users and permissions. Be able to select the users that fall under a permission group. Also be able check to see if a user has a given permission. For instance, does the user with email `alorente@portlandcodeschool.com` have permission to `blog_article.create`? Who are all of the users who have permissions to `blog_article.destroy`?
+- Create a many-to-many relationship between users and permissions. Be able to select the users that fall under a permission group. Also be able check to see if a user has a given permission. For instance, does the user with a particular email have permission to `blog_article.create`? Who are all of the users who have permissions to `blog_article.destroy`?
 - **Advanced:** Model a file system with files and directories. You should be able to get a directory's contents and the parent directory.
 - **Advanced:** Model family relationships. Support people who have a `name` and a `sex`. You should be able to query for:
   - A person's mother
@@ -444,9 +444,7 @@ Let's specify the creation of tables and relationships directly in JavaScript. T
 
 <aside>
 That command is a short way of saying
-{% highlight bash %}
-`./node_modules/.bin/knex init
-{% endhighlight %}
+`./node_modules/.bin/knex init`
 but it works from any directory.
 </aside>
 

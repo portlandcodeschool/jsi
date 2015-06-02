@@ -11,13 +11,11 @@ date: 2015-06-01 00:00:01
 
 -   First make a constructor named _Ctor_ for an object that has properties _a_ and _b_ and initializes them to 0 and 1 respectively.
 -   Now, make two objects named _obj1_ and _obj2_ using _Ctor_.
--   Now make a new object _obj3_ this way:
+-   Now check the properties of a new object _obj3_ made this way:
 {% highlight javascript%}
     var obj3 = {};
     Ctor.call(obj3);
 {% endhighlight %}
-
-    and check its properties.
 -   Next, add a property _c_ to _obj1_ with a value of 2.  What will be the value of _obj2.c_?
 -   Now, add a property _d_ with the value 3 to _obj1_'s "proto" (the object which helps out when _obj1_ can't do something by itself).  Remember that there are at least four ways of referring to that proto object.
 -   What are the values of _obj1.d_, _obj2.d_, and _obj3.d_? Can you explain the results?
