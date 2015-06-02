@@ -11,14 +11,14 @@ Very briefly, a Promise is an object which represents a chain of unfinished asyn
 
 For demo purposes, we can use the following as a stand-in for any
 async function:
-```
+{% highlight javascript %}
 function inASecond(cb) {
 	setTimeout(cb,1000);
 }
-```
+{% endhighlight %}
 
 We could rewrite it this way to see the start and end of the delay:
-```
+{% highlight javascript %}
 function inASecond(cb) {
 	console.log('one sec...')
 	setTimeout(function() {
@@ -26,17 +26,17 @@ function inASecond(cb) {
 		cb();
 	},1000);
 }
-```
+{% endhighlight %}
 
 And let's use this for our delayed result:
-```
+{% highlight javascript %}
 function sayHello() {
 	console.log('hello!');
 }
-```
+{% endhighlight %}
 
 The following constructor implements a kind of pseudo-promise object:
-```
+{% highlight javascript %}
 function Promise(startDoingAsyncFn) {
 	var pendingTask = null;
 
@@ -55,16 +55,16 @@ function Promise(startDoingAsyncFn) {
 function makePromise(startDoingAsyncFn) {
 	return new Promise(startDoingAsyncFn);
 }
-```
+{% endhighlight %}
 
 The resulting Promise instance uses `then` to schedule one callback after the initial async function finishes, like so:
-```
+{% highlight javascript %}
 //var promise = new Promise(inASecond);
 //promise.then(sayHello);
 
 // Or if you prefer the factory form:
 makePromise(inASecond).then(sayHello);
-```
+{% endhighlight %}
 
 Try it!
 

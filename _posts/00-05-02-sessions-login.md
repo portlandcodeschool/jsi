@@ -2,7 +2,7 @@
 layout: post
 title: Sessions
 class: sessions
-date: 2015-06-02
+date: 2015-06-02 12:00:00
 ---
 
 Allowing users to sign up and log into your website is a complicated process. It's gotten more complicated recently for developers as many sites are allowing people to log in using Google, Twitter, Facebook, etc.
