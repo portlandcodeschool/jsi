@@ -416,22 +416,16 @@ pg.connect(settings, function(err, client, done) {
 {% endhighlight %}
 </aside>
 
-## Bookshelf.js & Knex.js
+## Knex.js
 
-[Bookshelf.js][bookshelf] is an _object relational mapper_ or _ORM_. It allows us to work with objects in JavaScript instead of writing SQL queries manually. [Knex.js][knex] is the _query builder_ off of which Bookshelf.js is built. A query builder allows us (and Bookshelf.js) to build queries from JavaScript expressions that can be converted to any supported DBMS.
+[Knex.js][knex] is a _query builder_ which allows us to build queries from JavaScript expressions that can be converted to any supported DBMS.
 
-So using these tools, we can theoretically write code that would work with any of the SQL databases without having to worry about differences between them. In practice, since the differences are subtle, the best practice is to choose one database for a project, and use it for production and for the entire development team.
+Theoretically, it lets us write code that would work with any of the SQL databases without having to worry about differences between them. In practice, since the differences are subtle, the best practice is to choose one database for a project, and use it for production and for the entire development team.
 
-<aside>
-**So I Don't Need to Know SQL?**
-
-While we'll focus on Bookshelf.js and Knex.js, you absolutely need to continue to develop your skills with SQL. Unlike programming languages that completely abstract away the lower level interaction with assembly language, ORM tools do not completely abstract away SQL. They just make the most common tasks more expressive and digestible.
-</aside>
-
-To install, we'll use all three of these modules we've discussed, plus _Bluebird_, a _promise_ library. You'll see promises in action in just a second!
+To install, we'll use three modules: _pg_, _knex_, and _Bluebird_, a _promise_ library. You'll see promises in action in just a second!
 
 {% highlight bash %}
-npm install --save bookshelf knex pg bluebird
+npm install --save knex pg bluebird
 {% endhighlight %}
 
 ### Migrations
@@ -448,7 +442,7 @@ That command is a short way of saying
 but it works from any directory.
 </aside>
 
-Then modify the `knexfile.js` file so that it contains:
+Then modify the `knexfile.js` file so that the `development` section contains:
 
 {% highlight javascript %}
 client: 'postgres',
@@ -456,7 +450,7 @@ connection: {
   host     : process.env.APP_DB_HOST     || '127.0.0.1',
   user     : process.env.APP_DB_USER     || '',
   password : process.env.APP_DB_PASSWORD || '',
-  database : process.env.APP_DB_NAME     || 'jsi-bookshelf'
+  database : process.env.APP_DB_NAME     || 'jsi-knex-db'
 }
 {% endhighlight %}
 
@@ -470,7 +464,7 @@ Once ready, we can fill out our `20140510084914_countries.js`. Yours is named di
 
 Migrations allow us to collaborate better. Without this we would have to alter the database _schema_ to match the changes that another developer made. Doing this manually is error prone, so most communities have built automation tools to aid with this process.
 
-So here's a [migration][knex-schema]:
+Modify your file corresponding to `20140510084914_countries.js` to describe this two-way [migration][knex-schema]:
 
 {% highlight javascript %}
 'use strict';
@@ -508,75 +502,41 @@ Create another migration for the `cities` table. This should match up with the c
 
 ## Basic Manipulation
 
-Now we need to learn how to use Bookshelf.js to interact with the database.
-
-### Modeling
-
-We need to define the objects that we want to work with. This may seem tedious at this point, but we get to skip over any attributes and just define which model the table works with.
-
+Now we need to learn how to use Knex.js to interact with the database.
+To set up Knex within a `node` file, include these lines:
 {% highlight javascript %}
 var env = process.env.NODE_ENV || 'development';
 var knexConfig = require('./knexfile.js')[env];
 var knex = require('knex')(knexConfig);
-var bookshelf = require('bookshelf')(knex);
-
-var Country = bookshelf.Model.extend({
-  tableName: 'countries'
-});
 {% endhighlight %}
+
+Now `knex` is an object capable of building and running SQL queries.
+
 
 ### Insert
 
-Now we can create and save objects via `new` or `forge`:
-
+Here's a basic example of adding data via `knex`:
 {% highlight javascript %}
-// new Country({ name: 'Canada' }).save().... also works
-Country.forge({ name: 'Canada' }).save().then(function(country) {
-  console.log('created a country %j', country.toJSON());
-})
-.done();
+knex('countries').insert([{name: 'Xanadu'},{name: 'Oz'}]);
 {% endhighlight %}
+
 
 ### Queries
 
-Querying is pretty easy via:
+Here's an example of a simple select query:
 
 {% highlight javascript %}
-Country.where({ name: 'Canada' }).fetchAll().then(function(result) {
-  console.log(result.toJSON());
-})
-.done();
+knex('countries').select('*')
+  .then(function(result) {
+    console.log(result);
+  });
 {% endhighlight %}
 
-## Bookshelf Challenges
+Notice that `knex` returns a _promise_ object, and `then` handles the asynchronous outcome of the query.
 
-Go explore [the documentation][bookshelf] and figure out how to create
-one-to-one and one-to-many relationships. Figure out how to create objects in these relationships and query for them. Also make sure you can delete and update objects of each type of relationship.
-
-### Simple Usage
-
-- Define a migration
-- Create an object
-- Read an object
-- Update an object
-- Delete an object
-- Search through objects for something specific
-
-### One-to-Many
-
-- Define two tables in a migration
-- Create an object on the _one_ end of the relationship
-- Create a few of the other type
-- Search for a model on the _one_ side based on a condition for something from the _many_ side
-- Search for all models on the _many_ side that match a specific condition individually and are associated with a particular instance on the _one_ side
-- Delete specific objects on the _many_ side
-- Delete all objects on the _many_ side & the object on the _one_ side within a transaction
-
-### Many-to-Many
-
-- Define the required three tables in a migration
-- Create a bunch of objects that relate
-- Write queries to access them through their relationships
+<aside>
+More examples coming soon; watch this space!
+</aside>
 
 [bookshelf]: http://bookshelfjs.org
 [postgres]: http://www.postgresql.org
