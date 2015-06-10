@@ -517,7 +517,7 @@ Now `knex` is an object capable of building and running SQL queries.
 
 Here's a basic example of adding data via `knex`:
 {% highlight javascript %}
-knex('countries').insert([{name: 'Xanadu'},{name: 'Oz'}]);
+knex('countries').insert([{name: 'Xanadu'}]).then();
 {% endhighlight %}
 
 

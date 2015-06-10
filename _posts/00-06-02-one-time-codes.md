@@ -41,7 +41,7 @@ createVerificationEmail is an imaginary function that makes an email body contai
 
 {%highlight JavaScript %}
 router.get('/verify_email/:nonce', function(request, response) {
-    redisClient.get(request.params.nonce, function(userId) {
+    redisClient.get(request.params.nonce, function(err,userId) {
         redisClient.del(request.params.nonce, function() {
             if (userId) {
                 new User({id: userId}).fetch(function(user) {
