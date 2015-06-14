@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Sudoku Solver & Socket.io
+title: Testing Your Sudoku Solver
 class: sudoku
-date: 2015-06-18
+date: 2015-06-19
 ---
+
+WRITEME
 
 Now it's time to make your Sudoku solver solve all puzzles.
 
