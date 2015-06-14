@@ -174,6 +174,6 @@ DELETE /api/people/8
 
 ```
 
-Once you have a working API, you can make the page use it. index.html should end up looking like this:
+Once you have a working API, you can make the page use it. [The example repo](https://github.com/portlandcodeschool-jsi/node-http-server) has a [page.js](https://github.com/portlandcodeschool-jsi/node-http-server/blob/master/public/js/page.js) that will make a page like the below:
 
 ![contact book]({{site.baseurl}}/images/00-07-01-contact-book.png)
