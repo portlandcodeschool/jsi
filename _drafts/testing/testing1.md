@@ -26,7 +26,7 @@ Note that when you try this, you won't see any feedback from Node unless the ass
 
 ##The Mocha testing framework
 
-Tests written exclusively with Assert can do a lot of things, but they can get cumbersome to use, especially when you need to start testing asynchronous code. It also doesn't give you much in the way of feedback. To deal with this, we can use (Mocha)[http://mochajs.org/], a widely-used testing framework that can handle asynchronous code and promises, as well as giving us useful reports for how the tests went and allowing us to specify certain behaviors before or after the tests. The one thing that Mocha does not do is handle the actual tests themselves; it leaves that up to any assertion library you'd like to use, which means that if you want to, you can just use Node's built-in Assert library.
+Tests written exclusively with Assert can do a lot of things, but they can get cumbersome to use, especially when you need to start testing asynchronous code. It also doesn't give you much in the way of feedback. To deal with this, we can use [Mocha](http://mochajs.org/), a widely-used testing framework that can handle asynchronous code and promises, as well as giving us useful reports for how the tests went and allowing us to specify certain behaviors before or after the tests. The one thing that Mocha does not do is handle the actual tests themselves; it leaves that up to any assertion library you'd like to use, which means that if you want to, you can just use Node's built-in Assert library.
 
 In order to use Mocha, you'll need to install it on your system. Since it's a module that we'll want to use repeatedly rather than one we'll want to use in one specific project, we'll install it globally: `sudo npm install -g mocha`. Once Mocha is installed, you can run it from anywhere on your system with the command `mocha`. When it runs, it will look for a subdirectory called `test` and run all the test files in that directory. This lets you keep your tests discrete from your code, rather than including them in the code that you're testing. Note that doing this will require modularizing your code so that it can be required by the test files.
 
@@ -67,4 +67,26 @@ var chai = require('chai');
 var expect = chai.expect;
 ```
 
+"Expect" and "assert" do pretty similar things with some minor syntactic differences:
 
+```js
+assert.equal(fakeArray.pop(), 3);
+```
+
+does the same thing as:
+
+```js
+expect(fakeArray.pop()).to.equal(3);
+```
+
+The difference is primarily feel. The "expect" style includes some functions that don't actually do anything other than pass through the things that get passed to them, like the `to` method in the example above, which you could remove without any change to the test at all--it's there purely for readability.
+
+Chai's "expect" style assertions also include far more testing methods than simple equality: you can test if objects are instances of particular constructors, if functions throw particular errors, if functions affect particular properties, and more.
+
+###Test- and Behavior-Driven Development
+
+Like text editors and tabs vs. spaces, testing can attract some strong feelings. Test-Driven Development is a topic that a lot of people feel very strongly about. The principle behind TDD is that you should write your tests first--before any of your code. Once you've written all of your tests, you run them, and you watch your tests all fail. Then you write the minimum amount of code to get a test to pass, run the tests again, and so on. When all of your tests pass, you're done.
+
+Behavior-Driven Development grew out of TDD. As you might expect from the name, it emphasizes the behavior of the code being tested. This demands that the focus of your tests be on the results that you get rather than how those results are obtained--if I'm using BDD to test `Array.map`, I only want to know that the returned array was generated with the callback function I passed in, not whether a `forEach` or a `for` loop was used. Check out [this post](http://programmers.stackexchange.com/questions/135218/what-is-the-difference-between-writing-test-cases-for-bdd-and-tdd) for more discussion.
+
+Like tabs vs. spaces or text editors, the important thing is that you use what works for you. Check out TDD and BDD and find out why they're useful, then use what works.
