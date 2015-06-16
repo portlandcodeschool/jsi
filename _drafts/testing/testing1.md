@@ -9,6 +9,19 @@ Testing is important for a number of reasons: Having a good set of tests written
 - Writing code with tests in mind will ensure that you write code than can be easily tested--code made up of many discrete functions that are each responsible for a single thing, which is one of the main principles of object-oriented programming.
 - As a junior developer, one of the most common jobs for you to start out with is writing tests for code that doesn't currently have any. This is great for junior devs because it both teaches them the codebase they're working with and keeps them from breaking anything too valuable.
 
+The best place to start with tests is to write up a set of behaviors that you expect to get from your code--for example, "Given an array containing the numbers 1, 2, and 3 (in that order), I expect that the `pop` method should remove the 3 from the array and return it." Once you've got your tests formulated in English, it's easy enough to move them to JavaScript.
+
+###Edge Cases in Testing
+
+Coming up with good tests can be hard, since you you're only checking a couple of representative cases. For example, if you were testing to see if all numbers are even and gave the test 42, 8098, and 32426353214, your tests would conclude that yes, all numbers are in fact even. A comprehensive list of all edge cases is not possible, for the same reason that tests have edge cases in the first place, but some common things to look for are:
+
+- What happens when your code gets an input it doesn't expect, like a string instead of a number or an array instead of an object?
+- What about booleans, `undefined`, `null`, and `NaN`?
+- What happens when incrementing numbers roll over? (This is probably the most famous edge case ever, thanks to Y2K)
+- What happens if functions are called without all the arguments?
+
+Beyond those, take a close look at your data and try to construct cases that test every type of data you're dealing with.
+
 ##Node's Assert Library
 
 Testing works with *assertion libraries*, which are essentially just pre-baked ways of comparing an expected answer to an actual result. While vanilla javaScript doesn't have a built-in assertion library, Node does: the [Assert library] (https://nodejs.org/api/assert.html). As you might expect, it's pretty bare-bones, but it contains enough useful functions to take us a long way:
@@ -22,7 +35,9 @@ assert.equal(lastElem, 3, "expected " + lastElem + " to equal 3, but it didn't!"
 
 Note that when you try this, you won't see any feedback from Node unless the assertion fails. You're telling Node that you expect these two things to be equal, and if they are, it sees no reason to say anything. If you like, you can imagine Node stoically nodding its head in agreement.
 
-`assert.equal` can do a lot for us, but it can't do everything. Have a look at some of the other methods available in Assert, and then write some tests for some of the other methods of Array. `push`, `length`, and `shift` are reasonable places to start. Note that you'll want to test both the return values and the side effects--if the method changes the array, you'll want to test that it made the changes correctly and also that it returned the right value.
+###Testing with Node's Assert library
+
+`assert.equal` can do a lot for us, but it can't do everything. Have a look at some of the other methods available in Assert, and then write some tests for some of the other methods of Array. `push`, `length`, and `join` are reasonable places to start. Note that you'll want to test both the return values and the side effects--if the method changes the array, you'll want to test that it made the changes correctly and also that it returned the right value.
 
 ##The Mocha testing framework
 
@@ -53,6 +68,10 @@ describe('My fake array object', function() {
 });
 ```
 
+The big differences here are the `describe`, `it`, and `before` functions. `describe` and `it` go hand in hand throughout Mocha (and many other testing frameworks). `describe` takes a string to use as a header for a section of test results. `it` does something similar, but for a specific testing concern. `before` does something different: it lists code that should be run before you start on the tests. Mocha has other setup functions like this, such as `beforeEach`, `after`, and `afterEach`.
+
+Note that you can nest your `describe` functions. There's also a synonym for `describe` called `context`, which you can use to make things clearer.
+
 
 ###Writing and testing fake arrays
 
@@ -79,7 +98,7 @@ does the same thing as:
 expect(fakeArray.pop()).to.equal(3);
 ```
 
-The difference is primarily feel. The "expect" style includes some functions that don't actually do anything other than pass through the things that get passed to them, like the `to` method in the example above, which you could remove without any change to the test at all--it's there purely for readability.
+The difference is primarily feel. By this point, you can see that the code that we are writing is looking more and more like the pseudocode descriptions we started with, which makes our tests that much easier to read through. The "expect" style includes some functions that don't actually do anything other than pass through the things that get passed to them, like the `to` method in the example above, which you could remove without any change to the test at all--it's there purely for readability. The syntax is a little different, as what you're testing (`fakeArray.pop()` in this case) comes immediately after the test invocation, and the specifics of the test (`equal(3)` here) don't come until the end, but the same information is there.
 
 Chai's "expect" style assertions also include far more testing methods than simple equality: you can test if objects are instances of particular constructors, if functions throw particular errors, if functions affect particular properties, and more.
 
@@ -89,4 +108,10 @@ Like text editors and tabs vs. spaces, testing can attract some strong feelings.
 
 Behavior-Driven Development grew out of TDD. As you might expect from the name, it emphasizes the behavior of the code being tested. This demands that the focus of your tests be on the results that you get rather than how those results are obtained--if I'm using BDD to test `Array.map`, I only want to know that the returned array was generated with the callback function I passed in, not whether a `forEach` or a `for` loop was used. Check out [this post](http://programmers.stackexchange.com/questions/135218/what-is-the-difference-between-writing-test-cases-for-bdd-and-tdd) for more discussion.
 
+In both TDD and BDD, readability of tests is very important--tests should be human-readable enough to hand them to a client, according to some.
+
 Like tabs vs. spaces or text editors, the important thing is that you use what works for you. Check out TDD and BDD and find out why they're useful, then use what works.
+
+###Writing Tests with Chai
+
+First, translate your Mocha tests from the Node Assert library to Chai's Expect library and ensure they still work. Next, write some Chai tests for more Array methods. This time, try more complicated methods: `map`, `forEach`, and `filter`. Once you've got your tests passing, it's time to go back to `fakeArray` and start implementing those functions. When you're happy with both your tests and your functions, pass them around to other people to see if you can come up with cases that cause tests to fail, or cases that should cause tests to fail and don't.
