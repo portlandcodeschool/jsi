@@ -39,6 +39,7 @@ The basic way that Backbone *collections* work is that you associate to each col
         -   this will trigger the `add` event for the collection
 
 We're going to start our application very similar to how our previous project started: with some very simple HTML. 
+
 ```HTML
     <!doctype html>
     <html>
@@ -56,6 +57,7 @@ We're going to start our application very similar to how our previous project st
 ```
 
 Next, we'll start with our basic model of a piece of text. It'll have a "replace" method that will replace the text inside it. Its individual view is going to be an input with the default text of the input set to the value of the model and a "clear" button that will set the text of the model to the empty string ~" "~ . This part is basically the same as our previous project, except that we're going to use a different **kind** of event, `keypress`, for setting the value of the text of the model. In particular, if the key pressed in the input field is the "enter" key, then we call the `replace` operator of the view, which will in turn call the `replace` method of the model.
+
 ```JavaScript
     var TextModel = Backbone.Model.extend({
         defaults : {"value" : ""},
@@ -95,6 +97,7 @@ Next, we'll start with our basic model of a piece of text. It'll have a "replace
     });
 ```
 Next, we actually define the collection. This is pretty similar to all the other Backbone classes that we extend, just with the special attribute `model` that we need to match up to the kind of model we want to store in this collection.
+
 ```JavaScript
     var TextCollection = Backbone.Collection.extend({
         model : TextModel
