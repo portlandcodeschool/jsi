@@ -10,6 +10,7 @@ This is the first part of the full tutorial [here][backbone-repo].
 # The Overall Point of Backbone
 
 If you're reading this, then it's likely that your ultimate goal is to understand how to make interactive web sites. One of the difficulties in writing larger and more complex sites is keeping all the code principled and well-organized. For example, consider the way that in templates you can have something like
+
 ```Jade
     body
       if someVariable
@@ -19,6 +20,7 @@ If you're reading this, then it's likely that your ultimate goal is to understan
 ```
 
 or you could have, at the javascript level, an if-statement like
+
 ```JavaScript
     if (someVariable){
         response.render('one-thing');
@@ -64,7 +66,8 @@ and then after getting more comfortable with that picture, we'll add in a server
 
 # Installation
 
-In order to get started, you need to download the following files and place them in the `../js` directory of this repository
+In order to get started, you need to download the following files and place them in the `../js` directory of this repository:
+
 -   [Backbone](http://backbonejs.org/backbone.js)
 -   [Underscore](http://underscorejs.org/underscore.js)
 -   [jQuery](http://code.jquery.com/jquery-2.1.4.js)
@@ -104,6 +107,7 @@ The basic outline is that we'll
 First things first, we need to have our base HTML for the application. In this case, we're going to have a rather simple HTML page that initially contains a `<div>` where we're going to place our counter and a button that we'll use to increment the counter.
 
 file: counter.html
+
 ```HTML
     <!doctype html>
     <html>
@@ -123,6 +127,7 @@ file: counter.html
 Now, in our javascript file `counter.js`, the first thing we're going to do is build our *model*. As discussed in our introduction, a model is the thing that **contains** data in our application. All models are built by calling `Backbone.Model.extend(some-object-with-built-in-data)`. We'll talk about the kinds of things we put in `Backbone.Model.extend` as we need them, but to begin with we're going to have a very **simple** model: our goal is to have a single special property called "value" that will contain the value of the counter and is going to be modified by our button. To that end, we are going to include the single property `defaults`, which is a list of default values for the special data of our application. 
 
 file: counter.js
+
 ```JavaScript
     var Counter = Backbone.Model.extend({
         defaults : {"value" : 0}
@@ -223,7 +228,8 @@ In this exercise, you should start **from scratch** and write a new application 
 
 There's a little bit of ugliness in our code that was there for the sake of pedagogical order: we're **manually** connecting the event handler for the model back to the view and we're also including too much logic of the **model** in the **view** event handlers. This wasn't so bad for our tiny example, but what if we want to have more than one instance of the model? It's going to be annoying to connect everything together correctly and rewrite the model handling code in each view. We're going to present a bit of a cleaned up version of the code that will be better refactored and show that it's easier to insert multiple model/view pairs into the application. We're going to go a little bit faster than the previous time.
 
-in our file counterClean.js
+file counterClean.js
+
 ```JavaScript
     var Counter = Backbone.Model.extend({
         defaults : {"value" : 0}
