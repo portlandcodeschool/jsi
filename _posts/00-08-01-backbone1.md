@@ -7,7 +7,7 @@ date: 2015-06-22
 
 This is the first part of the full tutorial [here][backbone-repo].
 
-# The Overall Point of Backbone
+## The Overall Point of Backbone
 
 If you're reading this, then it's likely that your ultimate goal is to understand how to make interactive web sites. One of the difficulties in writing larger and more complex sites is keeping all the code principled and well-organized. For example, consider the way that in templates you can have something like
 
@@ -64,7 +64,7 @@ The structure of this tutorial is that we'll start first by leaving off the serv
 
 and then after getting more comfortable with that picture, we'll add in a server and a database. 
 
-# Installation
+## Installation
 
 In order to get started, you need to download the following files and place them in the `../js` directory of this repository:
 
@@ -82,9 +82,9 @@ or, at least on Linux but possibly OS X if you have "wget" installed, you should
     wget http://code.jquery.com/jquery-2.1.4.js
 ```
 
-# Your First Backbone Project: A Simple Counter
+## Your First Backbone Project: A Simple Counter
 
-## Outline
+### Outline
 
 In this brief project, we're going to create a client side application that will
 -   display a number
@@ -102,7 +102,7 @@ The basic outline is that we'll
 2.  create a view connected to this model
 3.  install our event handlers
 
-## Lesson and Example Code
+### Lesson and Example Code
 
 First things first, we need to have our base HTML for the application. In this case, we're going to have a rather simple HTML page that initially contains a `<div>` where we're going to place our counter and a button that we'll use to increment the counter.
 
@@ -196,9 +196,9 @@ Finally, we run the code that inserts the `$el` element of the view into the DOM
 
 Now, all that's left is to load our page and take a look!
 
-## Exercises
+### Exercises
 
-### Subtraction Button
+#### Subtraction Button
 
 For this exercise, take the counter example we walked through above and add another button that will *decrement* the counter instead. You'll need to 
 1.  modify the render function
@@ -209,14 +209,14 @@ For this exercise, take the counter example we walked through above and add anot
 
     Ensure that the counter **is not decremented** if its value is equal to zero. In other words, not only should the counter's value not dip below 0 but the `change` event in the model shouldn't be triggered if the value is 0. Test and ensure it's not firing by placing a `console.log` statement in the `change` event handler
 
-### Clear Button
+#### Clear Button
 
 In addition to or perhaps in lieu of the previous exercise, add a button that resets the counter back to 0. Like the previous exercise, you'll need to
 1.  modify the render function
 2.  modify the existing event handler for the increment button
 3.  make a new button to reset the counter
 
-### Concatenating Text Field
+#### Concatenating Text Field
 
 In this exercise, you should start **from scratch** and write a new application that will have
 -   an input text field,
@@ -224,7 +224,7 @@ In this exercise, you should start **from scratch** and write a new application 
 -   a place for the entered text to be displayed.
     Whenever the button is pushed, the displayed text (stored in a model) should append to itself whatever string was input.
 
-## Cleaning Up Our Code
+### Cleaning Up Our Code
 
 There's a little bit of ugliness in our code that was there for the sake of pedagogical order: we're **manually** connecting the event handler for the model back to the view and we're also including too much logic of the **model** in the **view** event handlers. This wasn't so bad for our tiny example, but what if we want to have more than one instance of the model? It's going to be annoying to connect everything together correctly and rewrite the model handling code in each view. We're going to present a bit of a cleaned up version of the code that will be better refactored and show that it's easier to insert multiple model/view pairs into the application. We're going to go a little bit faster than the previous time.
 
@@ -280,7 +280,7 @@ Now, within the `$(document).ready` wrapper, we can go ahead and make our models
     });
 ```
 
-## Questions To Think About
+#### Questions To Think About
 
 1.  Why do we include the increment button in the view and not the base HTML?
 2.  Think about sites you use frequently and sketch out how they might be divided into
