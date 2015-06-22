@@ -7,9 +7,9 @@ date: 2015-06-23
 
 This is the second part of the full tutorial [here][backbone-repo].
 
-# Collections Project: Text Lists
+## Collections Project: Text Lists
 
-## Outline
+### Outline
 
 In this project, we're going to again create a *client side only* application that
 -   displays a list of items
@@ -21,7 +21,7 @@ What we're going to cover in this section is:
 -   How to make the collection's view delegate to individual views
 -   How to use the collection specific events to keep the view in-sync
 
-## Lesson and Code
+### Lesson and Code
 
 When you're dealing with sites like twitter, or instagram, or anything of that ilk there tend to be **collections** of things. You're reading a *list* of tweets, looking at a *list* of search results, examining a *list* of photos that match a tag, checking a *list* of followers etc. 
 
@@ -151,16 +151,16 @@ Finally, we go ahead and run the code we need to initialize the whole applicatio
     $("#listdiv").append(textCollectionView.$el);
 ```
 
-## Exercises
+### Exercises
 
-### Delete Button
+#### Delete Button
 
 In this exercise, we're going to add a "delete" button that will erase the bottom element of the list of elements. To do that, you're going to need to 
 -   add a delete button to the view of the **collection**;
 -   add a event handler that listens for the "remove" event for the collection and refreshes the list, removing the corresponding view from the DOM.
     There's more than one way you could do this, but a simple way might be to use CSS pseudo-selectors to select only the last div in the collection
 
-### Edited Count
+#### Edited Count
 
 In this exercise, you're going to add a new piece of data to the **base** model: the number of times that it's been edited. Every time the field is edited, it should increment this number. In this case, "edited" means **either** cleared or you've pressed enter while in the input field. You'll need to also modify the view for the base model. 
 Question: will you need to modify the view for the collection?
