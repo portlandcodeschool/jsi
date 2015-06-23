@@ -168,3 +168,94 @@ Question: will you need to modify the view for the collection?
 1.  Extra Credit
 
     To be a little more challenging, make sure that the number-of-times-incremented only increases if the text has actually changed.
+
+## Bonus Topics
+
+### Initialization Objects
+
+Subclasses of Backbone objects (`CounterView` for example) can receive initialization arguments when instances are made by calling the constructor, as follows:
+```Javascript
+var view = CounterView({model:somemodel});
+```
+
+But only certain property names are installed automatically (e.g. 'model', 'collection', 'id').  Custom properties must be manually extracted in the initialize` method, as the follow demo shows:
+
+```Javascript
+var MyView = Backbone.View.extend({
+    props: function() {
+        return Object.keys(this).join(' ');
+    }
+});
+
+// Subclasses (inherit props):
+var MyView2 = MyView.extend({
+    initialize: function(opts) {
+        // grab particular options
+        if (opts)
+            this.special = opts.special;
+            this.a = opts.a; //...
+    }
+});
+
+var MyView3 = MyView.extend({
+    initialize: function(opts) {
+        // grab all options
+        _.extend(this,opts); //means merge, not subclass
+    }
+});
+
+var opts = {a:'a',b:'b',id:'id',model:'mod',special:'yay'};
+
+var view0 = new MyView();
+var view1 = new MyView(opts);
+var view2 = new MyView2(opts);
+var view3 = new MyView3(opts);
+
+view0.props();
+view1.props();
+view2.props();
+view3.props();
+```
+
+### Templates
+
+Backbone view often use pre-compiled templates to render their HTML.
+Here's a basic demo of two different template formats:
+
+```Javascript
+useMustacheTemplates(); //causes templates to use {{}} format
+
+var data = {verb:'jump', subj:'life', adj:'short', obj:'chair'};
+
+var ERBView = Backbone.View.extend({
+    template: _.template('The <%=subj%> <%=verb%>s the <%=adj%> <%=obj%>'),
+    render: function() {
+        this.$el.html(this.template(data));
+        $(document.body).append(this.$el);
+    }
+})
+
+
+var MustacheView = Backbone.View.extend({
+    template: _.template('The {{subj}} {{verb}}s the {{adj}} {{obj}}'),
+    render: function() {
+        this.$el.html(this.template(data));
+        $(document.body).append(this.$el);
+    }
+})
+
+var erbView, mustView;
+$(function() {
+    erbView = new ERBView();
+    mustView = new MustacheView();
+})
+
+function useMustacheTemplates() {
+    _.templateSettings = {
+        interpolate: /\{\{(.+?)\}\}/g
+    };
+}
+```
+
+[backbone-repo]: https://github.com/portlandcodeschool/backbone-tutorials
+
