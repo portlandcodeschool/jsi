@@ -164,7 +164,7 @@ Every time `save` or `fetch` is called, a `sync` event is triggered for the mode
 
     You'll note that as described, this field doesn't actually **persist** across refreshes of the page. In order to make it actually persist for the life of the server, we'll need to add a **new** view and model. The basic procedure is:
     -   define a new model for the refresh data
-        -   define the URL root for the refresh model
+    -   define the URL root for the refresh model
     -   define a view for the refresh data
     -   have the refresh-model listen for the `sync` event on the counter model and update itself
     
@@ -307,9 +307,9 @@ For the view, we make a rather important change in the `addCollection` call: we 
     });
 ```
 
-Finally, we have the server for our application. We're skipping over the preample that's identical, and instead we'll concentrate on the routes. To note, we're storing all of our examples in 
+Finally, we have the server for our application. We're skipping over the preample that's identical, and instead we'll concentrate on the routes.  To note, we're storing all of our server-side data in a single array called `texts`.
 
-Here, we're going to have three different main routes. 
+Here, we're going to have three different main routes: 
 
 1.  a `get` route to `/texts/:id`, this is called when we `fetch` from the **TextModel** and we need to return the JSON object that packs up the value property from the `texts` array on the server
 2.  a `put` route to `/texts/:id`, which is called when we modify a TextModel
