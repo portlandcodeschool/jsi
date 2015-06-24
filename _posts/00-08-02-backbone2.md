@@ -237,7 +237,7 @@ var ERBView = Backbone.View.extend({
 
 
 var MustacheView = Backbone.View.extend({
-    template: _.template('The &#123;&#123;subj&#125;&#125; &#123;&#123;verb&#125;&#125;s the &#123;&#123;adj&#125;&#125; &#123;&#123;obj&#125;&#125;'),
+    template: _.template('The {{ "{{ subj " }}}} {{ "{{ verb " }}}}s the {{ "{{ adj " }}}} {{ "{{ obj " }}}}'),
     render: function() {
         this.$el.html(this.template(data));
         $(document.body).append(this.$el);
