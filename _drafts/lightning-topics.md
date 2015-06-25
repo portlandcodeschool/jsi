@@ -61,3 +61,36 @@ portlandcodeschool.com. 299 IN  MX  5 alt2.aspmx.l.google.com.
 ;; WHEN: Thu Jun 25 13:28:36 2015
 ;; MSG SIZE  rcvd: 170
 ```
+
+## SQL Injection
+
+![Bobby Tables](https://imgs.xkcd.com/comics/exploits_of_a_mom.png)
+
+The single most common security flaw in web applications is _SQL Injection_. Consider this code:
+
+```JavaScript
+router.post('/login', function(request, response) {
+  database.query("select * from users where username = '"
+                 + request.body.username + "'", function(error, result) {
+    // check password and log the user in
+  });
+});
+```
+
+This code has a SQL injection vulnerability. If someone types `'; drop table users; --'` into the username field, the full query sent to the database will be:
+
+```SQL
+select * from users where username = ''; drop table users; --'
+```
+
+The JavaScript code meant to send the user-input to the database as a value to be inspected. However, careless programming allowed an attacker to send their own SQL code, so in this example the `users` table gets dropped (Remember that `--` is the comment character in SQL, so the trailing `'` won't cause an error).
+
+The solution is easily said, although it requires some attention: _Never_ use string concatenation with user input to build a SQL query. Ideally, you should use a query builder like Knex. If you must use raw SQL strings, keep user input in the parameters list:
+
+```JavaScript
+router.post('/login', function(request, response) {
+  database.query("select * from users where username = $1", [request.body.username], function(error, result) {
+    // check password and log the user in
+  });
+});
+```
