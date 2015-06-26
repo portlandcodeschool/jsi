@@ -94,3 +94,39 @@ router.post('/login', function(request, response) {
   });
 });
 ```
+
+## XSS (Cross-site Scripting)
+
+XSS could also be called "Javascript injection." Just as SQL injection occurs when data that should've been a plain value gets used as SQL code, XSS occurs when data that should've been a plain value gets used as HTML or JavaScript code. Consider this code from an imaginary chat application:
+
+```JavaScript
+socket.on('message', function(message) {
+    var div = document.createElement('div');
+    div.innerHTML(message.body);
+    document.getElementById('chat-pane').appendChild(div);
+});
+```
+
+What if `message.body` contains `<script>alert('hello')</script>`? The script tags will be evaluated as HTML, and the `alert` will run in the user's browser. XSS exploits allow attackers a range of options, from annoying alerts to stealing session tokens. Always use `element.innerText` or `$(element).text` to add user input to an element:
+
+```JavaScript
+socket.on('message', function(message) {
+    var div = document.createElement('div');
+    div.innerText(message.body);
+    document.getElementById('chat-pane').appendChild(div);
+});
+```
+
+Templating systems like Jade are also a vector for XSS vulnerabilities. Consider this profile page:
+
+```Jade
+.profile-section
+  != user.bio
+```
+
+If a malicious user puts `<script>` tags in their bio, they'll be served to the browser as HTML, and users who visit the malicious user's page will run that JS in their own session. Use the `=` operator to html-escape any user input:
+
+```Jade
+.profile-section
+  = user.bio
+```
