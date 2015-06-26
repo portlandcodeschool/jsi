@@ -44,7 +44,8 @@ The solution is easily said, although it requires some attention: _Never_ use st
 
 ```JavaScript
 router.post('/login', function(request, response) {
-  database.query("select * from users where username = $1", [request.body.username], function(error, result) {
+  database.query("select * from users where username = $1",
+                 [request.body.username], function(error, result) {
     // check password and log the user in
   });
 });
