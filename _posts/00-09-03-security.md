@@ -106,7 +106,7 @@ This hashing algorithm isn't very good, as it has a lot of _collisions_: inputs 
 
 ### Exercise: password hashing
 
-Take one of your previous projects that allowed signing in (or throw together a new project with a sign-in form, if you prefer). Update it so that when a user signs up or changes their password, the password is hashed using SHA-256. When a user signs in, hash the supplied password and compare it to the stored hash. Use [Node's `crypto` library][node-crypto], specifically the `createHash`, `Hash.update`, and `Hash.digest` functions.
+Take one of your previous projects that allowed signing in (or use [the login sample code](https://github.com/portlandcodeschool-jsi/authme/), if you prefer). Update it so that when a user signs up or changes their password, the password is hashed using SHA-256. When a user signs in, hash the supplied password and compare it to the stored hash. Use [Node's `crypto` library][node-crypto], specifically the `createHash`, `Hash.update`, and `Hash.digest` functions.
 
 ## Password salting
 
