@@ -110,11 +110,12 @@ md5 -s password
 #MD5 ("password") = 5f4dcc3b5aa765d61d8327deb882cf99
 ```
  If we try it with string only one character away, or with two characters transposed, we get a completely different result:
+
 ```bash
 md5 -s pastword
-MD5 ("pastword") = 6a15a9a75145971d8317560bb79bed6e
+#MD5 ("pastword") = 6a15a9a75145971d8317560bb79bed6e
 md5 -s passwrod
-MD5 ("passwrod") = 919e682cac825d430a580e842ff0bbc4
+#MD5 ("passwrod") = 919e682cac825d430a580e842ff0bbc4
 ```
 Although _MD-5_ has flaws, it demonstrates the defining features of hashing: a given input always generates the same output hash, but the process is irreversible --- knowing the hash tells you _nothing_ about the input.
 
