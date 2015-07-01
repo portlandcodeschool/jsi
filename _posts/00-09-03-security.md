@@ -103,16 +103,71 @@ function simpleHash(input) {
 }
 ```
 
-This hashing algorithm isn't very good, as it has a lot of _collisions_: inputs that hash to the same output. Instead you should use the _SHA-256_ hashing algorithm.
+This hashing algorithm isn't very good, as it has a lot of _collisions_: inputs that hash to the same output. New and improved hashing algorithms are introduced every so often; the current winner is _SHA-256_.  But for demo purposes, you can use an older system, _MD-5_ which is available right in your terminal:
 
+```bash
+md5 -s password
+#MD5 ("password") = 5f4dcc3b5aa765d61d8327deb882cf99
+```
+ If we try it with string only one character away, or with two characters transposed, we get a completely different result:
+```bash
+md5 -s pastword
+MD5 ("pastword") = 6a15a9a75145971d8317560bb79bed6e
+md5 -s passwrod
+MD5 ("passwrod") = 919e682cac825d430a580e842ff0bbc4
+```
+Although _MD-5_ has flaws, it demonstrates the defining features of hashing: a given input always generates the same output hash, but the process is irreversible --- knowing the hash tells you _nothing_ about the input.
+
+<!--
 ### Exercise: password hashing
 
 Take one of your previous projects that allowed signing in (or use [the login sample code](https://github.com/portlandcodeschool-jsi/authme/), if you prefer). Update it so that when a user signs up or changes their password, the password is hashed using SHA-256. When a user signs in, hash the supplied password and compare it to the stored hash. Use [Node's `crypto` library][node-crypto], specifically the `createHash`, `Hash.update`, and `Hash.digest` functions.
+-->
 
 ## Password salting
 
 Actually, hashing passwords isn't enough. An attacker who gets access to your hashed passwords can create a _rainbow table_, a list of thousands or hundreds of thousands of common passwords and their hashes, and use it to look up a hash and determine its corresponding plaintext. To combat this, you should add a _salt_ to your passwords: a chunk of random text that's added to the password before hashing. The salt isn't secret, but it should be different for each user. This forces attackers to rebuild the rainbow table for each user--a computationally infeasible task.
 
+### Demo: the `pwd` module
+
+The NPM module `pwd` makes it easy to implement both hashing and salting.  Here is a simple demo, in which only one user record is stored in a "database" but that record includes the user's unique salt and password hash, which can be used subsequently for authentication.
+
+```javascript
+var pwd = require('pwd');
+
+// The user's registration info:
+var raw = {name:'user', password:'password'};
+// What gets stored (salt and hash TBD):
+var stored = {name:'user', salt:'', hash:''};
+
+function register(raw) {
+  // Create and store encrypted user record:
+  pwd.hash(raw.password, function(err,salt,hash) {
+    stored = {name:raw.name, salt:salt, hash:hash};
+    console.log(stored); //==>
+    // { name: 'user',
+    //   salt: 'BcRp8aw2jxNO...',
+    //   hash: '3Myz3F5mz3Hj...' }
+  })
+}
+
+function authenticate(attempt) {
+  pwd.hash(attempt.password, stored.salt, function(err,hash) {
+    if (hash===stored.hash)
+      console.log('Success!')
+  })
+}
+
+register(raw);
+// After delay, try authenticating:
+setTimeout(function() {authenticate(raw)},  500);
+```
+
+### Exercise: password salting and hashing
+
+Take one of your previous projects that allowed signing in (or use [the login sample code](https://github.com/portlandcodeschool-jsi/authme/), if you prefer). Update it so that when a user signs up or changes their password, the password is salted and hashed using `pwd`. When a user signs in, hash the supplied password and compare it to the stored hash.
+
+<!--
 ### Exercise: password salting
 
 Update your password hashing algorithm so it adds a salt:
@@ -120,6 +175,7 @@ Update your password hashing algorithm so it adds a salt:
 * When a new password is created (on sign-up or change-password), generate 8 or so random characters and append them to the password before hashing.
 * When storing the user's password, store the salt as well.
 * When checking a user's password (on sign-in), read the salt from the user record and append it to the supplied password before hashing.
+-->
 
 [smbc-soceng]: http://www.smbc-comics.com/index.php?db=comics&id=2526
 [node-crypto]: nodejs.org/api/crypto.html
