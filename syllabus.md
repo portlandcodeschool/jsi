@@ -3,7 +3,7 @@ layout: page
 title: JavaScript Immersion Syllabus
 ---
 
-Version 1.1
+Version 1.2
 
 ![Portland Code School]({{ site.baseurl }}/images/pcs.png "PCS Logo")
 
@@ -24,19 +24,19 @@ Monday-Friday 9:00AM to 5:00PM
 
 ### Location
 
-PCS Classroom, 1771 NW Pettygrove Street, Ste 140
+PCS Classroom, 
+735 SW 20th Place, Suite 230
 Portland, OR 97209
 
+### Instructors:
 
-### Instructor:
+**Dan Bauer**
 
-**Erin Call**
+Email: [dbauer@portlandcodeschool.com](mailto:dbauer@portlandcodeschool.com)
 
-Email: [ecall@portlandcodeschool.com](mailto:ecall@portlandcodeschool.com)
+**Tom McCluskey**
 
-**Contacting your instructor**
-
-I am available during breaks any day of class. I'm also willing to meet with you personally by prior arrangement online. My PCS email is ecall@portlandcodeschool.com.
+Email: [tmccluskey@portlandcodeschool.com](mailto:tmccluskey@portlandcodeschool.com)
 
 
 # Prerequisites
@@ -123,7 +123,7 @@ There is no better way to learn coding then to do it, to fail, and to puzzle out
 
 ### Computer
 
-You need to provide your own computer running Mac OS X 10.9 for this class (or rent one from the school).
+You need to provide your own computer running Mac OS X 10.9 (or later) for this class (or rent one from the school).
 
 Portland Code School highly recommends MacBooks Pro or MacBooks Air running OSX 10.9 or later. Most of the best coding tools are developed on that operating system first. The important aspect of OSX is the underlying UNIX-like operating system. We place an emphasis at being able to work on a Unix/Linux command line level, down in the guts of the operating system as well as the entire group learning the same set of tools.
 
@@ -315,4 +315,4 @@ The instructor reserves the right to modify course content and/or substitute ass
 
 We adjust the class each session to the needs of the current students. We may slow the pace or add additional work, as needed. We also carefully incorporate new technologies as they become significant to your employability. As a result, we often are creating class materials as we go. You will always get advance notice of classwork.
 
-You should all have access to a Google calendar called "PCS" and should have received an email to this effect. If you haven't, please contact Kristina, Cris, or Erin and we will make sure the class calendar is available to you. We will try to make sure this calendar is always up-to-date.
+You should all have access to a Google calendar called "PCS" and should have received an email to this effect. If you haven't, please contact Kristina, Cris, Dan, or Tom and we will make sure the class calendar is available to you. We will try to make sure this calendar is always up-to-date.
