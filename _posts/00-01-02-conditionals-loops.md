@@ -217,6 +217,7 @@ if ((n - Math.floor(n)) >= .5) {
 
 
 **b)**
+
 ```
 var y, xIsFalse = (x? false : true);
 if (xIsFalse)
@@ -227,6 +228,7 @@ else
 
 
 **c)**
+
 ```
 for (var count = 15 - i ; count < 15 ; count=count+1) {
   i = i-1;
@@ -236,6 +238,7 @@ for (var count = 15 - i ; count < 15 ; count=count+1) {
 
 
 **d)**
+
 ```
 var x;
 if (a) {
@@ -259,9 +262,10 @@ if (a) {
 Suppose the '&' key on your keyboard is missing, and you want to be able to continue programming without it.  You decide to simulate the && operator with an expression!
 
 **a)**
-Write an expression that tries to simulate the && operator: it should always return the same result as `(a && b)` for any values of _a_ and _b_.  (For example, given `var a = (0>1);` and `var b = true;`, it should return _false_.)  But you can't use && itself within your expression!
+Write an expression that tries to simulate the && operator: it should always return the same result as `(a && b)` for any values of `a` and `b`.  (For example, given initial conditions `var a = (0>1);` and `var b = true;`, your expression using `a` and `b` should return _false_.)  But you can't use && itself within your expression!
 
-**b)** Write another expression that tries to simulate a double-&& operator: it should always return the same result as `(a && b && c)` for any values of a,b,c.  (For example, `var a = 1 > 0; var b = 0 > 1; var c = true;` should return `false`.)  As before, you're not allowed to use && itself.
+**b)**
+Write another expression that tries to simulate a double-&& operator: it should always return the same result as `(a && b && c)` for any values of `a`,`b`,`c`.  (For example, given initial conditions `var a = 1 > 0; var b = 0 > 1; var c = true;` your expression using `a`,`b`, and `c` should return `false`.)  As before, you're not allowed to use && itself.
 
 ---
 ## Checkerboard
