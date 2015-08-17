@@ -28,6 +28,12 @@ date: 2015-08-17 00:00:00
 
 9. *Bonus Challenge*: Modify your functions `whoHasKey` and `whoHasVal` to return a list of _all_ people matching the key or value, respectively.
 
+[Morning scratchpad]({{ site.baseurl }}/samples/Aug17/scratchpad1.js)
+
+[Morning console]({{ site.baseurl }}/samples/Aug17/console1.js)
+
+---
+
 ## Arrays vs. Objects
 
 Discuss with your team the difference between arrays and ordinary objects with respect to each of the following:
