@@ -98,7 +98,7 @@ answer = rect2.area();
 var square1 = {
 	width:1,
 	height:1,
-	area: rect2.area; // share rect2's method
+	area: rect2.area // share rect2's method
 }
 answer = square1.area();
 {% endhighlight %}
@@ -146,14 +146,16 @@ Borrowed on demand:
 {% highlight javascript %}
 var rhombus3 = {width:3, height:2};
 var rhombus4 = {width:4, height:2};
-answer = area.call(rhombus1);
-answer = area.call(rhombus2);
+answer = area.call(rhombus3);
+answer = area.call(rhombus4);
 {% endhighlight %}
 
 ### Exercise
 
 Write a method `talk` which can be used by any animal object.  When called via that animal, it should display a `noise` property of that animal.
 Use your method to make several different animals talk, each with a unique noise.
+
+[Morning scratchpad]({{ site.baseurl }}/samples/Aug18/scratchpad1.js)
 
 ---
 
