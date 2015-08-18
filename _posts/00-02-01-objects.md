@@ -34,6 +34,11 @@ date: 2015-08-17 00:00:00
 
 ---
 
+[Afternoon scratchpad]({{ site.baseurl }}/samples/Aug17/scratchpad2.js)
+
+[Afternoon console]({{ site.baseurl }}/samples/Aug17/console2.js)
+
+
 ## Arrays vs. Objects
 
 Discuss with your team the difference between arrays and ordinary objects with respect to each of the following:
