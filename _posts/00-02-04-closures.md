@@ -327,7 +327,7 @@ b();
 console.log(a);
 {% endhighlight %}
 
-The above examples are taken (and slightly modified) from this excellent article on (_hoisting_)[http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html.
+The above examples are taken (and slightly modified) from this excellent article on (_hoisting_)[http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html].
 
 The main consideration is that any time you use `var`, you can consider that variable to be declared at the top of the function in which it's defined. It is good practice, therefore, to put `var` declarations at the top of the function to avoid confusion.
 
