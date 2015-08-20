@@ -279,7 +279,7 @@ thing1.id(); //1
 thing2.id(); //2
 ```
 
-##Secrets at all levels**
+##Secrets at all levels
 
 **a)**  Write a user-registration tool, a factory function `makeUser(name,pwd)` which accepts a username and password and generates a user object.  Once we have a user object we should be able to do two things with it: retrieve the corresponding username and test to see if a provided password matches that user's password.  Each user will have these methods:
 
@@ -327,7 +327,7 @@ b();
 console.log(a);
 {% endhighlight %}
 
-The above examples are taken (and slightly modified) from this excellent article on [_hoisting_][hoisting].
+The above examples are taken (and slightly modified) from this excellent article on (_hoisting_)[http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html.
 
 The main consideration is that any time you use `var`, you can consider that variable to be declared at the top of the function in which it's defined. It is good practice, therefore, to put `var` declarations at the top of the function to avoid confusion.
 
