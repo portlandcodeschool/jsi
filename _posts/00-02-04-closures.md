@@ -328,6 +328,29 @@ callbacks.forEach(function(c) { c(); });
 * What's the actual result of this code?
 * How can you avoid this gotcha?
 
+##Scope of `this` with `call`
+
+Look at the following code and predict the results--talk about it with your table or group and see if you can predict what will happen. Then run it, and see if you were right. Explain any differences between actual and expected!
+
+{% highlight javascript %}
+function method() {
+	// this is obj
+	
+	function inner() {
+		console.log(this);
+	}
+	
+	inner.call(this); // call as borrowed method
+	inner();  // call as ordinary fn
+}
+
+var obj = {
+	method:method
+};
+
+obj.method();
+{% endhighlight %}
+
 ##Secrets at all levels
 
 **a)**  Write a user-registration tool, a factory function `makeUser(name,pwd)` which accepts a username and password and generates a user object.  Once we have a user object we should be able to do two things with it: retrieve the corresponding username and test to see if a provided password matches that user's password.  Each user will have these methods:
