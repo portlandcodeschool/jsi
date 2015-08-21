@@ -149,7 +149,31 @@ fakeRect.constructor //Rect
 -   Now, add a property _d_ with the value 3 to _obj1_'s "proto" (the object which helps out when _obj1_ can't do something by itself).  Remember that there are at least four ways of referring to that proto object.
 -   What are the values of _obj1.d_, _obj2.d_, and _obj3.d_? Can you explain the results?
 
-### Exercise 2: Modifying Prototypes
+### Exercise 2: Deque Class
+
+Write a constructor which constructs a special kind of object called a 'deque' (short for 'Double-Ended-QUEue').  A deque is like an array, but it can only be accessed from its two ends, like a roll of mints.  Each deque instance should have a property holding an array and should have four methods:
+{% highlight javascript %}
+deque.push(item)
+deque.pop()
+deque.unshift(item)
+deque.shift()
+{% endhighlight %}
+
+Each deque's array will be a personal property installed by the constructor, but its methods should be shared by all deque instances.  Attach the methods to Deque's prototype so that they will be inherited by the instances.  Each method will use 'this' to refer to the deque instance, then make a change to that deque's array using the array method of the same name.
+
+Usage is like so:
+{% highlight javascript %}
+var deque = new Deque();
+deque.push(2);
+deque.unshift(1);
+deque.push(3);
+deque.shift(); //--> 1
+deque.pop(); //--> 3
+{% endhighlight %}
+
+
+
+### Exercise 3: Modifying Prototypes
 
 Consider this code:
 
@@ -169,7 +193,7 @@ var objB = new B();
 There is a difference between the behaviors of `objA` and `objB`!  Explain.
 
 
-### Exercise 3: Implementing Inheritance
+### Exercise 4: Implementing Inheritance
 
 Here is a module (IIFE) which provides a constructor `Rect` which builds rectangle instances.  The instance methods are shared but linked directly to each instance. 
 
@@ -233,7 +257,7 @@ function new2(Ctor) {
 	Simplify `fakeNew` by using `Object.create`.
 
 
-### Exercise 4: Imaginary Menagerie
+### Exercise 5: Imaginary Menagerie
 
 **a)** Implement a simple taxonomy of four related classes, using a constructor for each:
 
