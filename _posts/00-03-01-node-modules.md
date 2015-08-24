@@ -45,7 +45,7 @@ Git is what you use on your machine to manage your code. In order to work with a
 
 ##Git Workflow
 
-![](http://portlandcodeschool.github.io/images/cog.png)
+![](http://portlandcodeschool.github.io/jsi/images/cog.png)
 
 ##Exercise: Merge conflicts!
 
