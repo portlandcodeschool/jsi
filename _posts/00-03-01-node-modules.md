@@ -57,6 +57,24 @@ Next, change directory into the folder that just got downloaded. If you do `git 
 
 The final step will be creating a merge conflict! From the master branch, pick one of the other two branches and do `git merge <first branch name>`. That should go smoothly. When you then do `git merge <second branch name>`, though, you should get a merge conflict in the cards.js file. Nice work! Now we get to have fun: open up the cards.js file, and resolve the merge conflicts! Keep at it until you have a working version of Cards.
 
-#Project Of The Week
+#Project Of The Week: Sudoku Solver
 
-For the first week's project, you'll be:
+For the first week's project, you'll be building an application that solves Sudoku puzzles.  More details will follow soon, but here's a broad outline.
+
+This project will have 4 modules, each implementing a constructor:
+
+* _DigitSet_: each instance of a DigitSet will represent a subset of 9 possible characters '1'-'9'.  Each set of digits should be unordered and have no duplicates; that is, each each possible digit is either present or absent from the set.  You'll need this to represent the partial knowledge available in each Sudoku square.
+
+* _Grid_: each Grid instance will represent a 9x9 grid of squares, each holding a known digit or a set of possible digits.  Each square belongs to three different groups: a row, a column, and a 3x3 block.
+<p>
+This object will have methods for retrieving certain squares and groups, for getting and setting the possible digits in each square, and for importing and exporting the entire grid into other formats.
+
+* _Viewer_: a viewer instance will be responsible for the display of a board, with various methods to represent its board as a string or, eventually, a browser graphic.
+
+* _Solver_: a solver instance will be able to deduce the contents of uncertain squares and eventually solve the entire grid.
+
+You will be responsible for writing the first three modules, _DigitSet_, _Grid_, and _Viewer_, according to a specification which will be compatible with a _Solver_.  On Tuesday, we'll explore precisely what a "module" is and how they work together in projects.
+
+As part of your development process, you'll need to write tests which validate the behavior of your modules.  On Wednesday, we'll talk about writing test with Mocha and Chai, frameworks for testing and assertions.
+
+On Thursday, we'll provide at least an initial version of a _Solver_ which should be able to solve the Sudoku puzzles encoded in your _Grid_ and use your _Viewer_ to display it.
