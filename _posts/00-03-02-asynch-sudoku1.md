@@ -1,6 +1,6 @@
 ---
 layout: post
-title: File I/O, Asynch Callbacks, and Sudoku (Part 1)
+title: Node, NPM, Modules, and Async callbacks (Sudoku part 1)
 class: node
 date: 2015-08-25 00:00:00
 ---
