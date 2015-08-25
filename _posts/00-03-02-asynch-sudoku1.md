@@ -372,94 +372,94 @@ A token may be a primitive (e.g. string or number) or any kind of object, includ
 
 ### DigitSet constructor
 
-`new DigitSet()` --> digitSet instance
-`new DigitSet(digitArray)` --> digitSet instance
-`new DigitSet(singleDigit)` --> digitSet instance
+* `new DigitSet()` --> digitSet instance
+* `new DigitSet(digitArray)` --> digitSet instance
+* `new DigitSet(singleDigit)` --> digitSet instance
 
 ### DigitSet instance methods
 
-`digitSet.size()` --> integer 0-9; how many digits are possible here
-`digitSet.set(arrayOfDigits)`
-`digitSet.add(digit)` --> undefined, modify original
-`digitSet.add(digitSet)` --> undefined, modify original
-`digitSet.eliminate(digit)` --> modify
-`digitSet.eliminate(digitSet)`
-`digitSet.toString()` --> string of digits in set
-`digitSet.toArray()` --> array of digits
+* `digitSet.size()` --> integer 0-9; how many digits are possible here
+* `digitSet.set(arrayOfDigits)`
+* `digitSet.add(digit)` --> undefined, modify original
+* `digitSet.add(digitSet)` --> undefined, modify original
+* `digitSet.eliminate(digit)` --> modify
+* `digitSet.eliminate(digitSet)`
+* `digitSet.toString()` --> string of digits in set
+* `digitSet.toArray()` --> array of digits
 
-`digitSet.isUncertain()` --> boolean
-`digitSet.contains(digit)` --> boolean
+* `digitSet.isUncertain()` --> boolean
+* `digitSet.contains(digit)` --> boolean
 
 ### Grid constructor
 
-`new Grid(initString)` --> grid instance
-`new Grid()` --> grid instance
+* `new Grid(initString)` --> grid instance
+* `new Grid()` --> grid instance
 
 
 ### Grid instance methods
 
-`grid.cells()` --> Array of all cell tokens
-`grid.cells(groupToken)` --> Array of cell tokens associated with groupToken
-`grid.groups()` --> Array of all group tokens
-`grid.groups(cellToken)` --> Array of all group tokens associated with cellToken
+* `grid.cells()` --> Array of all cell tokens
+* `grid.cells(groupToken)` --> Array of cell tokens associated with groupToken
+* `grid.groups()` --> Array of all group tokens
+* `grid.groups(cellToken)` --> Array of all group tokens associated with cellToken
 
-`grid.getRow()` --> array of groupTokens (all rows)
-`grid.getCol()` --> array of groupTokens (all cols)
-`grid.getBlock()` --> array of groupTokens (all blocks)
+* `grid.getRow()` --> array of groupTokens (all rows)
+* `grid.getCol()` --> array of groupTokens (all cols)
+* `grid.getBlock()` --> array of groupTokens (all blocks)
 
-`grid.getRow(cellToken)` --> groupToken (row)
-`grid.getCol(cellToken)` --> groupToken (col)
-`grid.getBlock(cellToken)` --> groupToken (block)
+* `grid.getRow(cellToken)` --> groupToken (row)
+* `grid.getCol(cellToken)` --> groupToken (col)
+* `grid.getBlock(cellToken)` --> groupToken (block)
 
-`grid.getPossible(cellToken)` --> digitSet
-`grid.setPossible(cellToken, digitSet)` --> ?
+* `grid.getPossible(cellToken)` --> digitSet
+* `grid.setPossible(cellToken, digitSet)` --> ?
 
-`grid.neighborhood(cellToken)` --> digitSet of all known digits in same row, col, or block
+* `grid.neighborhood(cellToken)` --> digitSet of all known digits in same row, col, or block
               OR --> array of digitSets for all neighbors
 
-`grid.fromString(initString)` --> set up grid with known digits
-`grid.toString()` --> initString
+* `grid.fromString(initString)` --> set up grid with known digits
+* `grid.toString()` --> initString
 
-`grid.save()` --> savedState
-`grid.restore(savedState)`
+* `grid.save()` --> savedState
+* `grid.restore(savedState)`
 
-`grid.isInvalid()` --> return true if notices any problems, else false?
+* `grid.isInvalid()` --> return true if notices any problems, else false?
 
-`grid.remaining()` --> number (0-81) of uncertain cells
+* `grid.remaining()` --> number (0-81) of uncertain cells
 
 ### Viewer constructor
 
-`new Viewer(grid)` --> viewer instance
+* `new Viewer(grid)` --> viewer instance
 
 ### Viewer instance methods
 
 
-`viewer.showCertain()` --> string depicting 9x9 grid of digits known with certainty
+* `viewer.showCertain()` --> string depicting 9x9 grid of digits known with certainty
 /* use own game with game.toString(), then squrify that string */
 
-`viewer.updateView() --> decorate finished group?
+* `viewer.updateView() --> decorate finished group?
 
-`viewer.showPossible()` --> richer display including partial info
+* `viewer.showPossible()` --> richer display including partial info
 
 
-`viewer.showDebug()`
+* `viewer.showDebug()`
 
-`viewer.showHint(cellToken)` --> show number of possibilities at some cell
+* `viewer.showHint(cellToken)` --> show number of possibilities at some cell
 
-`viewer.snapshot()` --> store snapshot
+* `viewer.snapshot()` --> store snapshot
 /* call grid.toString(), store that */
 
-`viewer.playback()` --> replay all shapshots
+* `viewer.playback()` --> replay all shapshots
 /* call series of viewer.showCertain() for each stored snapshot? */
 
-`viewer.startTimer()`
+* `viewer.startTimer()`
 `viewer.checkTime()`
 
 ### solver methods
 
-`solver.deduce(cellToken)` --> new DigitSet ??
+* `solver.deduce(cellToken)` --> new DigitSet ??
 
-`solver.logProgress()`
+* `solver.logProgress()`
 
 
 
