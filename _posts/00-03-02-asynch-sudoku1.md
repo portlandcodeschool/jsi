@@ -414,6 +414,9 @@ A token may be a primitive (e.g. string or number) or any kind of object, includ
 * `grid.getPossible(cellToken)` --> digitSet
 * `grid.setPossible(cellToken, digitSet)` --> ?
 
+* `grid.groupHas(groupToken)` --> digitset
+* `grid.groupNeeds(groupToken)` --> digitset
+
 * `grid.neighborhood(cellToken)` --> digitSet of all known digits in same row, col, or block
               OR --> array of digitSets for all neighbors
 
@@ -437,7 +440,7 @@ A token may be a primitive (e.g. string or number) or any kind of object, includ
 * `viewer.showCertain()` --> string depicting 9x9 grid of digits known with certainty
 /* use own game with game.toString(), then squrify that string */
 
-* `viewer.updateView() --> decorate finished group?
+* `viewer.updateView()` --> decorate finished group?
 
 * `viewer.showPossible()` --> richer display including partial info
 
