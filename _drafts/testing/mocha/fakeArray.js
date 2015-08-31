@@ -9,6 +9,11 @@ module.exports = {
   },
   push: function(input) {
     this[this.length] = input;
-    this.length++;
-  }
+    return ++this.length;
+  },
+  shift: shift
+};
+
+var shift = function(thing) {
+  //shift
 };
