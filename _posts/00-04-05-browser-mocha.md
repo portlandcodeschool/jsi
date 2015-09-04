@@ -45,3 +45,45 @@ Below is an example HTML file for testing a module named `mycode.js` with a test
 </html>
 {% endhighlight %}
 
+### Templates
+
+GUI code often use pre-compiled templates to render repeated patterns of HTML.
+Here's a basic demo of two different template formats:
+
+{% highlight javascript %}
+useMustacheTemplates(); //causes templates to use {{}} format
+
+var data = {verb:'jump', subj:'cow', adj:'blue', obj:'moon'};
+
+var ERBView = function() {
+    this.$el = $('<div>');
+    this.template = _.template('The <%=subj%> <%=verb%>s the <%=adj%> <%=obj%>');
+    this.render = function() {
+        this.$el.html(this.template(data)); // render some data-specific HTML
+        $(document.body).append(this.$el);
+    }
+}
+
+
+var MustacheView = function() {
+    this.$el = $('<div>');
+    this.template = _.template('The {{ "{{ subj " }}}} {{ "{{ verb " }}}}s the {{ "{{ adj " }}}} {{ "{{ obj " }}}}');
+    this.render = function() {
+        this.$el.html(this.template(data));
+        $(document.body).append(this.$el);
+    }
+})
+
+var erbView, mustView;
+$(function() {
+    erbView = new ERBView();
+    mustView = new MustacheView();
+})
+
+function useMustacheTemplates() {
+    _.templateSettings = {
+        interpolate: /\{\{(.+?)\}\}/g
+    };
+}
+{% endhighlight %}
+
