@@ -94,7 +94,8 @@ Once you've got a good idea of what pages you'll need, start building them! You 
 - an array containing a series of posts, each with an associated user name representing the person who made the post
 
 <aside>
-####About today's work
+
+<h4>About today's work</h4>
 
 A lot of the individual files that you work on today will not be used in the final project. However, most of the code in them will be, so don't be discouraged if tomorrow we create new files that seem to do what the files you create today do--what you're doing today is making the blueprints for the project, and while the individual files may change, the code you write today will still be useful!
 </aside>
