@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RESTful APIs and Servers
+title: Express, RESTful APIs, and Servers
 class: servers
 date: 2015-09-14 00:00:00
 ---
@@ -34,9 +34,9 @@ The `9000` in there is the <b>port</b> that the server is responding to. Ports d
 In order to connect to your new server, you'll have to open your web browser and point it to your computer at port 9000 by entering `localhost:9000` into your address bar. When you do that, you should see a bunch of information about the connection come up in your terminal. At this point, the browser will wait for a response for a whlie, and eventually time out. Before that happens, we can give the browser some data. Try entering in some HTML to see what happens. When you're done, you can use control-d (not command-d) to tell the client you're all done sending information.
 
 <aside>
-**HTTP Keep-Alive**
+<h3>HTTP Keep-Alive</h3>
 
-Run `nc -kl 9000`, which keeps netcat running after sending a response. Play around with sending responses to your browser this way.
+Run <pre>nc -kl 9000</pre>, which keeps netcat running after sending a response. Play around with sending responses to your browser this way.
 
 HTTP Keep-Alive allows a browser to keep a connection to a server and issue multiple HTTP requests over one TCP connection. This optimization improves performance.
 </aside>
@@ -100,7 +100,6 @@ Once you've got a good idea of what pages you'll need, start building them! You 
 A lot of the individual files that you work on today will not be used in the final project. However, most of the code in them will be, so don't be discouraged if tomorrow we create new files that seem to do what the files you create today do--what you're doing today is making the blueprints for the project, and while the individual files may change, the code you write today will still be useful!
 </aside>
 
-<!---
 You can use information that gets passed in by using a property of the request object, `req.params`. We could modify the above code to make use of that, like so:
 
 {%highlight javascript%}
@@ -119,11 +118,32 @@ That approach works fine on our tiny little server, but pretty soon we're going 
 
 Express comes built in with a solution to our problem, in the form of `app.locals`. This is an object that is accessible from inside any route by accessing `req.app.locals`. Since it's an object, we can add any properties we want to it. If we set `app.locals.cats = "shackleton"` in our app.js file, all of our routes will be able to access `req.app.locals.cats` to get to `shackleton`.
 
+##Middleware
+
+Express has a lot of additional functionality available to it that comes in the form of **middleware**--extra functions that have access to both the `request` and `response` objects and are able to do things with them. Internally, those pieces of middleware also have access to a function called `next`, that calls the next function in the middleware chain. Middleware can do a lot of very useful things, but it can also be a bit of a black box that does magic things. Middleware calls look something like this:
+
+
+{%highlight javascript%}
+app.use(express.static('public'));
+{%endhighlight%}
+
+If that looks a lot like an Express route, there's a reason for that: pretty much all of Express is middleware, including the routes. What the above does it tell Express to use the `public` directory as the location for any static files--so if you're providing css or client-side javascript to your pages, this is where they'll look.
+
 ##C is for Cookie!
 
 Great, so we've grabbed onto some information the client passed along to the server. But now what do we do with it? And for that matter, how can we log people in at all, when all we can do is give people the html pages they ask for?
 
 Well, there are a lot of answers to that question; like most things in JavaScript, there are a number of different ways to do things. But one of the easiest ways to deal with users is to set cookies. Cookies are bits of information that go in the header and get passed back and forth between the client and the server to keep track of bits of information, like how you got to a page, whether you're logged in, or what color socks you like to buy at Amazon.
+
+In order to use cookies, we'll need some middleware:
+
+app.use(express.static('public'));
+app.use(cookieParser());
+{%endhighlight%}
+
+To go along with that, you'll need to say `var cookieParser = require('cookie-parser')` at the top of your file, and of course you'll also need to install the module and save it to your package.json.
+
+<!---
 
 - app.locals (done)
 - Middleware
