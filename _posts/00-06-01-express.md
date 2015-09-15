@@ -129,6 +129,8 @@ app.use(express.static('public'));
 
 If that looks a lot like an Express route, there's a reason for that: pretty much all of Express is middleware, including the routes. What the above does it tell Express to use the `public` directory as the location for any static files--so if you're providing css or client-side javascript to your pages, this is where they'll look.
 
+<!---
+
 ##C is for Cookie!
 
 Great, so we've grabbed onto some information the client passed along to the server. But now what do we do with it? And for that matter, how can we log people in at all, when all we can do is give people the html pages they ask for?
@@ -137,13 +139,13 @@ Well, there are a lot of answers to that question; like most things in JavaScrip
 
 In order to use cookies, we'll need some middleware:
 
+{%highlight javascript%}
 app.use(express.static('public'));
 app.use(cookieParser());
 {%endhighlight%}
 
 To go along with that, you'll need to say `var cookieParser = require('cookie-parser')` at the top of your file, and of course you'll also need to install the module and save it to your package.json.
 
-<!---
 
 - app.locals (done)
 - Middleware
