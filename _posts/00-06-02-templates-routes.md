@@ -43,15 +43,15 @@ views:
 
 Yesterday, we went over how to send plain text responses with `res.send` and how to send static HTML documents with `res.sendfile`. Those might have been good enough for the Web of the late 90s, but it's not good enough for today. For really dynamic sites, we need the server to be able to easily generate completely different pages based on a few variables--and that's exactly what templating does.
 
-There are many different kinds of templating available. We've seen the client-side templating that comes built in to lodash: it uses some <%= crazy %> escape characters to indicate variables that can get swapped out, MadLibs fashion. We also saw how we can set up different delimiters for templating to make things more readable (and easier to type), and as a prelude to today we did that in Handlebars style: {{ like this! }}. We'll carry on with that today.
+There are many different kinds of templating available. We've seen the client-side templating that comes built in to lodash: it uses some <%= crazy %> escape characters to indicate variables that can get swapped out, MadLibs fashion. We also saw how we can set up different delimiters for templating to make things more readable (and easier to type), and as a prelude to today we did that in Handlebars style: \{\{ like this! \}\}. We'll carry on with that today.
 
-Some templating languages, like Jade, have a completely different syntax that the server will turn into HTML. Jade in particular is notorious for its semantic whitespace, which means that a single wrong indent can break your page, and for being generally finicky. Handlebars has a much more low-key feel. Files are saved as .hbs files, but they look pretty much like .html files--in fact, the only difference is that they have variables enclosed in {{markers}} throughout. So you might have a line of code that looks like:
+Some templating languages, like Jade, have a completely different syntax that the server will turn into HTML. Jade in particular is notorious for its semantic whitespace, which means that a single wrong indent can break your page, and for being generally finicky. Handlebars has a much more low-key feel. Files are saved as .hbs files, but they look pretty much like .html files--in fact, the only difference is that they have variables enclosed in \{\{markers\}\} throughout. So you might have a line of code that looks like:
 
 ```html
-<h3 class="welcome">Hello, {{username}}!</h3>
+<h3 class="welcome">Hello, \{\{username\}\}!</h3>
 ```
 
-It's uncomplicated and readable. It's worth noting that Handlebars will escape out any special characters that appear in your variables: if you have `var title = "Jonathan Strange & Mr. Norrell"` and a template of `<li>{{title}}</li>`, that would show up in the HTML as `<li>Jonathan Strange &amp; Mr. Norrell</li>`, exactly as you would want it. If you need characters to be unescaped, you can use triple curlies in the template, like so: `<body>{{{page_template}}}</body>`. This would allow you to have a separate page template passed in as a variable to the Handlebars template.
+It's uncomplicated and readable. It's worth noting that Handlebars will escape out any special characters that appear in your variables: if you have `var title = "Jonathan Strange & Mr. Norrell"` and a template of `<li>\{\{title\}\}</li>`, that would show up in the HTML as `<li>Jonathan Strange &amp; Mr. Norrell</li>`, exactly as you would want it. If you need characters to be unescaped, you can use triple curlies in the template, like so: `<body>\{\{\{page_template\}\}\}</body>`. This would allow you to have a separate page template passed in as a variable to the Handlebars template.
 
 That tells us how to define where the variables go in the template, but how do we use the templates, and how do we give them variables? Using templates with our generated app is straightforward--it's just like sending an HTML file, but instead of using `res.sendfile`, we use `res.render` (because we're rendering a template. We need to tell Express which template to use, and give it an object containing the names and values of all the variables we want to use, and that's it. Here's an example from the index.js file:
 
@@ -75,12 +75,12 @@ you could set up a gallery like this:
 
 ```html
 <div id="knot_gallery">
-  {{#each knots}}
+  \{\{#each knots\}\}
   <div class="knot">
-    <img src="{{image_url}}" alt="{{name}}" />
-    <p class="caption">{{name}}</p>
+    <img src="\{\{image_url\}\}" alt="\{\{name\}\}" />
+    <p class="caption">\{\{name\}\}</p>
   </div>
-  {{/each}}
+  \{\{/each\}\}
 </div>
 ```
 
