@@ -61,17 +61,19 @@ router.get('/', function(req, res, next) {
 });
 ```
 
-Handlebars has still more tricks to make our lives easier. It's a fairly common thing to put lists of things on a site, and those things may well be items that you have stored in a database or some other sort of logical structure on your server. Rather than having to make a blank template entry for each item in your collection, you can simply use `each` in your template. For example, given an object representing names and images on my knot-tying app, like so:
+Handlebars has still more tricks to make our lives easier. It's a fairly common thing to put lists of things on a site, and those things may well be items that you have stored in a database or some other sort of logical structure on your server. Rather than having to make a blank template entry for each item in your collection, you can simply use `each` in your template. For example, given a route that renders a template called knots by passing in an object like this:
 
 ```js
-var knots = [
-  {name: "sheepshank", image_url: "images/sheep.png"},
-  {name: "round turn and two half-hitches", image_url: "images/rtt.jpg"},
-  {name: "flying bowline", image_url: "showoff.gif"}
-];
+router.get('/knots', function(req, res, next) {
+  res.render('knots', {knots: [
+    {name: "sheepshank", image_url: "images/sheep.png"},
+    {name: "round turn and two half-hitches", image_url: "images/rtt.jpg"},
+    {name: "flying bowline", image_url: "showoff.gif"}
+  ]});
+});
 ```
 
-you could set up a gallery like this:
+you could set up that template like so:
 
 ```html
 <div id="knot_gallery">
