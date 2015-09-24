@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Backbone IV: Persisting data
+title: Backbone Persistence
 class: backbone
 date: 2015-09-24 00:00:00
 ---
