@@ -1,3 +1,6 @@
 [submodule "reveal.js"]
 	path = reveal.js
 	url = https://github.com/hakimel/reveal.js.git
+[submodule "other_repos/websockets"]
+	path = other_repos/websockets
+	url = https://github.com/TomMcCluskey/websockets.git
