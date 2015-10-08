@@ -106,79 +106,79 @@ Follow the [Getting Started With Node.js guide][heroku-nodejs] in Heroku's docum
 
 - Then in your terminal:
 {%highlight bash%}
-    heroku login
-    heroku keys
+heroku login
+heroku keys
 {% endhighlight %}
 
 - Set up a sample repo:
 {%highlight bash%}
-    cd [somewhere above new repo]
-    git clone https://github.com/heroku/node-js-getting-started.git
-    cd node-js-getting-started/
-    sudo npm install
-    git config --list
+cd [somewhere above new repo]
+git clone https://github.com/heroku/node-js-getting-started.git
+cd node-js-getting-started/
+sudo npm install
+git config --list
 {% endhighlight %}
 
 - Check the apps listed in Heroku dashboard
 
 - Link repo to a new heroku app:
 {%highlight bash%}
-    heroku create
-    git config --list
-    heroku status
-    heroku apps --help
-    heroku apps
-    heroku apps:rename <myname>-helloworld
-    heroku apps
+heroku create
+git config --list
+heroku status
+heroku apps --help
+heroku apps
+heroku apps:rename <myname>-helloworld
+heroku apps
 {% endhighlight %}
 
 - Send to heroku:
 {%highlight bash%}
-    git push heroku master
+git push heroku master
 {% endhighlight %}
 
 - Test it on heroku:
 {%highlight bash%}
-    heroku open
+heroku open
 {% endhighlight %}
 
 - Destroy the remote app:
 {%highlight bash%}
-    heroku apps:destroy -app <myname>-helloworld
-    git config --list
+heroku apps:destroy -app <myname>-helloworld
+git config --list
 {% endhighlight %}
 
 - Test it again (visit old URL)
 {%highlight bash%}
-    heroku open
-    heroku apps
-    git config --list
+heroku open
+heroku apps
+git config --list
 {% endhighlight %}
 
 - In the Dashboard, make a temporary app (<myname>-helloworld).
 
 - Relink repo to new heroku app:
 {%highlight bash%}
-    heroku git:remote -a <myname>-helloworld
-    heroku open
-    git config --list
+heroku git:remote -a <myname>-helloworld
+heroku open
+git config --list
 {% endhighlight %}
 
 - Deploy again:
 {%highlight bash%}
-    git push heroku master
-    heroku open
+git push heroku master
+heroku open
 {% endhighlight %}
     
 
 Follow those steps when you're ready to deploy your current project repo:
 {%highlight bash%}
-    cd <project>
-    <create or copy Procfile>
-    git add Procfile
-    git commit...
-    heroku git:remote -a <capstone-app>
-    git push heroku master
+cd <project>
+<create or copy Procfile>
+git add Procfile
+git commit...
+heroku git:remote -a <capstone-app>
+git push heroku master
 {% endhighlight %}
 
 ### Adapting your code for Heroku
@@ -187,7 +187,37 @@ If you're in the habit of running your NodeJS-based servers locally, you'll prob
 
 #### Port numbers
 
+You can't pick your own port number; instead, you should give priority to an environment vaiable called "PORT", which Heroku can set when it runs your server.
+Wherever you are specifying a port number like this:
+
+```
+app.set('port', 5000);
+```
+
+You should change it to this:
+
+```
+app.set('port', (process.env.PORT || 5000));
+```
+
 #### Config files with private keys
+Since it's a security breach to check private access keys into your repo, you won't be able to use a `config.js` in the usual way.  Instead, you'll have to set the keys individually in Heroku environment variable like so:
+
+{% highlight bash %}
+heroku config:set HEROKU=true SAMPLEKEY=whatever DBKEY=secret
+{%endhighlight%}
+
+Then in your server code, add something like this:
+
+{%highlight javascript%}
+var config = (process.env.HEROKU)? // if Heroku environment...
+    { //...build config object using config/environment vars
+        dbKey:     process.env.DBKEY,
+        sampleKey: process.env.SAMPLEKEY
+    } : //else load module
+    require('./config.js');
+{%endhighlight%}
+
 
 ### Exercise: create a Heroku app for your portfolio site
 
