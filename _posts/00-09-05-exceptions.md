@@ -5,7 +5,8 @@ class: misc
 date: 2015-10-09 00:00:00
 ---
 
-{%highlight javascript%}
+```Javascript
+
 var problem = false;
 
 function C() {
@@ -49,4 +50,4 @@ try {
 catch(err) { //won't run unless problem
 	console.log(err);
 }
-{%endhighlight%}
+```
