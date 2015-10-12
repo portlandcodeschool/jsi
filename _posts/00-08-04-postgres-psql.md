@@ -90,6 +90,12 @@ Let's specify the creation of tables and relationships directly in JavaScript. T
 That command is a short way of saying
 `./node_modules/.bin/knex init`
 but it works from any directory.
+
+Beware of directories with spaces in their name; the path replacement won't work if the path it returns contains a space.
+If that happens, you can glue the whole path together by wrapping it in quotes like this:
+{% highlight bash %}
+"`npm bin`"/knex init
+{% endhighlight %}
 </aside>
 
 Then modify the `knexfile.js` file so that the `development` section contains:
